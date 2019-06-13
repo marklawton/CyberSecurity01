@@ -1,0 +1,2 @@
+nipper --ios-switch --input=<fileName> --output=<file.html>
+
