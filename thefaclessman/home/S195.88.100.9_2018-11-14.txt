@@ -1,0 +1,661 @@
+##############################################################
+...................CISCO COMMAND SHOW RUN OUTPUT 195.88.100.9 2018-11-14 ......................
+: Saved
+:
+PIX Version 8.0(4) 
+!
+hostname F20-DC2-3PTY
+domain-name aimes.net
+enable password D.2tXTsQh3oBcXVd encrypted
+passwd 2KFQnbNIdI.2KYOU encrypted
+names
+!
+interface Ethernet0
+ description Internet S25 P20 vlan 2
+ nameif outside
+ security-level 0
+ ip address 195.88.100.9 255.255.254.0 standby 195.88.100.10 
+!
+interface Ethernet1
+ description TRUNK to ABC BRECKFIELD HOUSE LEASED LINE CR9533
+ nameif ABC_TRUNK
+ security-level 95
+ no ip address
+!
+interface Ethernet1.1
+ description Breckfield House Internet vlan 226
+ vlan 226
+ nameif BRECKFIELD226
+ security-level 60
+ ip address 10.0.26.1 255.255.255.0 
+!
+interface Ethernet2
+ description AIMES CORE switches S55/S56 P14
+ speed 100
+ duplex full
+ nameif CORE-TRUNK
+ security-level 95
+ no ip address
+!
+interface Ethernet2.1
+ description AIMES SYSLOG/Monitoring/Mgmt
+ vlan 212
+ nameif AIMES_DMZ
+ security-level 49
+ ip address 10.0.4.247 255.255.255.0 standby 10.0.4.248 
+!
+interface Ethernet2.2
+ description AIMES DNS backup servers CR9724
+ vlan 297
+ nameif AIMES_DNS_297
+ security-level 48
+ ip address 10.0.97.1 255.255.255.0 
+!
+interface Ethernet2.3
+ description AIMES SPHERE OOB support V236 CR11646
+ vlan 236
+ nameif SPHERE_OOB_236
+ security-level 48
+ ip address 10.0.236.1 255.255.255.0 
+!
+interface Ethernet2.4
+ description " AIMES DEVELOPERS CHC-DEV R710  (V217) "
+ vlan 217
+ nameif CHC-DEV-V217
+ security-level 49
+ ip address 85.91.40.97 255.255.255.240 
+!
+interface Ethernet2.5
+ description " LIVERPOOL 5G SW MGNT (V277) "
+ vlan 277
+ nameif AIMES-5G-V277
+ security-level 48
+ ip address 10.5.177.1 255.255.255.0 
+!
+interface Ethernet2.6
+ description " LIVERPOOL 5G DEMO (V251) "
+ vlan 251
+ nameif LPOOL-5G-DEMO-V251
+ security-level 48
+ ip address 192.168.181.1 255.255.255.0 
+!
+interface Ethernet2.7
+ description " LIVERPOOL 5G KENSINGTON (V238) "
+ vlan 238
+ nameif LPOOL-5G-KENNY-V238
+ security-level 48
+ ip address 10.181.1.1 255.255.248.0 
+!
+interface Ethernet3
+ description removed free
+ shutdown
+ nameif free-trunk
+ security-level 95
+ no ip address
+!
+interface Ethernet4
+ description SPHERE SWB1/2 switch p18 V220 BaaS & HYP MGNT
+ nameif AIMES_SPHERE-MGNT_220
+ security-level 48
+ ip address 10.0.220.1 255.255.255.0 
+!
+interface Ethernet5
+ description LAN/STATE Failover Interface
+!
+ftp mode passive
+clock timezone GMT/BST 0
+clock summer-time GMT/BDT recurring last Sun Mar 1:00 last Sun Oct 2:00
+dns server-group DefaultDNS
+ domain-name aimes.net
+object-group network Sysadmins
+ description support access LAN01.100, LPMc.101, H.102, JVDW.103, M.104 D.105 M2.106 Mt.107 ARFAN.108 JR.109 free.110
+ network-object host 195.88.100.4
+ network-object host 10.0.4.221
+ network-object host 192.168.0.100
+ network-object host 192.168.0.101
+ network-object host 192.168.0.102
+ network-object host 192.168.0.103
+ network-object host 192.168.0.105
+ network-object host 192.168.0.104
+ network-object host 10.0.4.193
+ network-object host 10.0.4.194
+ network-object host 10.0.4.195
+ network-object host 10.0.4.196
+ network-object host 10.0.4.197
+ network-object host 192.168.0.106
+ network-object host 192.168.0.107
+ network-object host 10.0.4.198
+ network-object host 10.0.4.199
+ network-object host 37.48.240.18
+ network-object host 192.168.0.108
+ network-object host 10.0.4.200
+ network-object host 192.168.0.109
+ network-object host 10.0.4.192
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+object-group network Aimes_Monitors
+ description Aimes DMZ servers/monitors
+ network-object host 10.0.4.220
+ network-object host 10.0.4.221
+ network-object host 10.0.4.218
+ network-object host 10.0.4.222
+ network-object host 10.0.4.223
+ network-object host 172.16.99.221
+ network-object host 172.16.99.240
+ network-object host 172.16.99.250
+ network-object host 10.0.4.216
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+object-group network NET_Admin-Access
+ description network subnets Sys admins can access
+ network-object 192.168.64.0 255.255.192.0
+ network-object 10.0.26.0 255.255.255.0
+object-group network OUTSIDE_NTP
+ description access to external NTP server uk.pool.ntp.org
+ network-object host 91.186.12.87
+ network-object host 77.75.105.150
+ network-object host 195.88.100.3
+object-group network OUTSIDE_DNS
+ description access to external DNS servers (193. fused /85. grffin / 194 Virginmedia)
+ network-object host 194.168.4.123
+ network-object host 194.168.8.123
+ network-object host 195.88.100.15
+ network-object host 195.88.101.70
+object-group network NET_DMZ_BRECKFIELD226
+ description network subnet for ABC BRECKFIELD ROUTER uplink
+ network-object 10.0.26.0 255.255.255.0
+object-group network NET_DMZ_BRECKFIELD95
+ description network subnet for ABC BRECKFIELD switch uplink
+ network-object 192.168.95.0 255.255.255.0
+object-group network NET_DMZ_BRECKFIELD_USERS
+ description network subnet for ABC BRECKFIELD USERS
+ network-object 192.168.64.0 255.255.192.0
+object-group network WWW-ABC-Arrow-PBX
+ description ABC BRECKFIELD Arrow VOIP PBX 192.168.118.4 card2 .6 CR9357/CR9932
+ network-object host 195.88.100.111
+ network-object host 195.88.101.62
+object-group network EXT-ABC-Arrow-PBX
+ description ABC BRECKFIELD Arrow VOIP PBX  SIP hosts CR9357
+ network-object host 88.215.61.201
+ network-object host 88.215.61.202
+object-group service ABC-VOIP-V118-IN_udp udp
+ description TCP Ports required for ABC BRECKFIELD Arrox PBX SIP CR9357
+ port-object eq sip
+ port-object range 6000 40000
+object-group network EXT-ABC-CARDREADER
+ description ABC BRECKFIELD CARDREADER 192.168.65.x CR9274
+ network-object host 81.144.134.243
+ network-object host 80.194.35.82
+object-group network INT-ABC-CARDREADER
+ description ABC BRECKFIELD CARDREADER 192.168.65.x NAT CR9274
+ network-object host 195.88.100.41
+object-group service ABC-VOIP-V118-IN_TCP tcp
+ description TCP Ports required for ABC BRECKFIELD Arrox PBX remote support CR9425
+ port-object eq 4000
+ port-object eq 44000
+object-group network Monitor-targets
+ description Aimes monitors ping targets
+ network-object 192.168.95.0 255.255.255.0
+object-group network WWW-ABC-MR-V124
+ description ABC BRECKFIELD Morgan Ridec Room 305 draytek for 192.168.124.10 CR10055
+ network-object host 195.88.101.16
+object-group network EXT-ABC-MR-DAILER
+ description ABC BRECKFIELD Morgan Ridec Room 305 remote dialer CR10055
+ network-object host 213.171.220.142
+object-group service ABC-V124-IN_TCP tcp
+ description TCP Ports required for ABC room 305 Morgan Ridec draytek CR10055
+ port-object eq www
+object-group service ABC-V124-IN_UDP udp
+ description UDP Ports required for ABC room 305 Morgan Ridec draytek CR10055
+ port-object eq sip
+object-group network Aimes_DNS_support
+ description "Aimes DNS01 rDNS support access CR9724"
+ network-object host 195.88.100.4
+ network-object host 195.88.100.7
+ network-object host 37.48.240.18
+object-group service Aimes_DNS-support-TCP-PORTS tcp
+ description "Aimes DNS01 rDNS support INBOUND access CR9724"
+ port-object eq ssh
+ port-object eq 10000
+object-group network EXT-Aimes_DNS
+ description "Aimes DNS01 & DNS02 rDNS server CR9724"
+ network-object host 195.88.100.15
+ network-object host 195.88.101.70
+object-group network EXT-LMH_DNS
+ description "Aimes LMH-DNS01 & DNS02 server CR9724"
+ network-object host 195.88.101.209
+ network-object host 195.88.101.210
+object-group network Aimes_DNS_LAN
+ description "Aimes DNS LAN CR9724"
+ network-object 10.0.97.0 255.255.255.0
+object-group service BASE_tcp-out tcp
+ description network TCP ports allowed outbound
+ port-object eq www
+ port-object eq https
+ port-object eq domain
+ port-object eq smtp
+ port-object eq 587
+ port-object eq 465
+object-group service BASE_udp-out udp
+ description network UDP ports allowed outbound
+ port-object eq domain
+ port-object eq ntp
+object-group network Aimes-Sphere-MGNT-V220
+ description VLAN 220 Sphere  management cr10335
+ network-object 10.0.220.0 255.255.255.0
+object-group network WWW-Sphere-CMC
+ description Sphere m1000e CMC external IP for remote management cr10335
+ network-object host 195.88.101.87
+object-group network Support-Sphere-CMC-MGNT
+ description external IP allowed to access the CMC console cr10335
+ network-object host 37.48.240.18
+object-group network Aimes-Sphere-OOB-V236
+ description VLAN 236 Sphere OOB management CMC & modules cr101646
+ network-object 10.0.236.0 255.255.255.0
+object-group network DMZ-R1SOFT
+ description Aimes backup server for r1soft CR10515
+ network-object host 37.48.240.12
+object-group service R1SOFT_replication-ports tcp
+ description TCP Range required for CDPSOFT Replication server IN/OUT
+ port-object eq 1167
+ port-object eq www
+object-group network Aimes-NTP
+ description External IP Aimes NTP server R2 + uk.pool
+ network-object host 195.88.100.3
+ network-object host 91.186.12.87
+object-group network Aimes-R7200
+ description External IP Aimes Router at Breckfield
+ network-object host 10.0.26.4
+object-group service Aimes-R7200-snmp udp
+ description TCP prt snmp to router
+ port-object eq snmp
+object-group network CHC-DEV-LAN-V217
+ description Aimes CHC SERVER LAN VLAN V217
+ network-object 85.91.40.96 255.255.255.240
+object-group network CHC-DEV-HYP-MGNT-V217
+ description Aimes CHC hypervisor management VLAN 1201
+ network-object host 85.91.40.99
+object-group network CHC-DEV-HYP-DRAC-V217
+ description Aimes CHC hypervisor DRAC VLAN 1201
+ network-object host 85.91.40.98
+object-group network EXT-AIMES-SUPPORT
+ description external IP Aimes support team
+ network-object host 37.48.240.18
+object-group network EXT-AIMES-DEV-LAN
+ description Aimes CHC DEV LAN ACCESS VLAN 1201
+ network-object host 195.88.100.24
+ network-object host 195.88.100.13
+ network-object host 195.88.100.17
+object-group network EXT-TIANI-JUMP-SERVER
+ description Tiani Support
+ network-object host 52.30.63.102
+object-group network CHC-DEV-TIANI-SVR-V217
+ description Aimes CHC DEV TIANI-VM VLAN 1201
+ network-object host 85.91.40.101
+object-group service CHC-DEV-TIANI-SVR-V217-tcp-in tcp
+ description network  Aimes CHC DEV TIANI-VM  inbound
+ port-object eq ssh
+ port-object eq https
+ port-object eq 8081
+ port-object eq 8181
+ port-object eq 8281
+object-group network AIMES-LIV-5G-SW-MGNT-V277
+ description Aimes LIVERPOOL 5G SW MGNT (V277)
+ network-object 10.5.177.0 255.255.255.0
+object-group network AIMES-LIV-5G-DEMO-V251
+ description LIVERPOOL 5G Accelerator DEMO Typoon STA1-1 (V251) T20180910.0005
+ network-object 192.168.181.0 255.255.255.0
+object-group network AIMES-LIV-5G-DEMO-NETS
+ description Aimes LIVERPOOL 5G Accelerator DEMO NETS VIA T20180910.0005/T20181105.0014
+ network-object 10.180.1.0 255.255.255.0
+ network-object 192.168.181.0 255.255.255.0
+ network-object 192.168.182.0 255.255.255.0
+ network-object 192.168.183.0 255.255.255.0
+ network-object 10.181.0.0 255.255.248.0
+object-group network AIMES-LIV-5G-KENNY-V238
+ description LIVERPOOL 5G Accelerator Kensington access (V238) T20181105.0014
+ network-object 10.181.0.0 255.255.248.0
+object-group network NET_DENY-Access
+ description customer networks/subnets that should NOT connect to each other
+ group-object CHC-DEV-LAN-V217
+ group-object NET_DMZ_BRECKFIELD226
+ group-object NET_DMZ_BRECKFIELD95
+ group-object NET_DMZ_BRECKFIELD_USERS
+ group-object Aimes-Sphere-MGNT-V220
+ group-object WWW-Sphere-CMC
+ group-object AIMES-LIV-5G-SW-MGNT-V277
+ group-object AIMES-LIV-5G-DEMO-V251
+ group-object AIMES-LIV-5G-DEMO-NETS
+ group-object AIMES-LIV-5G-KENNY-V238
+object-group network ISAPZWEB01-V217
+ description CHC IMOSPHERE WEB VM James SMEDLEY VLAN 217
+ network-object host 85.91.40.102
+object-group network 5G-MGNT-VM-V251
+ description 5G DEMO Management VM 192.168.181.22 T20180910.0005 
+ network-object host 195.88.100.108
+ network-object host 192.168.181.22
+object-group network 5G-MGNT-WHITELIST-V251
+ description 5G DEMO WHITELIST to Management VM 192.168.181.22 T20180910.0005
+ network-object host 37.48.240.18
+ network-object host 5.148.47.13
+object-group service 5G-MGNT-VM-V251-tcp-in tcp
+ description network  5G DEMO Management VM 192.168.181.22 T20180910.0005  inbound
+ port-object eq ssh
+access-list outside_in extended permit icmp any any 
+access-list outside_in extended permit udp object-group EXT-ABC-Arrow-PBX object-group WWW-ABC-Arrow-PBX object-group ABC-VOIP-V118-IN_udp 
+access-list outside_in extended permit icmp object-group EXT-ABC-Arrow-PBX object-group WWW-ABC-Arrow-PBX 
+access-list outside_in extended permit tcp any object-group WWW-ABC-Arrow-PBX object-group ABC-VOIP-V118-IN_TCP 
+access-list outside_in extended permit tcp object-group EXT-ABC-MR-DAILER object-group WWW-ABC-MR-V124 object-group ABC-V124-IN_TCP 
+access-list outside_in extended permit udp object-group EXT-ABC-MR-DAILER object-group WWW-ABC-MR-V124 object-group ABC-V124-IN_UDP 
+access-list outside_in extended permit tcp any object-group EXT-Aimes_DNS eq domain 
+access-list outside_in extended permit udp any object-group EXT-Aimes_DNS eq domain 
+access-list outside_in extended permit icmp any object-group EXT-Aimes_DNS 
+access-list outside_in extended permit tcp object-group Aimes_DNS_support object-group EXT-Aimes_DNS object-group Aimes_DNS-support-TCP-PORTS 
+access-list outside_in extended permit tcp object-group Aimes_DNS_support object-group EXT-LMH_DNS object-group Aimes_DNS-support-TCP-PORTS 
+access-list outside_in extended permit tcp any object-group EXT-LMH_DNS eq domain 
+access-list outside_in extended permit udp any object-group EXT-LMH_DNS eq domain 
+access-list outside_in extended permit icmp any object-group EXT-LMH_DNS 
+access-list outside_in extended permit tcp any object-group EXT-LMH_DNS eq www 
+access-list outside_in extended permit ip object-group Support-Sphere-CMC-MGNT object-group WWW-Sphere-CMC 
+access-list outside_in extended permit ip object-group EXT-AIMES-SUPPORT object-group CHC-DEV-LAN-V217 
+access-list outside_in extended permit ip object-group EXT-AIMES-DEV-LAN object-group CHC-DEV-TIANI-SVR-V217 
+access-list outside_in extended permit tcp object-group EXT-TIANI-JUMP-SERVER object-group CHC-DEV-TIANI-SVR-V217 object-group CHC-DEV-TIANI-SVR-V217-tcp-in 
+access-list outside_in extended permit tcp object-group 5G-MGNT-WHITELIST-V251 object-group 5G-MGNT-VM-V251 object-group 5G-MGNT-VM-V251-tcp-in 
+access-list outside_in extended permit icmp object-group 5G-MGNT-WHITELIST-V251 object-group 5G-MGNT-VM-V251 
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD226 eq 9996 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD226 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD95 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD_USERS 
+access-list Aimes_DMZ_in extended permit ip object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD_USERS 
+access-list Aimes_DMZ_in extended permit ip object-group Sysadmins object-group Aimes-Sphere-MGNT-V220 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group Aimes-Sphere-MGNT-V220 
+access-list Aimes_DMZ_in extended permit icmp object-group Sysadmins object-group NET_DMZ_BRECKFIELD226 
+access-list Aimes_DMZ_in extended permit tcp object-group Sysadmins object-group NET_DMZ_BRECKFIELD226 eq ssh 
+access-list Aimes_DMZ_in extended permit tcp object-group Sysadmins object-group NET_DMZ_BRECKFIELD95 eq ssh 
+access-list Aimes_DMZ_in extended permit icmp object-group Sysadmins object-group NET_DMZ_BRECKFIELD95 
+access-list Aimes_DMZ_in extended permit tcp object-group Sysadmins object-group NET_DMZ_BRECKFIELD226 eq telnet 
+access-list Aimes_DMZ_in extended permit tcp object-group Sysadmins object-group NET_DMZ_BRECKFIELD95 eq telnet 
+access-list Aimes_DMZ_in extended permit ip object-group Sysadmins object-group Aimes-Sphere-OOB-V236 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group Aimes-Sphere-OOB-V236 
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_Monitors object-group Aimes-R7200 object-group Aimes-R7200-snmp 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group AIMES-LIV-5G-SW-MGNT-V277 
+access-list Aimes_DMZ_in extended permit icmp object-group Sysadmins object-group AIMES-LIV-5G-SW-MGNT-V277 
+access-list Aimes_DMZ_in extended permit ip object-group Sysadmins object-group AIMES-LIV-5G-SW-MGNT-V277 
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors object-group AIMES-LIV-5G-DEMO-NETS 
+access-list Aimes_DMZ_in extended permit icmp object-group Sysadmins object-group AIMES-LIV-5G-DEMO-NETS 
+access-list Aimes_DMZ_in extended permit tcp object-group Sysadmins object-group AIMES-LIV-5G-DEMO-NETS eq ssh 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD226 object-group Sysadmins 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD_USERS object-group Sysadmins 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD226 object-group Monitor-targets 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD_USERS object-group Monitor-targets 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD95 object-group Aimes_Monitors 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD_USERS object-group Aimes_Monitors 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD226 object-group Aimes_Monitors 
+access-list nonat-breckfield226 extended permit ip object-group NET_DMZ_BRECKFIELD95 object-group Sysadmins 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD226 object-group Sysadmins 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD226 object-group Aimes_Monitors 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD_USERS object-group Sysadmins 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD_USERS object-group Aimes_Monitors 
+access-list breckfield226_in extended permit udp object-group NET_DMZ_BRECKFIELD226 object-group OUTSIDE_NTP eq ntp 
+access-list breckfield226_in extended permit udp object-group NET_DMZ_BRECKFIELD226 object-group Aimes_Monitors eq 9996 
+access-list breckfield226_in extended permit udp object-group NET_DMZ_BRECKFIELD226 object-group Aimes_Monitors eq syslog 
+access-list breckfield226_in extended permit udp object-group NET_DMZ_BRECKFIELD95 object-group Aimes_Monitors eq syslog 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD95 object-group Sysadmins 
+access-list breckfield226_in extended deny ip object-group NET_DMZ_BRECKFIELD_USERS 192.168.0.0 255.255.255.0 
+access-list breckfield226_in extended deny ip object-group NET_DMZ_BRECKFIELD_USERS 10.0.0.0 255.0.0.0 
+access-list breckfield226_in extended deny ip object-group NET_DMZ_BRECKFIELD_USERS 172.16.0.0 255.240.0.0 
+access-list breckfield226_in extended permit ip object-group NET_DMZ_BRECKFIELD_USERS any 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD_USERS any 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD95 object-group Aimes_Monitors 
+access-list breckfield226_in extended permit icmp object-group NET_DMZ_BRECKFIELD226 any 
+access-list breckfield226_in extended permit udp object-group NET_DMZ_BRECKFIELD226 any 
+access-list AIMES-5G-V277_access_in extended permit icmp object-group AIMES-LIV-5G-SW-MGNT-V277 object-group Aimes_Monitors 
+access-list AIMES-5G-V277_access_in extended permit icmp object-group AIMES-LIV-5G-SW-MGNT-V277 object-group Sysadmins 
+access-list AIMES-5G-V277_access_in extended deny ip object-group AIMES-LIV-5G-SW-MGNT-V277 object-group NET_DENY-Access 
+access-list AIMES-5G-V277_access_in extended deny icmp object-group AIMES-LIV-5G-SW-MGNT-V277 object-group NET_DENY-Access 
+access-list AIMES-5G-V277_access_in extended permit tcp object-group AIMES-LIV-5G-SW-MGNT-V277 any object-group BASE_tcp-out 
+access-list AIMES-5G-V277_access_in extended permit udp object-group AIMES-LIV-5G-SW-MGNT-V277 any object-group BASE_udp-out 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD226 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD95 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group Aimes_DNS_LAN 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group NET_DMZ_BRECKFIELD_USERS 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group Aimes-Sphere-MGNT-V220 
+access-list nonat-Aimes-DMZ extended permit ip object-group Sysadmins object-group Aimes-Sphere-MGNT-V220 
+access-list nonat-Aimes-DMZ extended permit ip object-group Sysadmins object-group NET_DMZ_BRECKFIELD95 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group Aimes-Sphere-OOB-V236 
+access-list nonat-Aimes-DMZ extended permit ip object-group Sysadmins object-group Aimes-Sphere-OOB-V236 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group AIMES-LIV-5G-SW-MGNT-V277 
+access-list nonat-Aimes-DMZ extended permit ip object-group Sysadmins object-group AIMES-LIV-5G-SW-MGNT-V277 
+access-list nonat-Aimes-DMZ extended permit ip object-group Aimes_Monitors object-group AIMES-LIV-5G-DEMO-NETS 
+access-list nonat-Aimes-DMZ extended permit ip object-group Sysadmins object-group AIMES-LIV-5G-DEMO-NETS 
+access-list aimes-dns-297_in extended permit ip object-group Aimes_DNS_LAN any 
+access-list aimes-dns-297_in extended permit icmp object-group Aimes_DNS_LAN any 
+access-list nonat-aimes-dns-297 extended permit ip object-group Aimes_DNS_LAN object-group Aimes_Monitors 
+access-list SPHERE-OOB-V236_in extended permit icmp object-group Aimes-Sphere-OOB-V236 object-group Aimes_Monitors 
+access-list SPHERE-OOB-V236_in extended permit icmp object-group Aimes-Sphere-OOB-V236 object-group Sysadmins 
+access-list SPHERE-OOB-V236_in extended permit tcp object-group Aimes-Sphere-OOB-V236 any object-group BASE_tcp-out 
+access-list SPHERE-OOB-V236_in extended permit udp object-group Aimes-Sphere-OOB-V236 any object-group BASE_udp-out 
+access-list nonat-SPHERE-OOB-V236 extended permit ip object-group Aimes-Sphere-OOB-V236 object-group Aimes_Monitors 
+access-list nonat-SPHERE-OOB-V236 extended permit ip object-group Aimes-Sphere-OOB-V236 object-group Sysadmins 
+access-list SPHERE-MGNT-V220_in extended permit icmp object-group Aimes-Sphere-MGNT-V220 object-group Aimes_Monitors 
+access-list SPHERE-MGNT-V220_in extended permit icmp object-group Aimes-Sphere-MGNT-V220 object-group Sysadmins 
+access-list SPHERE-MGNT-V220_in extended permit tcp object-group Aimes-Sphere-MGNT-V220 any object-group BASE_tcp-out 
+access-list SPHERE-MGNT-V220_in extended permit udp object-group Aimes-Sphere-MGNT-V220 any object-group BASE_udp-out 
+access-list nonat-SPHERE-MGNT-V220 extended permit ip object-group Aimes-Sphere-MGNT-V220 object-group Aimes_Monitors 
+access-list nonat-SPHERE-MGNT-V220 extended permit ip object-group Aimes-Sphere-MGNT-V220 object-group Sysadmins 
+access-list CHC-DEV-V217_access_in extended permit icmp object-group CHC-DEV-LAN-V217 object-group Aimes_Monitors 
+access-list CHC-DEV-V217_access_in extended deny ip object-group CHC-DEV-LAN-V217 object-group NET_DENY-Access 
+access-list CHC-DEV-V217_access_in extended deny icmp object-group CHC-DEV-LAN-V217 object-group NET_DENY-Access 
+access-list CHC-DEV-V217_access_in extended permit tcp object-group CHC-DEV-LAN-V217 any object-group BASE_tcp-out 
+access-list CHC-DEV-V217_access_in extended permit udp object-group CHC-DEV-LAN-V217 any object-group BASE_udp-out 
+access-list CHC-DEV-V217_access_in extended permit icmp object-group CHC-DEV-LAN-V217 any 
+access-list nonat-chc-dev-217 extended permit ip object-group CHC-DEV-LAN-V217 any 
+access-list nonat-AIMES-5G-V277 extended permit ip object-group AIMES-LIV-5G-SW-MGNT-V277 object-group Aimes_Monitors 
+access-list nonat-AIMES-5G-V277 extended permit ip object-group AIMES-LIV-5G-SW-MGNT-V277 object-group Sysadmins 
+access-list AIMES-5G-V251_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS object-group Aimes_Monitors 
+access-list AIMES-5G-V251_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS object-group Sysadmins 
+access-list AIMES-5G-V251_access_in extended deny ip object-group AIMES-LIV-5G-DEMO-NETS object-group NET_DENY-Access 
+access-list AIMES-5G-V251_access_in extended deny icmp object-group AIMES-LIV-5G-DEMO-NETS object-group NET_DENY-Access 
+access-list AIMES-5G-V251_access_in extended permit tcp object-group AIMES-LIV-5G-DEMO-NETS any object-group BASE_tcp-out 
+access-list AIMES-5G-V251_access_in extended permit udp object-group AIMES-LIV-5G-DEMO-NETS any object-group BASE_udp-out 
+access-list AIMES-5G-V251_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS any 
+access-list AIMES-5G-V251_access_in extended permit ip object-group AIMES-LIV-5G-DEMO-NETS any 
+access-list nonat-AIMES-5G-V251 extended permit ip object-group AIMES-LIV-5G-DEMO-NETS object-group Aimes_Monitors 
+access-list AIMES-5G-V238_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS object-group Aimes_Monitors 
+access-list AIMES-5G-V238_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS object-group Sysadmins 
+access-list AIMES-5G-V238_access_in extended deny ip object-group AIMES-LIV-5G-DEMO-NETS object-group NET_DENY-Access 
+access-list AIMES-5G-V238_access_in extended deny icmp object-group AIMES-LIV-5G-DEMO-NETS object-group NET_DENY-Access 
+access-list AIMES-5G-V238_access_in extended permit tcp object-group AIMES-LIV-5G-DEMO-NETS any object-group BASE_tcp-out 
+access-list AIMES-5G-V238_access_in extended permit udp object-group AIMES-LIV-5G-DEMO-NETS any object-group BASE_udp-out 
+access-list AIMES-5G-V238_access_in extended permit icmp object-group AIMES-LIV-5G-DEMO-NETS any 
+access-list AIMES-5G-V238_access_in extended permit ip object-group AIMES-LIV-5G-DEMO-NETS any 
+access-list nonat-AIMES-5G-V238 extended permit ip object-group AIMES-LIV-5G-DEMO-NETS object-group Aimes_Monitors 
+access-list nonat-AIMES-5G-V238 extended permit ip object-group AIMES-LIV-5G-DEMO-NETS object-group Sysadmins 
+!
+tcp-map mss-map
+!
+pager lines 24
+logging enable
+logging buffered debugging
+logging trap debugging
+logging asdm informational
+logging host AIMES_DMZ 10.0.4.221
+no logging message 710005
+mtu outside 1500
+mtu ABC_TRUNK 1500
+mtu BRECKFIELD226 1500
+mtu CORE-TRUNK 1500
+mtu AIMES_DMZ 1500
+mtu AIMES_DNS_297 1500
+mtu SPHERE_OOB_236 1500
+mtu CHC-DEV-V217 1500
+mtu free-trunk 1500
+mtu AIMES_SPHERE-MGNT_220 1500
+mtu AIMES-5G-V277 1500
+mtu LPOOL-5G-DEMO-V251 1500
+mtu LPOOL-5G-KENNY-V238 1500
+no failover
+failover lan unit primary
+failover lan interface failover Ethernet5
+failover lan enable
+failover link failover Ethernet5
+failover interface ip failover 192.168.255.120 255.255.255.0 standby 192.168.255.121
+icmp unreachable rate-limit 1 burst-size 1
+icmp permit any outside
+icmp permit any parameter-problem outside
+icmp permit any mask-reply outside
+icmp permit any source-quench outside
+icmp permit any time-exceeded outside
+icmp permit any timestamp-reply outside
+icmp permit any unreachable outside
+icmp permit any information-reply outside
+icmp permit host 195.88.100.4 outside
+icmp permit host 37.48.240.18 outside
+icmp deny any outside
+icmp permit any AIMES_DMZ
+asdm image flash:/asdm-61557.bin
+no asdm history enable
+arp timeout 14400
+nat-control
+global (outside) 1 interface
+global (outside) 26 195.88.100.41 netmask 255.255.254.0
+global (outside) 251 195.88.100.107 netmask 255.255.254.0
+nat (BRECKFIELD226) 0 access-list nonat-breckfield226
+nat (BRECKFIELD226) 1 10.0.26.0 255.255.255.0
+nat (BRECKFIELD226) 26 192.168.64.0 255.255.192.0
+nat (AIMES_DMZ) 0 access-list nonat-Aimes-DMZ
+nat (AIMES_DNS_297) 0 access-list nonat-aimes-dns-297
+nat (SPHERE_OOB_236) 0 access-list nonat-SPHERE-OOB-V236
+nat (SPHERE_OOB_236) 1 0.0.0.0 0.0.0.0
+nat (CHC-DEV-V217) 0 access-list nonat-chc-dev-217
+nat (AIMES_SPHERE-MGNT_220) 0 access-list nonat-SPHERE-MGNT-V220
+nat (AIMES_SPHERE-MGNT_220) 1 0.0.0.0 0.0.0.0
+nat (AIMES-5G-V277) 0 access-list nonat-AIMES-5G-V277
+nat (AIMES-5G-V277) 1 0.0.0.0 0.0.0.0
+nat (LPOOL-5G-DEMO-V251) 0 access-list nonat-AIMES-5G-V251
+nat (LPOOL-5G-DEMO-V251) 251 0.0.0.0 0.0.0.0
+nat (LPOOL-5G-KENNY-V238) 0 access-list nonat-AIMES-5G-V238
+nat (LPOOL-5G-KENNY-V238) 251 0.0.0.0 0.0.0.0
+static (AIMES_DNS_297,BRECKFIELD226) 10.0.26.200 10.0.97.200 netmask 255.255.255.255 dns 
+static (AIMES_DNS_297,outside) 195.88.101.70 10.0.97.100 netmask 255.255.255.255 dns 
+static (AIMES_DNS_297,outside) 195.88.101.210 10.0.97.200 netmask 255.255.255.255 dns 
+static (SPHERE_OOB_236,outside) 195.88.101.87 10.0.236.21 netmask 255.255.255.255 dns 
+static (BRECKFIELD226,outside) 195.88.100.111 192.168.118.4 netmask 255.255.255.255 dns 
+static (BRECKFIELD226,outside) 195.88.101.62 192.168.118.6 netmask 255.255.255.255 dns 
+static (BRECKFIELD226,outside) 195.88.101.16 192.168.124.10 netmask 255.255.255.255 dns 
+static (LPOOL-5G-DEMO-V251,outside) 195.88.100.108 192.168.181.22 netmask 255.255.255.255 dns 
+access-group outside_in in interface outside
+access-group breckfield226_in in interface BRECKFIELD226
+access-group Aimes_DMZ_in in interface AIMES_DMZ
+access-group aimes-dns-297_in in interface AIMES_DNS_297
+access-group SPHERE-OOB-V236_in in interface SPHERE_OOB_236
+access-group CHC-DEV-V217_access_in in interface CHC-DEV-V217
+access-group SPHERE-MGNT-V220_in in interface AIMES_SPHERE-MGNT_220
+access-group AIMES-5G-V277_access_in in interface AIMES-5G-V277
+access-group AIMES-5G-V251_access_in in interface LPOOL-5G-DEMO-V251
+access-group AIMES-5G-V238_access_in in interface LPOOL-5G-KENNY-V238
+route outside 0.0.0.0 0.0.0.0 195.88.100.1 1
+route outside 0.0.0.0 0.0.0.0 195.88.101.58 10
+route outside 0.0.0.0 0.0.0.0 195.88.101.59 20
+route outside 0.0.0.0 0.0.0.0 195.88.101.56 30
+route LPOOL-5G-DEMO-V251 10.180.1.0 255.255.255.0 192.168.181.254 1
+route AIMES_DMZ 172.16.99.0 255.255.255.0 10.0.4.253 1
+route AIMES_DMZ 192.168.0.0 255.255.255.0 10.0.4.253 1
+route BRECKFIELD226 192.168.64.0 255.255.192.0 10.0.26.4 1
+route LPOOL-5G-DEMO-V251 192.168.182.0 255.255.255.0 192.168.181.253 1
+route LPOOL-5G-DEMO-V251 192.168.183.0 255.255.255.0 192.168.181.254 1
+timeout xlate 3:00:00
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+dynamic-access-policy-record DfltAccessPolicy
+aaa authentication http console LOCAL 
+aaa authentication ssh console LOCAL 
+http server enable
+http 192.168.0.0 255.255.255.0 AIMES_DMZ
+http 37.48.240.18 255.255.255.255 outside
+snmp-server host AIMES_DMZ 10.0.4.190 community monitor udp-port 161
+snmp-server host AIMES_DMZ 10.0.4.191 community monitor udp-port 161
+snmp-server host AIMES_DMZ 10.0.4.216 community monitor
+snmp-server host AIMES_DMZ 172.16.99.240 community monitor udp-port 161
+snmp-server host AIMES_DMZ 172.16.99.250 community monitor udp-port 161
+snmp-server location DC2 B1/B2 11
+snmp-server contact G Lawton
+snmp-server community monitor
+snmp-server enable traps snmp authentication linkup linkdown coldstart
+snmp-server enable traps syslog
+crypto ipsec security-association lifetime seconds 28800
+crypto ipsec security-association lifetime kilobytes 4608000
+telnet timeout 5
+ssh 195.88.100.4 255.255.255.255 outside
+ssh 37.48.240.18 255.255.255.255 outside
+ssh 192.168.0.0 255.255.255.0 AIMES_DMZ
+ssh 10.0.4.0 255.255.255.0 AIMES_DMZ
+ssh timeout 30
+console timeout 0
+dhcpd address 10.0.220.192-10.0.220.250 AIMES_SPHERE-MGNT_220
+dhcpd dns 195.88.100.15 195.88.101.70 interface AIMES_SPHERE-MGNT_220
+dhcpd lease 14400 interface AIMES_SPHERE-MGNT_220
+dhcpd domain aimes-sphere.aimes.net interface AIMES_SPHERE-MGNT_220
+dhcpd enable AIMES_SPHERE-MGNT_220
+!
+threat-detection basic-threat
+threat-detection statistics access-list
+no threat-detection statistics tcp-intercept
+ntp server 195.88.100.3 source outside prefer
+ntp server 91.186.12.87 source outside
+username mlawton password 2fs3Dh7Jq.G/1emH encrypted privilege 15
+username banders password F1PkRbI7FDDgFdn. encrypted privilege 15
+username dlawton password hqHcQeYS4rtMieY. encrypted privilege 15
+username glawton password HVU5CjGDgpRFkKG2 encrypted privilege 15
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum 512
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map 
+  inspect ftp 
+  inspect h323 h225 
+  inspect h323 ras 
+  inspect netbios 
+  inspect rsh 
+  inspect rtsp 
+  inspect skinny  
+  inspect sqlnet 
+  inspect sunrpc 
+  inspect tftp 
+  inspect sip  
+  inspect xdmcp 
+  inspect ipsec-pass-thru 
+policy-map ABC_policy
+ class inspection_default
+  inspect dns preset_dns_map 
+  inspect ftp 
+  inspect pptp 
+  inspect h323 h225 
+  inspect h323 ras 
+  inspect netbios 
+  inspect rsh 
+  inspect rtsp 
+  inspect skinny  
+  inspect sqlnet 
+  inspect sunrpc 
+  inspect tftp 
+  inspect xdmcp 
+  inspect ipsec-pass-thru 
+  inspect sip  
+policy-map cardreader-map1
+!
+service-policy global_policy global
+service-policy cardreader-map1 interface outside
+service-policy ABC_policy interface BRECKFIELD226
+prompt hostname context 
+Cryptochecksum:b8d710f82d3240a1bc1b3bd2cb530a1e
+: end
+########################195.88.100.9######################################
