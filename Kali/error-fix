@@ -1,0 +1,18 @@
+Errors were encountered while processing:
+<PACKAGE>
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+
+
+
+ls -l /var/lib/dpkg/info | grep -i <PACKAGE>
+
+ls -l /var/lib/dpkg/info | grep -i <PACKAGE>
+-rw-r--r-- 1 root root 2324811 Aug 14 19:29 <PACKAGE>.list
+-rw-r--r-- 1 root root 2822824 Aug 10 04:28 <PACKAGE>.md5sums
+-rwxr-xr-x 1 root root     113 Aug 10 04:28 <PACKAGE>.postinst
+-rwxr-xr-x 1 root root      84 Aug 10 04:28 <PACKAGE>.postrm
+
+mv /var/lib/dpkg/info/<PACKAGE>.* /tmp
+
+now try to update or install again
