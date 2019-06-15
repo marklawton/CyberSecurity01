@@ -1,0 +1,514 @@
+# Nmap 7.70 scan initiated Wed Oct 31 10:39:19 2018 as: nmap -T4 -sV -n -sSU -p T:23,21,22,110,111,2049,3389,8080,U:500,5060 -oA /tmp/sparta-xly0mA-running/nmap/20181031102726-nmapstage3 192.168.20.0/24
+Host: 192.168.20.0 ()	Status: Up
+Host: 192.168.20.0 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.1 ()	Status: Up
+Host: 192.168.20.1 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.2 ()	Status: Up
+Host: 192.168.20.2 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.3 ()	Status: Up
+Host: 192.168.20.3 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.4 ()	Status: Up
+Host: 192.168.20.4 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.5 ()	Status: Up
+Host: 192.168.20.5 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.6 ()	Status: Up
+Host: 192.168.20.6 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.7 ()	Status: Up
+Host: 192.168.20.7 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.8 ()	Status: Up
+Host: 192.168.20.8 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.9 ()	Status: Up
+Host: 192.168.20.9 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.10 ()	Status: Up
+Host: 192.168.20.10 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.11 ()	Status: Up
+Host: 192.168.20.11 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.12 ()	Status: Up
+Host: 192.168.20.12 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.13 ()	Status: Up
+Host: 192.168.20.13 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.14 ()	Status: Up
+Host: 192.168.20.14 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.15 ()	Status: Up
+Host: 192.168.20.15 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.16 ()	Status: Up
+Host: 192.168.20.16 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.17 ()	Status: Up
+Host: 192.168.20.17 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.18 ()	Status: Up
+Host: 192.168.20.18 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.19 ()	Status: Up
+Host: 192.168.20.19 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.20 ()	Status: Up
+Host: 192.168.20.20 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.21 ()	Status: Up
+Host: 192.168.20.21 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.22 ()	Status: Up
+Host: 192.168.20.22 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.23 ()	Status: Up
+Host: 192.168.20.23 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.24 ()	Status: Up
+Host: 192.168.20.24 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.25 ()	Status: Up
+Host: 192.168.20.25 ()	Ports: 21/filtered/tcp//ftp///, 22/closed/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.26 ()	Status: Up
+Host: 192.168.20.26 ()	Ports: 21/filtered/tcp//ftp///, 22/closed/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.27 ()	Status: Up
+Host: 192.168.20.27 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.28 ()	Status: Up
+Host: 192.168.20.28 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.29 ()	Status: Up
+Host: 192.168.20.29 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.30 ()	Status: Up
+Host: 192.168.20.30 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.31 ()	Status: Up
+Host: 192.168.20.31 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.32 ()	Status: Up
+Host: 192.168.20.32 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.33 ()	Status: Up
+Host: 192.168.20.33 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.34 ()	Status: Up
+Host: 192.168.20.34 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.35 ()	Status: Up
+Host: 192.168.20.35 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.36 ()	Status: Up
+Host: 192.168.20.36 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.37 ()	Status: Up
+Host: 192.168.20.37 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.38 ()	Status: Up
+Host: 192.168.20.38 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.39 ()	Status: Up
+Host: 192.168.20.39 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.40 ()	Status: Up
+Host: 192.168.20.40 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.41 ()	Status: Up
+Host: 192.168.20.41 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.42 ()	Status: Up
+Host: 192.168.20.42 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.43 ()	Status: Up
+Host: 192.168.20.43 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.44 ()	Status: Up
+Host: 192.168.20.44 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.45 ()	Status: Up
+Host: 192.168.20.45 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.46 ()	Status: Up
+Host: 192.168.20.46 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.47 ()	Status: Up
+Host: 192.168.20.47 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.48 ()	Status: Up
+Host: 192.168.20.48 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.49 ()	Status: Up
+Host: 192.168.20.49 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.50 ()	Status: Up
+Host: 192.168.20.50 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.51 ()	Status: Up
+Host: 192.168.20.51 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.52 ()	Status: Up
+Host: 192.168.20.52 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.53 ()	Status: Up
+Host: 192.168.20.53 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.54 ()	Status: Up
+Host: 192.168.20.54 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.55 ()	Status: Up
+Host: 192.168.20.55 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.56 ()	Status: Up
+Host: 192.168.20.56 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.57 ()	Status: Up
+Host: 192.168.20.57 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.58 ()	Status: Up
+Host: 192.168.20.58 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.59 ()	Status: Up
+Host: 192.168.20.59 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.60 ()	Status: Up
+Host: 192.168.20.60 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.2 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/open/tcp//http-proxy//HTTP Server/, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.61 ()	Status: Up
+Host: 192.168.20.61 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.2 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.62 ()	Status: Up
+Host: 192.168.20.62 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.63 ()	Status: Up
+Host: 192.168.20.63 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.64 ()	Status: Up
+Host: 192.168.20.64 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.65 ()	Status: Up
+Host: 192.168.20.65 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.66 ()	Status: Up
+Host: 192.168.20.66 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.3 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 2049/open/tcp//nlockmgr//4 (RPC #100021)/, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.67 ()	Status: Up
+Host: 192.168.20.67 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.68 ()	Status: Up
+Host: 192.168.20.68 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.69 ()	Status: Up
+Host: 192.168.20.69 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.70 ()	Status: Up
+Host: 192.168.20.70 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.71 ()	Status: Up
+Host: 192.168.20.71 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.72 ()	Status: Up
+Host: 192.168.20.72 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.73 ()	Status: Up
+Host: 192.168.20.73 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.74 ()	Status: Up
+Host: 192.168.20.74 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.75 ()	Status: Up
+Host: 192.168.20.75 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.76 ()	Status: Up
+Host: 192.168.20.76 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.77 ()	Status: Up
+Host: 192.168.20.77 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.78 ()	Status: Up
+Host: 192.168.20.78 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.79 ()	Status: Up
+Host: 192.168.20.79 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.80 ()	Status: Up
+Host: 192.168.20.80 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.81 ()	Status: Up
+Host: 192.168.20.81 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.82 ()	Status: Up
+Host: 192.168.20.82 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.83 ()	Status: Up
+Host: 192.168.20.83 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.84 ()	Status: Up
+Host: 192.168.20.84 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.85 ()	Status: Up
+Host: 192.168.20.85 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.86 ()	Status: Up
+Host: 192.168.20.86 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.87 ()	Status: Up
+Host: 192.168.20.87 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.88 ()	Status: Up
+Host: 192.168.20.88 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.89 ()	Status: Up
+Host: 192.168.20.89 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.90 ()	Status: Up
+Host: 192.168.20.90 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.91 ()	Status: Up
+Host: 192.168.20.91 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.92 ()	Status: Up
+Host: 192.168.20.92 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.93 ()	Status: Up
+Host: 192.168.20.93 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.94 ()	Status: Up
+Host: 192.168.20.94 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.95 ()	Status: Up
+Host: 192.168.20.95 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.96 ()	Status: Up
+Host: 192.168.20.96 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.97 ()	Status: Up
+Host: 192.168.20.97 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.98 ()	Status: Up
+Host: 192.168.20.98 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.99 ()	Status: Up
+Host: 192.168.20.99 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.100 ()	Status: Up
+Host: 192.168.20.100 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.101 ()	Status: Up
+Host: 192.168.20.101 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.102 ()	Status: Up
+Host: 192.168.20.102 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.103 ()	Status: Up
+Host: 192.168.20.103 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.104 ()	Status: Up
+Host: 192.168.20.104 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.105 ()	Status: Up
+Host: 192.168.20.105 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.106 ()	Status: Up
+Host: 192.168.20.106 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.107 ()	Status: Up
+Host: 192.168.20.107 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.108 ()	Status: Up
+Host: 192.168.20.108 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.109 ()	Status: Up
+Host: 192.168.20.109 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.110 ()	Status: Up
+Host: 192.168.20.110 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.111 ()	Status: Up
+Host: 192.168.20.111 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.112 ()	Status: Up
+Host: 192.168.20.112 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.113 ()	Status: Up
+Host: 192.168.20.113 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.114 ()	Status: Up
+Host: 192.168.20.114 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.115 ()	Status: Up
+Host: 192.168.20.115 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.116 ()	Status: Up
+Host: 192.168.20.116 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.117 ()	Status: Up
+Host: 192.168.20.117 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.118 ()	Status: Up
+Host: 192.168.20.118 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.119 ()	Status: Up
+Host: 192.168.20.119 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.120 ()	Status: Up
+Host: 192.168.20.120 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.121 ()	Status: Up
+Host: 192.168.20.121 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.122 ()	Status: Up
+Host: 192.168.20.122 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.123 ()	Status: Up
+Host: 192.168.20.123 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.124 ()	Status: Up
+Host: 192.168.20.124 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.125 ()	Status: Up
+Host: 192.168.20.125 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.126 ()	Status: Up
+Host: 192.168.20.126 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.127 ()	Status: Up
+Host: 192.168.20.127 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.128 ()	Status: Up
+Host: 192.168.20.128 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.129 ()	Status: Up
+Host: 192.168.20.129 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.130 ()	Status: Up
+Host: 192.168.20.130 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.131 ()	Status: Up
+Host: 192.168.20.131 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.132 ()	Status: Up
+Host: 192.168.20.132 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.133 ()	Status: Up
+Host: 192.168.20.133 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.134 ()	Status: Up
+Host: 192.168.20.134 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.135 ()	Status: Up
+Host: 192.168.20.135 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/open/tcp//rpcbind//2 (RPC #100000)/, 2049/open/tcp//nfs//3 (RPC #100003)/, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Services/, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.136 ()	Status: Up
+Host: 192.168.20.136 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.137 ()	Status: Up
+Host: 192.168.20.137 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.138 ()	Status: Up
+Host: 192.168.20.138 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Services/, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.139 ()	Status: Up
+Host: 192.168.20.139 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.140 ()	Status: Up
+Host: 192.168.20.140 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.141 ()	Status: Up
+Host: 192.168.20.141 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.142 ()	Status: Up
+Host: 192.168.20.142 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.143 ()	Status: Up
+Host: 192.168.20.143 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.144 ()	Status: Up
+Host: 192.168.20.144 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.145 ()	Status: Up
+Host: 192.168.20.145 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/open/tcp//rpcbind//2 (RPC #100000)/, 2049/open/tcp//nfs//3 (RPC #100003)/, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.146 ()	Status: Up
+Host: 192.168.20.146 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.147 ()	Status: Up
+Host: 192.168.20.147 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/open/tcp//rpcbind//2 (RPC #100000)/, 2049/open/tcp//nfs//3 (RPC #100003)/, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.148 ()	Status: Up
+Host: 192.168.20.148 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.149 ()	Status: Up
+Host: 192.168.20.149 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.150 ()	Status: Up
+Host: 192.168.20.150 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.151 ()	Status: Up
+Host: 192.168.20.151 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.152 ()	Status: Up
+Host: 192.168.20.152 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.153 ()	Status: Up
+Host: 192.168.20.153 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.154 ()	Status: Up
+Host: 192.168.20.154 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.155 ()	Status: Up
+Host: 192.168.20.155 ()	Ports: 21/filtered/tcp//ftp///, 22/closed/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.156 ()	Status: Up
+Host: 192.168.20.156 ()	Ports: 21/filtered/tcp//ftp///, 22/closed/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.157 ()	Status: Up
+Host: 192.168.20.157 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.8 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.158 ()	Status: Up
+Host: 192.168.20.158 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.159 ()	Status: Up
+Host: 192.168.20.159 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.160 ()	Status: Up
+Host: 192.168.20.160 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.161 ()	Status: Up
+Host: 192.168.20.161 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/open/tcp//ssl|ms-wbt-server?///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.162 ()	Status: Up
+Host: 192.168.20.162 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.163 ()	Status: Up
+Host: 192.168.20.163 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.164 ()	Status: Up
+Host: 192.168.20.164 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.165 ()	Status: Up
+Host: 192.168.20.165 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.166 ()	Status: Up
+Host: 192.168.20.166 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Service/, 8080/open/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.167 ()	Status: Up
+Host: 192.168.20.167 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 6.2 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.168 ()	Status: Up
+Host: 192.168.20.168 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Service/, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.169 ()	Status: Up
+Host: 192.168.20.169 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.170 ()	Status: Up
+Host: 192.168.20.170 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.171 ()	Status: Up
+Host: 192.168.20.171 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.172 ()	Status: Up
+Host: 192.168.20.172 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.173 ()	Status: Up
+Host: 192.168.20.173 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.174 ()	Status: Up
+Host: 192.168.20.174 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.175 ()	Status: Up
+Host: 192.168.20.175 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.176 ()	Status: Up
+Host: 192.168.20.176 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.177 ()	Status: Up
+Host: 192.168.20.177 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.2 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.178 ()	Status: Up
+Host: 192.168.20.178 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.2 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.179 ()	Status: Up
+Host: 192.168.20.179 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.180 ()	Status: Up
+Host: 192.168.20.180 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.181 ()	Status: Up
+Host: 192.168.20.181 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.182 ()	Status: Up
+Host: 192.168.20.182 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.183 ()	Status: Up
+Host: 192.168.20.183 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.184 ()	Status: Up
+Host: 192.168.20.184 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.185 ()	Status: Up
+Host: 192.168.20.185 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.186 ()	Status: Up
+Host: 192.168.20.186 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.187 ()	Status: Up
+Host: 192.168.20.187 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.188 ()	Status: Up
+Host: 192.168.20.188 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.189 ()	Status: Up
+Host: 192.168.20.189 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.190 ()	Status: Up
+Host: 192.168.20.190 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.191 ()	Status: Up
+Host: 192.168.20.191 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.192 ()	Status: Up
+Host: 192.168.20.192 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.193 ()	Status: Up
+Host: 192.168.20.193 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.194 ()	Status: Up
+Host: 192.168.20.194 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.195 ()	Status: Up
+Host: 192.168.20.195 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.196 ()	Status: Up
+Host: 192.168.20.196 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.197 ()	Status: Up
+Host: 192.168.20.197 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.198 ()	Status: Up
+Host: 192.168.20.198 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.199 ()	Status: Up
+Host: 192.168.20.199 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.200 ()	Status: Up
+Host: 192.168.20.200 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Service/, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.201 ()	Status: Up
+Host: 192.168.20.201 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.202 ()	Status: Up
+Host: 192.168.20.202 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.203 ()	Status: Up
+Host: 192.168.20.203 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.204 ()	Status: Up
+Host: 192.168.20.204 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.205 ()	Status: Up
+Host: 192.168.20.205 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.206 ()	Status: Up
+Host: 192.168.20.206 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.207 ()	Status: Up
+Host: 192.168.20.207 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.208 ()	Status: Up
+Host: 192.168.20.208 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.209 ()	Status: Up
+Host: 192.168.20.209 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.210 ()	Status: Up
+Host: 192.168.20.210 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.211 ()	Status: Up
+Host: 192.168.20.211 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.212 ()	Status: Up
+Host: 192.168.20.212 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.213 ()	Status: Up
+Host: 192.168.20.213 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.214 ()	Status: Up
+Host: 192.168.20.214 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.215 ()	Status: Up
+Host: 192.168.20.215 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.216 ()	Status: Up
+Host: 192.168.20.216 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.217 ()	Status: Up
+Host: 192.168.20.217 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.218 ()	Status: Up
+Host: 192.168.20.218 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.219 ()	Status: Up
+Host: 192.168.20.219 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.220 ()	Status: Up
+Host: 192.168.20.220 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.221 ()	Status: Up
+Host: 192.168.20.221 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.222 ()	Status: Up
+Host: 192.168.20.222 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.223 ()	Status: Up
+Host: 192.168.20.223 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.224 ()	Status: Up
+Host: 192.168.20.224 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.225 ()	Status: Up
+Host: 192.168.20.225 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.226 ()	Status: Up
+Host: 192.168.20.226 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.227 ()	Status: Up
+Host: 192.168.20.227 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.228 ()	Status: Up
+Host: 192.168.20.228 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 4.3 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/filtered/udp//isakmp///, 5060/filtered/udp//sip///
+Host: 192.168.20.229 ()	Status: Up
+Host: 192.168.20.229 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.5 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.230 ()	Status: Up
+Host: 192.168.20.230 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.6 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.231 ()	Status: Up
+Host: 192.168.20.231 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.232 ()	Status: Up
+Host: 192.168.20.232 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.233 ()	Status: Up
+Host: 192.168.20.233 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.234 ()	Status: Up
+Host: 192.168.20.234 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.235 ()	Status: Up
+Host: 192.168.20.235 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.6 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.236 ()	Status: Up
+Host: 192.168.20.236 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.237 ()	Status: Up
+Host: 192.168.20.237 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.238 ()	Status: Up
+Host: 192.168.20.238 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.239 ()	Status: Up
+Host: 192.168.20.239 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.240 ()	Status: Up
+Host: 192.168.20.240 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.241 ()	Status: Up
+Host: 192.168.20.241 ()	Ports: 21/filtered/tcp//ftp///, 22/closed/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.242 ()	Status: Up
+Host: 192.168.20.242 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/open/tcp//ms-wbt-server//Microsoft Terminal Services/, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.243 ()	Status: Up
+Host: 192.168.20.243 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh?///, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.244 ()	Status: Up
+Host: 192.168.20.244 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/open/tcp//ssl|ms-wbt-server?///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.245 ()	Status: Up
+Host: 192.168.20.245 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/open/tcp//ssl|ms-wbt-server?///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.246 ()	Status: Up
+Host: 192.168.20.246 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 5.6 (protocol 2.0)/, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.247 ()	Status: Up
+Host: 192.168.20.247 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.248 ()	Status: Up
+Host: 192.168.20.248 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.249 ()	Status: Up
+Host: 192.168.20.249 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.250 ()	Status: Up
+Host: 192.168.20.250 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.251 ()	Status: Up
+Host: 192.168.20.251 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh//OpenSSH 7.0 (protocol 2.0)/, 23/closed/tcp//telnet///, 110/closed/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/closed/tcp//nfs///, 3389/closed/tcp//ms-wbt-server///, 8080/closed/tcp//http-proxy///, 500/closed/udp//isakmp///, 5060/closed/udp//sip///
+Host: 192.168.20.252 ()	Status: Up
+Host: 192.168.20.252 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.253 ()	Status: Up
+Host: 192.168.20.253 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.254 ()	Status: Up
+Host: 192.168.20.254 ()	Ports: 21/filtered/tcp//ftp///, 22/open/tcp//tcpwrapped///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+Host: 192.168.20.255 ()	Status: Up
+Host: 192.168.20.255 ()	Ports: 21/filtered/tcp//ftp///, 22/filtered/tcp//ssh///, 23/filtered/tcp//telnet///, 110/filtered/tcp//pop3///, 111/filtered/tcp//rpcbind///, 2049/filtered/tcp//nfs///, 3389/filtered/tcp//ms-wbt-server///, 8080/filtered/tcp//http-proxy///, 500/open|filtered/udp//isakmp///, 5060/open|filtered/udp//sip///
+# Nmap done at Wed Oct 31 11:20:31 2018 -- 256 IP addresses (256 hosts up) scanned in 2471.54 seconds

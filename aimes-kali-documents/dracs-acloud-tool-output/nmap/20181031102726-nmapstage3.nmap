@@ -1,0 +1,3915 @@
+# Nmap 7.70 scan initiated Wed Oct 31 10:39:19 2018 as: nmap -T4 -sV -n -sSU -p T:23,21,22,110,111,2049,3389,8080,U:500,5060 -oA /tmp/sparta-xly0mA-running/nmap/20181031102726-nmapstage3 192.168.20.0/24
+Nmap scan report for 192.168.20.0
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.1
+Host is up (0.010s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.2
+Host is up (0.011s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.3
+Host is up (0.011s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.4
+Host is up (0.012s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.5
+Host is up (0.012s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.6
+Host is up (0.019s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.7
+Host is up (0.018s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.8
+Host is up (0.018s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.9
+Host is up (0.018s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.10
+Host is up (0.019s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.11
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.12
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.13
+Host is up (0.012s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.14
+Host is up (0.012s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.15
+Host is up (0.011s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.16
+Host is up (0.013s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.17
+Host is up (0.0087s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.18
+Host is up (0.0097s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.19
+Host is up (0.011s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.20
+Host is up (0.010s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.21
+Host is up (0.012s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.22
+Host is up (0.013s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.23
+Host is up (0.11s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.24
+Host is up (0.099s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.25
+Host is up (0.021s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   closed        ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.26
+Host is up (0.018s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   closed        ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.27
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.28
+Host is up (0.036s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.29
+Host is up (0.036s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.30
+Host is up (0.031s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.31
+Host is up (0.031s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.32
+Host is up (0.032s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.33
+Host is up (0.032s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.34
+Host is up (0.032s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.35
+Host is up (0.033s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.36
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.37
+Host is up (0.030s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.38
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.39
+Host is up (0.036s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.40
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.41
+Host is up (0.017s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.42
+Host is up (0.019s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.43
+Host is up (0.017s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.4 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.44
+Host is up (0.054s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.4 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.45
+Host is up (0.054s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.4 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.46
+Host is up (0.018s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.4 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.47
+Host is up (0.054s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.48
+Host is up (0.042s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.49
+Host is up (0.042s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.50
+Host is up (0.042s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.51
+Host is up (0.043s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.52
+Host is up (0.043s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.53
+Host is up (0.044s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.54
+Host is up (0.044s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.55
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.56
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.57
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.58
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.59
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.60
+Host is up (0.022s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.2 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp open          http-proxy    HTTP Server
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8080-TCP:V=7.70%I=7%D=10/31%Time=5BD9866A%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,EA,"HTTP/1\.1\x20302\x20Found\r\nSet-Cookie:\x20JSESSIONID=26
+SF:0351C6C05FA677DF6A86C8777A825A;\x20Path=/;\x20HttpOnly\r\nLocation:\x20
+SF:http://localhost:8080/console\r\nContent-Length:\x200\r\nDate:\x20Wed,\
+SF:x2031\x20Oct\x202018\x2010:39:38\x20GMT\r\nConnection:\x20close\r\nServ
+SF:er:\x20HTTP\x20Server\r\n\r\n")%r(HTTPOptions,136,"HTTP/1\.1\x20403\x20
+SF:Forbidden\r\nSet-Cookie:\x20JSESSIONID=DCB2CB8C621DA8F8915D5E3BFFB77C86
+SF:;\x20Path=/;\x20HttpOnly\r\nCache-Control:\x20private\r\nExpires:\x20Th
+SF:u,\x2001\x20Jan\x201970\x2000:00:00\x20GMT\r\nContent-Length:\x2048\r\n
+SF:Date:\x20Wed,\x2031\x20Oct\x202018\x2010:39:38\x20GMT\r\nConnection:\x2
+SF:0close\r\nServer:\x20HTTP\x20Server\r\n\r\nAccess\x20to\x20the\x20reque
+SF:sted\x20resource\x20has\x20been\x20denied")%r(RTSPRequest,8A,"HTTP/1\.1
+SF:\x20400\x20Bad\x20Request\r\nTransfer-Encoding:\x20chunked\r\nDate:\x20
+SF:Wed,\x2031\x20Oct\x202018\x2010:39:38\x20GMT\r\nConnection:\x20close\r\
+SF:nServer:\x20HTTP\x20Server\r\n\r\n0\r\n\r\n")%r(FourOhFourRequest,136,"
+SF:HTTP/1\.1\x20403\x20Forbidden\r\nSet-Cookie:\x20JSESSIONID=891767D4622F
+SF:93444B02348D586818B5;\x20Path=/;\x20HttpOnly\r\nCache-Control:\x20priva
+SF:te\r\nExpires:\x20Thu,\x2001\x20Jan\x201970\x2000:00:00\x20GMT\r\nConte
+SF:nt-Length:\x2048\r\nDate:\x20Wed,\x2031\x20Oct\x202018\x2010:39:38\x20G
+SF:MT\r\nConnection:\x20close\r\nServer:\x20HTTP\x20Server\r\n\r\nAccess\x
+SF:20to\x20the\x20requested\x20resource\x20has\x20been\x20denied")%r(Socks
+SF:5,8A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nTransfer-Encoding:\x20chunk
+SF:ed\r\nDate:\x20Wed,\x2031\x20Oct\x202018\x2010:39:38\x20GMT\r\nConnecti
+SF:on:\x20close\r\nServer:\x20HTTP\x20Server\r\n\r\n0\r\n\r\n")%r(Socks4,8
+SF:A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nTransfer-Encoding:\x20chunked\
+SF:r\nDate:\x20Wed,\x2031\x20Oct\x202018\x2010:39:38\x20GMT\r\nConnection:
+SF:\x20close\r\nServer:\x20HTTP\x20Server\r\n\r\n0\r\n\r\n")%r(RPCCheck,8A
+SF:,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nTransfer-Encoding:\x20chunked\r
+SF:\nDate:\x20Wed,\x2031\x20Oct\x202018\x2010:39:43\x20GMT\r\nConnection:\
+SF:x20close\r\nServer:\x20HTTP\x20Server\r\n\r\n0\r\n\r\n");
+
+Nmap scan report for 192.168.20.61
+Host is up (0.024s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.2 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.62
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.63
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.64
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.65
+Host is up (0.053s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.66
+Host is up (0.019s latency).
+
+PORT     STATE  SERVICE       VERSION
+21/tcp   closed ftp
+22/tcp   open   ssh           OpenSSH 5.3 (protocol 2.0)
+23/tcp   closed telnet
+110/tcp  closed pop3
+111/tcp  open   rpcbind       2-4 (RPC #100000)
+2049/tcp open   nlockmgr      4 (RPC #100021)
+3389/tcp closed ms-wbt-server
+8080/tcp closed http-proxy
+500/udp  closed isakmp
+5060/udp closed sip
+
+Nmap scan report for 192.168.20.67
+Host is up (0.056s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.68
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.69
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.70
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.71
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.72
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.73
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.74
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.75
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.76
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.77
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.78
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.79
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.80
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.81
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.82
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.83
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.84
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.85
+Host is up (0.062s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.86
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.87
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.88
+Host is up (0.062s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.89
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.90
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.91
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.92
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.93
+Host is up (0.051s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.94
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.95
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.96
+Host is up (0.069s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.97
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.98
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.99
+Host is up (0.064s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.100
+Host is up (0.065s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.101
+Host is up (0.066s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.102
+Host is up (0.066s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.103
+Host is up (0.066s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.104
+Host is up (0.051s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.105
+Host is up (0.051s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.106
+Host is up (0.067s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.107
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.108
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.109
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.110
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.111
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.112
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.113
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.114
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.115
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.116
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.117
+Host is up (0.054s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.118
+Host is up (0.055s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.119
+Host is up (0.055s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.120
+Host is up (0.056s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.121
+Host is up (0.012s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.122
+Host is up (0.011s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.123
+Host is up (0.0095s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.124
+Host is up (0.079s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.125
+Host is up (0.080s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.126
+Host is up (0.047s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.127
+Host is up (0.047s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.128
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.129
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.130
+Host is up (0.051s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.131
+Host is up (0.062s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.132
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.133
+Host is up (0.056s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.134
+Host is up (0.066s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.135
+Host is up (0.018s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  open          rpcbind       2 (RPC #100000)
+2049/tcp open          nfs           3 (RPC #100003)
+3389/tcp open          ms-wbt-server Microsoft Terminal Services
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.136
+Host is up (0.054s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.137
+Host is up (0.056s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.138
+Host is up (0.019s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp open          ms-wbt-server Microsoft Terminal Services
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.139
+Host is up (0.055s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.140
+Host is up (0.055s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.141
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.142
+Host is up (0.068s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.143
+Host is up (0.069s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.144
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.145
+Host is up (0.027s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  open          rpcbind       2 (RPC #100000)
+2049/tcp open          nfs           3 (RPC #100003)
+3389/tcp closed        ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.146
+Host is up (0.074s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp closed        ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.147
+Host is up (0.072s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  open          rpcbind       2 (RPC #100000)
+2049/tcp open          nfs           3 (RPC #100003)
+3389/tcp closed        ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.148
+Host is up (0.031s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp closed        ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.149
+Host is up (0.024s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp closed        ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.150
+Host is up (0.053s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.151
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.152
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.153
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.154
+Host is up (0.053s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.155
+Host is up (0.13s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   closed        ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.156
+Host is up (0.037s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   closed        ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.157
+Host is up (0.028s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 5.8 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.158
+Host is up (0.059s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.159
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.160
+Host is up (0.023s latency).
+
+PORT     STATE  SERVICE       VERSION
+21/tcp   closed ftp
+22/tcp   open   ssh           OpenSSH 7.4 (protocol 2.0)
+23/tcp   closed telnet
+110/tcp  closed pop3
+111/tcp  open   rpcbind       2-4 (RPC #100000)
+2049/tcp closed nfs
+3389/tcp closed ms-wbt-server
+8080/tcp closed http-proxy
+500/udp  closed isakmp
+5060/udp closed sip
+
+Nmap scan report for 192.168.20.161
+Host is up (0.025s latency).
+
+PORT     STATE         SERVICE            VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp open          ssl/ms-wbt-server?
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+
+Nmap scan report for 192.168.20.162
+Host is up (0.060s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.163
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.164
+Host is up (0.061s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.165
+Host is up (0.066s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.166
+Host is up (0.024s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   closed        ftp
+22/tcp   closed        ssh
+23/tcp   closed        telnet
+110/tcp  closed        pop3
+111/tcp  filtered      rpcbind
+2049/tcp closed        nfs
+3389/tcp open          ms-wbt-server Microsoft Terminal Service
+8080/tcp open          http-proxy
+500/udp  open|filtered isakmp
+5060/udp closed        sip
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8080-TCP:V=7.70%I=7%D=10/31%Time=5BD98B7F%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,28,"HTTP/1\.0\x20301\x20Redirect\nLocation:\x20/axis/\n\n")%r
+SF:(HTTPOptions,433,"HTTP/1\.0\x20500\x20Internal\x20server\x20error\r\nCo
+SF:ntent-Type:\x20text/xml;\x20charset=utf-8\r\n\r\n<\?xml\x20version=\"1\
+SF:.0\"\x20encoding=\"UTF-8\"\?><soapenv:Envelope\x20xmlns:soapenv=\"http:
+SF://schemas\.xmlsoap\.org/soap/envelope/\"\x20xmlns:xsd=\"http://www\.w3\
+SF:.org/2001/XMLSchema\"\x20xmlns:xsi=\"http://www\.w3\.org/2001/XMLSchema
+SF:-instance\">\n\x20<soapenv:Body>\n\x20\x20<soapenv:Fault>\n\x20\x20\x20
+SF:<faultcode>soapenv:Server\.userException</faultcode>\n\x20\x20\x20<faul
+SF:tstring>java\.io\.IOException:\x20Cannot\x20handle\x20non-GET,\x20non-P
+SF:OST\x20request</faultstring>\n\x20\x20\x20<detail>\n\x20\x20\x20\x20<ns
+SF:1:stackTrace\x20xmlns:ns1=\"http://xml\.apache\.org/axis/\">java\.io\.I
+SF:OException:\x20Cannot\x20handle\x20non-GET,\x20non-POST\x20request\r\n\
+SF:tat\x20org\.apache\.axis\.transport\.http\.SimpleAxisWorker\.parseHeade
+SF:rs\(SimpleAxisWorker\.java:602\)\r\n\tat\x20org\.apache\.axis\.transpor
+SF:t\.http\.SimpleAxisWorker\.execute\(SimpleAxisWorker\.java:224\)\r\n\ta
+SF:t\x20org\.apache\.axis\.transport\.http\.SimpleAxisWorker\.run\(SimpleA
+SF:xisWorker\.java:155\)\r\n\tat\x20java\.lang\.Thread\.run\(Threa")%r(RTS
+SF:PRequest,433,"HTTP/1\.0\x20500\x20Internal\x20server\x20error\r\nConten
+SF:t-Type:\x20text/xml;\x20charset=utf-8\r\n\r\n<\?xml\x20version=\"1\.0\"
+SF:\x20encoding=\"UTF-8\"\?><soapenv:Envelope\x20xmlns:soapenv=\"http://sc
+SF:hemas\.xmlsoap\.org/soap/envelope/\"\x20xmlns:xsd=\"http://www\.w3\.org
+SF:/2001/XMLSchema\"\x20xmlns:xsi=\"http://www\.w3\.org/2001/XMLSchema-ins
+SF:tance\">\n\x20<soapenv:Body>\n\x20\x20<soapenv:Fault>\n\x20\x20\x20<fau
+SF:ltcode>soapenv:Server\.userException</faultcode>\n\x20\x20\x20<faultstr
+SF:ing>java\.io\.IOException:\x20Cannot\x20handle\x20non-GET,\x20non-POST\
+SF:x20request</faultstring>\n\x20\x20\x20<detail>\n\x20\x20\x20\x20<ns1:st
+SF:ackTrace\x20xmlns:ns1=\"http://xml\.apache\.org/axis/\">java\.io\.IOExc
+SF:eption:\x20Cannot\x20handle\x20non-GET,\x20non-POST\x20request\r\n\tat\
+SF:x20org\.apache\.axis\.transport\.http\.SimpleAxisWorker\.parseHeaders\(
+SF:SimpleAxisWorker\.java:602\)\r\n\tat\x20org\.apache\.axis\.transport\.h
+SF:ttp\.SimpleAxisWorker\.execute\(SimpleAxisWorker\.java:224\)\r\n\tat\x2
+SF:0org\.apache\.axis\.transport\.http\.SimpleAxisWorker\.run\(SimpleAxisW
+SF:orker\.java:155\)\r\n\tat\x20java\.lang\.Thread\.run\(Threa");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.167
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 6.2 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.168
+Host is up (0.062s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp open          ms-wbt-server Microsoft Terminal Service
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.169
+Host is up (0.021s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.170
+Host is up (0.065s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.171
+Host is up (0.071s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.172
+Host is up (0.021s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.173
+Host is up (0.022s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.174
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.175
+Host is up (0.073s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.176
+Host is up (0.083s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.177
+Host is up (0.022s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 5.2 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.178
+Host is up (0.031s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 5.2 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.179
+Host is up (0.022s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.180
+Host is up (0.088s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.181
+Host is up (0.047s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.182
+Host is up (0.075s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.183
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.184
+Host is up (0.030s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.185
+Host is up (0.027s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.186
+Host is up (0.047s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.187
+Host is up (0.028s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.188
+Host is up (0.077s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.189
+Host is up (0.079s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.190
+Host is up (0.065s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.191
+Host is up (0.065s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.192
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.193
+Host is up (0.037s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.194
+Host is up (0.037s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.195
+Host is up (0.038s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.196
+Host is up (0.038s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.197
+Host is up (0.042s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.198
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.199
+Host is up (0.067s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.200
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp open          ms-wbt-server Microsoft Terminal Service
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.201
+Host is up (0.078s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.202
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.203
+Host is up (0.077s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.204
+Host is up (0.037s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.205
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.3 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.206
+Host is up (0.11s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.207
+Host is up (0.064s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.208
+Host is up (0.028s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.209
+Host is up (0.037s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.210
+Host is up (0.078s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.211
+Host is up (0.079s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.212
+Host is up (0.025s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.213
+Host is up (0.026s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.214
+Host is up (0.030s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.215
+Host is up (0.031s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.216
+Host is up (0.065s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.217
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.218
+Host is up (0.039s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.219
+Host is up (0.033s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.220
+Host is up (0.033s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.221
+Host is up (0.033s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.222
+Host is up (0.034s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.223
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.224
+Host is up (0.034s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.225
+Host is up (0.035s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.226
+Host is up (0.050s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.227
+Host is up (0.034s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.228
+Host is up (0.029s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   filtered ftp
+22/tcp   open     ssh           OpenSSH 4.3 (protocol 2.0)
+23/tcp   filtered telnet
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+2049/tcp filtered nfs
+3389/tcp filtered ms-wbt-server
+8080/tcp filtered http-proxy
+500/udp  filtered isakmp
+5060/udp filtered sip
+
+Nmap scan report for 192.168.20.229
+Host is up (0.056s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 7.5 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.230
+Host is up (0.058s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 5.6 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.231
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.232
+Host is up (0.057s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.233
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.234
+Host is up (0.027s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   closed   ssh
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.235
+Host is up (0.052s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 5.6 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.236
+Host is up (0.051s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.237
+Host is up (0.040s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.238
+Host is up (0.040s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.239
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.240
+Host is up (0.043s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.241
+Host is up (0.053s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   closed        ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.242
+Host is up (0.065s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp open          ms-wbt-server Microsoft Terminal Services
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for 192.168.20.243
+Host is up (0.039s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh?
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.244
+Host is up (0.099s latency).
+
+PORT     STATE         SERVICE            VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp open          ssl/ms-wbt-server?
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.245
+Host is up (0.098s latency).
+
+PORT     STATE         SERVICE            VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp open          ssl/ms-wbt-server?
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.246
+Host is up (0.088s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          ssh           OpenSSH 5.6 (protocol 2.0)
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp closed        http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.247
+Host is up (0.042s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.248
+Host is up (0.041s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.249
+Host is up (0.045s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.250
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.251
+Host is up (0.049s latency).
+
+PORT     STATE    SERVICE       VERSION
+21/tcp   closed   ftp
+22/tcp   open     ssh           OpenSSH 7.0 (protocol 2.0)
+23/tcp   closed   telnet
+110/tcp  closed   pop3
+111/tcp  filtered rpcbind
+2049/tcp closed   nfs
+3389/tcp closed   ms-wbt-server
+8080/tcp closed   http-proxy
+500/udp  closed   isakmp
+5060/udp closed   sip
+
+Nmap scan report for 192.168.20.252
+Host is up (0.046s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.253
+Host is up (0.049s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.254
+Host is up (0.063s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   open          tcpwrapped
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Nmap scan report for 192.168.20.255
+Host is up (0.048s latency).
+
+PORT     STATE         SERVICE       VERSION
+21/tcp   filtered      ftp
+22/tcp   filtered      ssh
+23/tcp   filtered      telnet
+110/tcp  filtered      pop3
+111/tcp  filtered      rpcbind
+2049/tcp filtered      nfs
+3389/tcp filtered      ms-wbt-server
+8080/tcp filtered      http-proxy
+500/udp  open|filtered isakmp
+5060/udp open|filtered sip
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct 31 11:20:31 2018 -- 256 IP addresses (256 hosts up) scanned in 2471.54 seconds
