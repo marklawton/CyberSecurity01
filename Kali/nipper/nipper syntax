@@ -1,2 +1,22 @@
 nipper --ios-switch --input=<fileName> --output=<file.html>
 
+Nipper supports  a  number of  different types  of network device.  This
+version contains support for the following devices:
+
+    CMD Option      Device Type
+    =================================================
+    --ios-switch    Cisco IOS-based Switch
+    --ios-router    Cisco IOS-based Router (default)
+    --ios-catalyst  Cisco IOS-based Catalyst
+    --pix           Cisco PIX-based Firewall
+    --asa           Cisco ASA-based Firewall
+    --fwsm          Cisco FWSM-based Router
+    --catos         Cisco CatOS-based Catalyst
+    --nmp           Cisco NMP-based Catalyst
+    --css           Cisco Content Services Switch
+    --screenos      Juniper NetScreen Firewall
+    --passport      Nortel Passport Device
+    --sonicos       SonicWall SonicOS Firewall
+    --fw1           CheckPoint Firewall-1 Firewall
+    --nokiaip       Nokia IP Firewall
+    --accelar       Bay Networks Accelar
