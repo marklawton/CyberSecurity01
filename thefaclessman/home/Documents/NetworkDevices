@@ -1,0 +1,66 @@
+
+#Routers
+
+37.48.240.2,A	#r3925 R3.edge.aimes 0/0
+37.48.240.3,A	#r3925 R4.edge.,Aimes 0/0
+37.48.240.4,A	#r3925 R6.edge.aimes 0/0
+37.48.240.9,A	#R2 blackhole DDOS router
+37.48.240.8,A	#r3925 R5.edge.aimes 0/0
+10.16.100.1,A	#r16
+
+#Firewalls
+
+37.48.240.5,A	#FW1-asa-5510-FO
+37.48.240.6,A	#F6.CG VPN
+37.48.240.7,A	#F6.CG VPN  (NAT)
+37.48.240.14,A	#F26.edge.2FA
+37.48.240.18,A	#f27 nat for support team
+37.48.240.19,A	#F36-v25  aimes OS testbed fuel01 server NAT
+37.48.240.20,A	#F58-e3  aimes RC01-CMC NAT
+37.48.240.22,A	#F36-e3  aimes RC02-CMC NAT
+37.48.240.26,A	#F28.edge.lstore
+37.48.240.27,A	#F27.edge.IPv6
+37.48.240.28,B	#F61.ACLOUD.ASA
+37.48.240.29,B	#F62.ACLOUD.ASA
+37.48.240.30,A	#F30.edge.fw
+37.48.240.31,A	#F30.edge.fw FO
+37.48.240.32,A	#F303 Musa testbed 
+37.48.240.33,A	#F33 idera FW   CR10029
+37.48.240.34,A	#f34.edge.
+37.48.240.35,A	#f34.edge.FO
+37.48.240.36,A	#f36.dc2:p1e1 Aimes Openstack
+37.48.240.38,A	#f38.dc2.isp.
+37.48.240.39,A	#f38.dc2.isp.FO
+37.48.240.40,A	#f40.dc2.isp. Split
+37.48.240.41,A	#f40.dc2.isp.FO split
+37.48.240.42,A	#f42.dc2.isp.
+37.48.240.43,A	#f42.dc2.isp.FO
+37.48.240.44,A	#f44.XSTATION
+37.48.240.45,A	#f44.XSTATION.FO
+37.48.240.46,A	#f46.spare
+37.48.240.47,A	#f46.spare.FO
+37.48.240.48,A	#f48.DC2.isp
+37.48.240.49,A	#f48.DC2.isp-FO
+37.48.240.50,A	#F16.LIP.FW
+37.48.240.51,B	#AZFW01
+37.48.240.52,B	#AZFW01-FO
+37.48.240.53,B	#F63.dc2.Acloud fW
+37.48.240.54,A	#RR-cust-fw F50-1
+37.48.240.56,A	#Quill-Pinpoint  Cust FE E03
+37.48.240.57,A	#Quill-Pinpoint  Cust FE E04  fo
+37.48.240.58,A	#FW.58- ARK-TEMP
+37.48.240.77,A	#Cognition Foundation cust FW
+37.48.240.78,A	#Cognition Foundation cust FW-FO
+37.48.240.81,A	#Taskers FW-01
+37.48.240.82,A	#Taskers FW-01-FO
+37.48.240.83,A	#Taskers TSW01 nat
+
+#Switches
+
+10.0.4.4,B	#s24
+10.0.4.11,B	#s25
+10.0.4.10,B	#s26
+172.16.99.104,B	#s87
+10.16.100.110,B	#s110
+10.5.177.60,B	#s60    #oob 172.16.99.60
+10.5.177.65,B	#s65
