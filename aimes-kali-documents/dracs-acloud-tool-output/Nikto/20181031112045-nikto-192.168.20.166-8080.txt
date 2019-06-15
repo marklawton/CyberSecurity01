@@ -1,0 +1,41 @@
+- Nikto v2.1.6/2.1.5
++ Target Host: 192.168.20.166
++ Target Port: 8080
++ GET The anti-clickjacking X-Frame-Options header is not present.
++ GET The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ GET The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ PUT Cookie 2 created without the httponly flag
++ PUT Uncommon header 'set-cookie2' found, with contents: 2
++ GET Cookie 5 created without the httponly flag
++ GET Cookie 20 created without the httponly flag
++ GET Cookie 21 created without the httponly flag
++ POST Cookie 22 created without the httponly flag
++ POST Cookie 23 created without the httponly flag
++ GET /services: Axis web services reveals information about all installed web services. See http://ws.apache.org/axis/java/security.html to secure Axis.
++ POST Cookie 24 created without the httponly flag
++ POST Cookie 25 created without the httponly flag
++ GET /portal/webservice/: Vignette Server webservices.
++ GET /portal/changelog: Vignette richtext HTML editor changelog found.
++ POST Cookie 26 created without the httponly flag
++ POST Cookie 27 created without the httponly flag
++ POST Cookie 28 created without the httponly flag
++ POST Cookie 29 created without the httponly flag
++ POST Cookie 30 created without the httponly flag
++ POST Cookie 31 created without the httponly flag
++ POST Cookie 32 created without the httponly flag
++ POST Cookie 33 created without the httponly flag
++ POST Cookie 34 created without the httponly flag
++ POST Cookie 35 created without the httponly flag
++ POST Cookie 36 created without the httponly flag
++ POST Cookie 37 created without the httponly flag
++ POST Cookie 38 created without the httponly flag
++ POST Cookie 39 created without the httponly flag
++ POST Cookie 40 created without the httponly flag
++ POST Cookie 41 created without the httponly flag
++ POST Cookie 42 created without the httponly flag
++ POST Cookie 43 created without the httponly flag
++ POST Cookie 44 created without the httponly flag
++ POST Cookie 45 created without the httponly flag
++ POST Cookie 46 created without the httponly flag
++ POST Cookie 47 created without the httponly flag
++ POST Cookie 48 created without the httponly flag
