@@ -1,0 +1,1272 @@
+F365-N3-AG - 30/04/2019 - T20190423.0011 - Mersey Care Trust SMTP Settings for PHR
+
+F365-N3-AG# show run
+: Saved
+
+:
+: Serial Number: JAD220200ZX
+: Hardware:   ASA5508, 8192 MB RAM, CPU Atom C2000 series 2000 MHz, 1 CPU (8 cores)
+:
+ASA Version 9.8(2)
+!
+hostname F365-N3-AG
+domain-name aimes.net
+enable password 8Ry2YjIyt7RRXU24 encrypted
+names
+
+!
+interface GigabitEthernet1/1
+ description to AGGREGATOR N3/HSCN SERVICE
+ nameif outside
+ security-level 100
+ ip address 10.38.181.8 255.255.255.240
+!
+interface GigabitEthernet1/2
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet1/3
+ description Health Cloud N3 Trunk SHC211/SHC212
+ nameif N3-HC
+ security-level 95
+ no ip address
+!
+interface GigabitEthernet1/3.1
+ description Aimes-Mgmt-V1025 T20180406.0001 - create Aimes HSCN mgmt VMs on Healthcloud (AIMES)
+ vlan 1025
+ nameif Aimes-Mgmt-V1025
+ security-level 69
+ ip address 10.44.116.33 255.255.255.240
+!
+interface GigabitEthernet1/3.2
+ description ISOSEC N3 FL v1268
+ vlan 1268
+ nameif AIMES-ISOSEC-N3-FL-V1268
+ security-level 48
+ ip address 10.44.120.209 255.255.255.248
+!
+interface GigabitEthernet1/3.3
+ description AIMES-ELK-MONITORING V1098
+ vlan 1098
+ nameif AIMES-ELK-MON-N3-FL-V1098
+ security-level 48
+ ip address 10.44.114.65 255.255.255.240
+!
+interface GigabitEthernet1/3.4
+ description Newcastle REDCAP N3-WEB V1366
+ vlan 1366
+ nameif NEWCASTLE-REDCAP-v1366
+ security-level 48
+ ip address 10.44.114.113 255.255.255.240
+!
+interface GigabitEthernet1/3.5
+ description LHCIE-PRD-F5-EXT-V1090
+ vlan 1090
+ nameif LHCIE-PRD-F5-EXT-V1090
+ security-level 48
+ ip address 10.44.114.161 255.255.255.240
+!
+interface GigabitEthernet1/3.7
+ description SHEMKO-AWS N3-WEB V1363
+ vlan 1363
+ nameif SHEMKO-AWS-V1363
+ security-level 48
+ ip address 10.44.121.1 255.255.255.240
+!
+interface GigabitEthernet1/3.8
+ description LHCIE-UAT-F5-EXT-V1093
+ vlan 1093
+ nameif LHCIE-UAT-F5-EXT-V1093
+ security-level 48
+ ip address 10.44.114.209 255.255.255.240
+!
+interface GigabitEthernet1/3.9
+ description LDP-PRE-PROD2-AIMES-AD-N3-V1404
+ shutdown
+ vlan 1404
+ nameif LDP-PRE-PROD2-AIMES-AD-N3-V1404
+ security-level 46
+ ip address 10.44.123.225 255.255.255.240
+!
+interface GigabitEthernet1/3.10
+ description LDP-TIANI-PRE-PROD2-FEND-N3-V1396
+ shutdown
+ vlan 1396
+ nameif LDP-TIANI-PRE-PROD2-FEND-N3-V1396
+ security-level 20
+ ip address 10.44.123.97 255.255.255.240
+!
+interface GigabitEthernet1/3.11
+ description LDP-TIANI-PRE-PROD2-APP-N3-V1398
+ shutdown
+ vlan 1398
+ nameif LDP-TIANI-PRE-PROD2-APP-N3-V1398
+ security-level 22
+ ip address 10.44.123.129 255.255.255.240
+!
+interface GigabitEthernet1/3.12
+ description LDP-TIANI-PRE-PROD2-MON-N3-V1400
+ shutdown
+ vlan 1400
+ nameif LDP-TIANI-PRE-PROD2-MON-N3-V1400
+ security-level 23
+ ip address 10.44.123.161 255.255.255.240
+!
+interface GigabitEthernet1/3.13
+ description LDP-TIANI-PRE-PROD2-DB-N3-V1402
+ shutdown
+ vlan 1402
+ nameif LDP-TIANI-PRE-PROD2-DB-N3-V1402
+ security-level 24
+ ip address 10.44.123.193 255.255.255.240
+!
+interface GigabitEthernet1/3.14
+ description LDP-FORCARE-PRE-PROD2-N3-V1390
+ shutdown
+ vlan 1390
+ nameif LDP-FORCARE-PRE-PROD2-N3-V1390
+ security-level 25
+ ip address 10.44.123.1 255.255.255.240
+!
+interface GigabitEthernet1/3.15
+ description LDP-INTERSYSTEMS-PRE-PROD2-N3-V1392
+ shutdown
+ vlan 1392
+ nameif LDP-INTERSYSTEMS-PRE-PROD2-N3-V1392
+ security-level 26
+ ip address 10.44.123.33 255.255.255.240
+!
+interface GigabitEthernet1/3.16
+ description LDP-SYMPHONIC-PRE-PROD2-N3-V1394
+ shutdown
+ vlan 1394
+ nameif LDP-SYMPHONIC-PRE-PROD2-N3-V1394
+ security-level 27
+ ip address 10.44.123.65 255.255.255.240
+!
+interface GigabitEthernet1/3.17
+ description OpenCDRPilot-HC-N3 T20181120.0009
+ vlan 1376
+ nameif OpenCDRPilot-v1376
+ security-level 49
+ ip address 10.44.116.249 255.255.255.248
+!
+interface GigabitEthernet1/3.18
+ description STRATA-InTouch-pathway1
+ vlan 1560
+ nameif STRATA-InTouch-pathway1-V1560
+ security-level 49
+ ip address 10.44.126.33 255.255.255.248
+!
+interface GigabitEthernet1/3.19
+ description STRATA-InTouch-pathway2
+ vlan 1562
+ nameif STRATA-InTouch-pathway2-V1562
+ security-level 49
+ ip address 10.44.126.49 255.255.255.248
+!
+interface GigabitEthernet1/3.20
+ description STRATA-InTouch-pathway3
+ vlan 1564
+ nameif STRATA-InTouch-pathway3-V1564
+ security-level 49
+ ip address 10.44.126.65 255.255.255.248
+!
+interface GigabitEthernet1/3.21
+ description STRATA-InTouch-pathway4
+ vlan 1566
+ nameif STRATA-InTouch-pathway4-V1566
+ security-level 49
+ ip address 10.44.126.81 255.255.255.248
+!
+interface GigabitEthernet1/3.22
+ description STRATA-InTouch-pathway5
+ vlan 1568
+ nameif STRATA-InTouch-pathway5-V1568
+ security-level 49
+ ip address 10.44.126.97 255.255.255.248
+!
+interface GigabitEthernet1/3.23
+ description T20181107.0008 - Silver project - Newcastle
+ vlan 1294
+ nameif NEWCASTLE-SILVER-HSCN-V1294
+ security-level 45
+ ip address 10.44.120.113 255.255.255.240
+!
+interface GigabitEthernet1/3.24
+ description LUNGHEALTH-JB-V1554
+ vlan 1554
+ nameif LUNGHEALTH-JB-V1554
+ security-level 45
+ ip address 10.44.112.193 255.255.255.248
+!
+interface GigabitEthernet1/3.25
+ description Mindwave-HSCN-V1552
+ vlan 1552
+ nameif Mindwave-HSCN-V1552
+ security-level 45
+ ip address 10.44.126.241 255.255.255.248
+!
+interface GigabitEthernet1/3.26
+ description OTSUKA-HSCN-V1570
+ vlan 1570
+ nameif OTSUKA-HSCN-V1570
+ security-level 45
+ ip address 10.44.126.177 255.255.255.240
+!
+interface GigabitEthernet1/3.27
+ description OTSUKA-LBBL-V1571
+ vlan 1571
+ nameif OTSUKA-LBBL-V1571
+ security-level 42
+ ip address 10.44.126.153 255.255.255.248
+!
+interface GigabitEthernet1/3.28
+ description Sleep-LUNGHEALTH-Web-HSCN-FL-V1575 T20181210.0005
+ vlan 1575
+ nameif Sleep-LUNGHEALTH--Web-HSCN-FL-V1575
+ security-level 45
+ ip address 10.44.126.193 255.255.255.248
+!
+interface GigabitEthernet1/3.36
+ description PCG-N3-JB-V1102
+ vlan 1102
+ nameif PCG-N3-JB-V1102
+ security-level 48
+ ip address 10.44.113.33 255.255.255.240
+!
+interface GigabitEthernet1/3.37
+ description IBD-REG-HSCN-WEB-V1377-T20180625.0014
+ vlan 1377
+ nameif IBD-REG-HSCN-WEB-V1377
+ security-level 48
+ ip address 10.44.122.1 255.255.255.240
+!
+interface GigabitEthernet1/3.38
+ description Wigan Writington & Leigh HSCN access HSCN-WEB V1440
+ vlan 1440
+ nameif WWL-V1440
+ security-level 48
+ ip address 10.44.125.129 255.255.255.240
+!
+interface GigabitEthernet1/3.39
+ description Imosphere Live HSCN access HSCN-WEB V1278 T20180831.0008
+ vlan 1278
+ nameif IMOPSPHERE-LIVE-V1278
+ security-level 48
+ ip address 10.44.125.161 255.255.255.240
+!
+interface GigabitEthernet1/3.40
+ description Aimes-Pentest-V1556 Cust 3 T20181112.0002
+ vlan 1556
+ nameif Aimes-Pentest-VM-V1556
+ security-level 45
+ ip address 10.44.114.97 255.255.255.248
+!
+interface GigabitEthernet1/3.41
+ description Aimes-Pentest-V1558 cust 4 T20181112.0002
+ vlan 1558
+ nameif Aimes-Pentest-VM-V1558
+ security-level 45
+ ip address 10.44.114.105 255.255.255.248
+!
+interface GigabitEthernet1/3.42
+ description T20181218.0002 - Redwing RRAS and Jumpbox Server Build / Network Design
+ vlan 1585
+ nameif REDWING_BI-HSCN-V1585
+ security-level 45
+ ip address 10.44.122.201 255.255.255.248
+!
+interface GigabitEthernet1/3.43
+ description AIMES Shared HSCN SFTP Server
+ vlan 1583
+ nameif AIMES-SHARED-HSCN-SFTP-FL-V1583
+ security-level 45
+ ip address 10.44.120.241 255.255.255.248
+!
+interface GigabitEthernet1/4
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet1/5
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet1/6
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet1/7
+ shutdown
+ no nameif
+ no security-level
+ no ip address
+!
+interface GigabitEthernet1/8
+ description LAN/STATE Failover Interface
+!
+interface Management1/1
+ description "Aimes management dedicated PC only  v3"
+ management-only
+ nameif management
+ security-level 30
+ ip address 192.168.42.65 255.255.255.0 standby 192.168.42.66
+!
+banner motd *******************************************************
+banner motd * AIMES GRID SERVICES  EDGE LANE -       F363-N3-AG   *
+banner motd * WARNING: THIS IS A PRIVATE NETWORK                  *
+banner motd * ACCESS IS PERMITTED FOR AUTHORISED PERSONS ONLY     *
+banner motd *******************************************************
+banner motd ^C
+ftp mode passive
+clock timezone GMT/BST 0
+clock summer-time GMT/BDT recurring last Sun Mar 1:00 last Sun Oct 2:00
+dns server-group DefaultDNS
+ domain-name aimes.net
+object network obj_any
+ subnet 0.0.0.0 0.0.0.0
+object network AIMES-HSCN-Router
+ host 10.38.181.1
+object network 10.44.126.34
+ host 10.44.126.34
+object network 10.44.126.50
+ host 10.44.126.50
+object network 10.44.126.66
+ host 10.44.126.66
+object network 10.44.126.82
+ host 10.44.126.82
+object network 10.44.126.98
+ host 10.44.126.98
+object network 10.52.14.248
+ host 10.52.14.248
+object network 10.52.14.249
+ host 10.52.14.249
+object network 172.31.16.178
+ host 172.31.16.178
+ description description T20181114.0034 - BackEnd VPN access to InTOUCH VLAN for Intouch adm... (Strata Health)
+object network lwhintouch01
+ host 10.44.126.34
+object network phsintouch01
+ host 10.44.126.66
+object network sohintouch01
+ host 10.44.126.82
+ description description VPN connection for Southport and Omskirk Hospital T20181114.0033
+object network esxintouch01
+ host 10.44.126.98
+object-group service BASE_tcp-out tcp
+ description network TCP ports allowed outbound
+ port-object eq www
+ port-object eq https
+ port-object eq domain
+object-group service BASE_udp-out udp
+ description network UDP ports allowed outbound
+ port-object eq domain
+ port-object eq ntp
+object-group network N3-DNS-SVRS
+ description access N3 DNS
+ network-object host 194.72.7.137
+ network-object host 194.72.7.142
+ network-object host 155.231.231.1
+ network-object host 155.231.231.2
+object-group network NHS-MAIL-RELAY
+ description N3 smtp mail relay.nhs.uk  http://support.nhs.net/relayguidance#tag2
+ network-object host 155.231.210.221
+ network-object host 155.231.210.222
+ network-object host 155.231.210.253
+ network-object host 155.231.210.254
+object-group service N3-DNS-TCP tcp
+ description "TCP Ports for N3 DNS access"
+ port-object eq domain
+object-group service N3-DNS-UDP udp
+ description "TCP Ports for N3 DNS access"
+ port-object eq domain
+object-group network Aimes-Mgmt-V1025-LAN
+ description Aimes-Mgmt-V1025 T20180406.0001 - create Aimes HSCN mgmt VMs on Healthcloud (AIMES)
+ network-object 10.44.116.32 255.255.255.240
+object-group network AIMES-ISOSEC-N3-FL-V1268
+ description ISOSEC N3 FL v1268
+ network-object 10.44.120.208 255.255.255.248
+object-group service ISOSEC-WEB-in tcp
+ description inbound access T20180416.0002 - Unable to communicate with N3 services (Isosec Ltd)
+ port-object eq https
+ port-object eq www
+object-group network NEWCASTLE-REDCAP-N3-WEB-V1366
+ description Newcastle REDCAP N3 WEB access V1366
+ network-object host 10.44.114.114
+object-group service NEWCASTLE-REDCAP-WEB-in tcp
+ description inbound access Newcastle Redcap inbound V1366
+ port-object eq https
+ port-object eq www
+object-group network SHEMKO-AWS-N3-WEB-V1363
+ description SHEMKO-AWS N3 WEB access V1363
+ network-object host 10.44.121.2
+object-group network LHCIE-PRD-F5-EXT-LAN-V1090
+ description LHCIE-PRD-F5-EXT-V1090 lan
+ network-object 10.44.114.160 255.255.255.240
+object-group network PCG-N3-JB-V1102-SRV
+ description N3 PCG-N3-JB-V1102 VM T20180430.0047
+ network-object host 10.44.113.34
+object-group service PCG-N3-JB-V1102_tcp tcp
+ description network N3 PCG-N3-JB-V1102 T20180430.0047
+ port-object eq 3389
+object-group service SHEMKO-AWS-WEB-in tcp
+ description inbound access SHEMKO-AWS inbound V1363
+ port-object eq https
+ port-object eq www
+object-group network NEWCASTLE-REDCAP-N3-SFTP-V1366
+ description Newcastle REDCAP N3 SFTP access V1366
+ network-object host 10.44.114.115
+object-group service NEWCASTLE-REDCAP-SFTP-in tcp
+ description inbound access Newcastle Redcap SFTP inbound V1366
+ port-object eq ssh
+object-group network LHCIE-UAT-F5-EXT-LAN-V1093
+ description LHCIE-UAT-F5-EXT-V1093 lan
+ network-object 10.44.114.208 255.255.255.240
+object-group network dcc.prod.lhcie.nhs.uk-v1090
+ description Symponic prod F5 VIP T20180611.0004
+ network-object host 10.44.114.166
+object-group network iec.prod.lhcie.nhs.uk-v1090
+ description forcare prod F5 VIP T20180611.0004
+ network-object host 10.44.114.169
+object-group network gw.prod.lhcie.nhs.uk-v1090
+ description Intersystems prod F5 VIP T20180611.0004
+ network-object host 10.44.114.168
+object-group network Ext-Hillingdon1
+ description to LHCIE External access Hilligdon1 T20180611.0004
+ network-object host 10.210.120.6
+object-group network Ext-Mount1
+ description to LHCIE External access Mount-Vernon T20180611.0004
+ network-object host 10.210.139.150
+object-group network Ext-Hillingdon2
+ description to LHCIE External access Hilligdon2 T20180611.0004
+ network-object host 10.210.132.20
+object-group service DCC.prod-TCP-IN tcp
+ description network dcc.prod.lhcie.nhs.uk inbound ports
+ port-object eq https
+ port-object eq 8443
+object-group service iec.prod-TCP-IN tcp
+ description network dcc.prod.lhcie.nhs.uk inbound ports
+ port-object eq https
+ port-object eq 8443
+object-group service GW.prod-TCP-IN tcp
+ description network gw.prod.lhcie.nhs.uk inbound ports
+ port-object eq https
+ port-object eq 8443
+ port-object eq 8444
+ port-object eq 6514
+object-group network LHCIE-PROD-F5-EXT-LAN-V1090
+ description LHCIE-PROD-F5-EXT-V1090 lan
+ network-object 10.44.114.160 255.255.255.240
+object-group network NEWCASTLE-REDCAP-N3-JB03-V1366-WHITELIST
+ description Newcastle REDCAP N3 JUMPBOX access list V1366 T20180615.0002
+ network-object 0.0.0.0 0.0.0.0
+object-group network NEWCASTLE-REDCAP-N3-JB03-V1366
+ description Newcastle REDCAP N3 JUMPBOX access V1366 T20180615.0002
+ network-object host 10.44.114.116
+object-group service NEWCASTLE-REDCAP-N3-JB03_tcp tcp
+ description network Newcastle REDCAP N3 JUMPBOX access V1366 T20180615.0002
+ port-object eq 3389
+object-group network WWL-EMAIL-RELAY
+ description T20190401.0016 - Need help routing to our network email server from server at Amies side
+ network-object host 159.170.247.206
+object-group network HSCN-mail.nhs.uk-SRV
+ description T20190401.0016 - Need help routing to our network email server from server at Amies side
+ network-object host 150.70.226.147
+object-group network HC-Mindwave-Docker02
+ description T20190423.0011 - Mersey Care Trust SMTP Settings for PHR
+ network-object host 10.44.126.242
+object-group network EXT-Mindwave-EMAIL-RELAY
+ description T20190423.0011 - Mersey Care Trust SMTP Settings for PHR
+ network-object host 10.164.65.126
+object-group service NHS-EMAIL_tcp-out tcp
+ description T20190423.0011 - Mersey Care Trust SMTP Settings for PHR
+ port-object eq smtp
+ port-object eq 587
+object-group network LHCIE-N3-DNS-SRVS
+ description T20180606.0049
+ network-object host 81.128.8.1
+ network-object host 81.128.8.9
+ network-object host 62.130.194.17
+ network-object host 62.130.194.25
+object-group service TIANI_LDAP_PORTS_IN tcp
+ description network T20171114.0015 - Require Access to EXPPEX1.aimes.cloud from IECPP01 (LHCIE - IEC (Forcare...)
+ port-object eq ldap
+object-group network TIANI-PROD-GROUPS
+ description Tiani group N3 PROD
+object-group network IBD-REG-LAN-v1377
+ description T20180625.0014 - IBD REG
+ network-object 10.44.122.0 255.255.255.240
+object-group network IBD-REG-WEB01-v1377
+ description T20180625.0014 - IBD REG
+ network-object host 10.44.122.2
+object-group service IBD-REG-WEB-tcp-in tcp
+ description network T20180625.0014 - IBD REG
+ port-object eq www
+ port-object eq https
+object-group network WWL-HSCN-WEB-V1440
+ description Wigan Writington & Leigh HSCN WEB access V1440
+ network-object host 10.44.125.130
+object-group service WWL-WEB-in tcp
+ description inbound access Wigan Writington & Leigh inbound V1440
+ port-object eq https
+ port-object eq www
+object-group network expp2app01.pp2.lhcie.nhs.uk
+ description T20180914.0007 - Frewall configuration. (LHCIE (LDP))
+ network-object host 10.44.123.130
+object-group network HOMERTON-HEALTHCARE-NHS-TRUST
+ description T20180914.0007 - Frewall configuration. (LHCIE (LDP))
+ network-object host 10.148.176.135
+ network-object host 10.148.176.199
+ network-object host 10.148.176.200
+object-group service HOMERTON-ex-pp2-app01-ports-in tcp
+ description T20180914.0007 - Firewall configuration. (LHCIE (LDP))
+ port-object eq https
+ port-object eq 8443
+ port-object eq 8444
+ port-object eq 6514
+object-group network IMOPSPHERE-LIVE-HSCN-WEB-V1278
+ description Imosphere Live HSCN WEB access V1278 T20180831.0008
+ network-object host 10.44.125.162
+object-group service IMOPSPHERE-LIVE-WEB-in tcp
+ description inbound access Imosphere Live inbound V1278
+ port-object eq https
+object-group network EXT-PCG-N3-JB-53389
+ description N3 PCG-N3-JB-V1102 VM T20180919.0044
+ network-object host 10.142.96.243
+ network-object host 10.142.96.242
+object-group service PCG-N3-JB-53389_tcp tcp
+ description network N3 PCG-N3-JB-V1102 T20180919.0044
+ port-object eq 53389
+object-group network IBD-EXT-SUPPORT-WHITELIST
+ description IBD external ipp whitelist for support
+ network-object host 10.215.113.226
+object-group service IBD-RDP-IN-tcp tcp
+ description IBD inbound RDP port for support
+ port-object eq 3389
+ port-object eq ssh
+object-group network IBD-REG-ssh-v1377
+ description ubuntu ox for ftp over ssh data migration
+ network-object host 10.44.122.3
+object-group network HC-Aimes-Pentest-LAN-C3-V1556
+ description HC Aimes-Pentest N3 Local Cust3 LANs  T20181112.0002
+ network-object 10.44.114.96 255.255.255.248
+object-group network HC-Aimes-Pentest-LAN-C4-V1558
+ description HC Aimes-Pentest N3 Local Cust4 LANs  T20181112.0002
+ network-object 10.44.114.104 255.255.255.248
+object-group service HC-Aimes-Pentest-N3_in tcp
+ description "HC Aimes-Pentest N3 USER ACCESS T20181112.0002 "
+ port-object eq https
+ port-object eq www
+object-group network OpenCDRPilot-N3-HC-V1376
+ description OpenCDRPilot-HC-N3 T20181120.0009
+ network-object host 10.44.116.250
+object-group service OpenCDRPilot-N3-HC-ports-in tcp
+ description inbound access OpenCDRPilot inbound V1376
+ port-object eq https
+ port-object eq www
+ port-object eq 8080
+ port-object eq 8081
+ port-object eq 7779
+ port-object eq 7777
+object-group network STRATA-InTouch-pathway1-LAN-V1560
+ description STRATA InTouch PW1
+ network-object 10.44.126.32 255.255.255.248
+object-group network STRATA-InTouch-pathway2-LAN-V1562
+ description STRATA InTouch PW2
+ network-object 10.44.126.48 255.255.255.248
+object-group network STRATA-InTouch-pathway3-LAN-V1564
+ description STRATA InTouch PW3
+ network-object 10.44.126.64 255.255.255.248
+object-group network STRATA-InTouch-pathway4-LAN-V1566
+ description STRATA InTouch PW4
+ network-object 10.44.126.80 255.255.255.248
+object-group network STRATA-InTouch-pathway5-LAN-V1568
+ description STRATA InTouch PW5
+ network-object 10.44.126.96 255.255.255.248
+object-group network IN-TOUCH-ADMIN-VPN-ALLOWED-AIMES-HOSTS
+ description T20181114.0034 - BackEnd VPN access to InTOUCH VLAN for Intouch adm... (Strata Health)
+ network-object host 10.44.126.50
+ network-object host 10.44.126.34
+ network-object host 10.44.126.66
+ network-object host 10.44.126.82
+ network-object host 10.44.126.98
+object-group network RLH-VPN-ALLOWED-PEER-HOSTS
+ description T20181114.0032 - N3/HSCN VPN connection for Royal Liverpool Hospita... (Strata Health)
+ network-object object 10.52.14.248
+ network-object object 10.52.14.249
+object-group network RLH-VPN-ALLOWED-AIMES-HOSTS
+ description T20181114.0032 - N3/HSCN VPN connection for Royal Liverpool Hospita... (Strata Health)
+ network-object object 10.44.126.34
+object-group network IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+ description T20181114.0034 - BackEnd VPN access to InTOUCH VLAN for Intouch adm... (Strata Health)
+ network-object host 172.31.16.178
+object-group network NEWCASTLE-SILVER-HSCN-V1294-RANGE
+ description T20181107.0008 - Silver project - Newcastle WWW range outside patches
+ network-object 10.44.120.112 255.255.255.240
+object-group network NEWCASTLE-SILVER-HSCN-WEB
+ description T20181107.0008 - Silver project - Newcastle mig invoker
+ network-object host 10.44.120.114
+object-group service NEWCASTLE-SILVER-HSCN-V1294-WEB-port-in tcp
+ description network T20181107.0008 - Silver project - Newcastle
+ port-object eq https
+object-group network MIG-hg-thirdparty-nhs-uk
+ description LPRES Aimes LPRES-MIG-hg-thirdparty-nhs-uk T20171101.0013 - Re-configure LPRES VMs to use AIMES N3/HSCN
+ network-object host 10.212.49.27
+object-group network ISOSEC-EXT-CUST
+ description T20181128.0073- No outbound access to an N3 server: Ticket Note Created
+ network-object host 10.144.21.85
+object-group service ISOSEC-EXT-CUST-ports-out tcp
+ description T20181128.0073- No outbound access to an N3 server: Ticket Note Created
+ port-object eq ldap
+ port-object eq ldaps
+ port-object eq 10389
+ port-object eq 10636
+object-group network HC-LUNGHEALTH-JB01-N3-V1554
+ description HC LUNGHEALTH N3 JB01
+ network-object 10.44.112.192 255.255.255.248
+object-group service HC-LUNGHEALTH-JB01-N3_out tcp
+ description "HC LUNGHEALTH N3 JB01"
+ port-object eq 3389
+object-group network HC-Mindwave-HSCN-V1552
+ description HC Mindwave HSCN
+ network-object 10.44.126.240 255.255.255.248
+object-group service STRATA-RLH-VPN-ALLOWED-ports tcp
+ description "Strata royal allowed ports "
+ port-object eq https
+ port-object eq 5900
+ port-object eq 8731
+object-group network HC-Mindwave-WHITELIST-HSCN-V1552
+ description HC Mindwave HSCN WHITELIST for SFTP
+ network-object 10.164.65.0 255.255.255.0
+object-group network HC-OTSUKA-HSCN-V1570
+ description HC OTSUKA HSCN
+ network-object 10.44.126.176 255.255.255.240
+object-group network HC-OTSUKA-LBBL-V1571
+ description HC OTSUKA HSCN
+ network-object 10.44.126.152 255.255.255.248
+object-group service HC-OTSUKA-LOAD-BALports-in tcp
+ description HC OTSUKA HSCN
+ port-object eq www
+ port-object eq https
+object-group network HC-Sleep-LungHealth-Prod-Web-V1575
+ description HC Sleep-LungHealth HSCN Prod Web T20181210.0005
+ network-object 10.44.126.192 255.255.255.248
+object-group network Mindwave-PHR-SFTP
+ description HC mindwave PHR SFTP server ubuntu
+ network-object host 10.44.126.243
+object-group network Mindwave-PHR-SFTP-WHITELIST
+ description HC whitelist for mindwave PHR SFTP server ubuntu
+ network-object 10.164.65.0 255.255.255.0
+object-group service HSCN_EXT_SOUTHPORT_ORMSKIRK_tcp-in tcp
+ description description access VPN connection for Southport and Omskirk Hospital T20181114.0033
+ port-object eq https
+ port-object eq 5900
+ port-object eq 8731
+object-group service HSCN_EXT_SOUTHPORT_ORMSKIRK_tcp-out tcp
+ description access VPN connection for Southport and Omskirk Hospital T20181114.0033
+ port-object eq 8731
+ port-object eq https
+ port-object eq 5900
+object-group network EXT_VPN_HOST_SOUTHPORT_ORMSKIRK
+ description VPN connection for Southport and Omskirk Hospital T20181114.0033
+ network-object host 192.168.7.8
+object-group network OpenCDR_HSQL_ACCESS_in
+ network-object host 56.0.0.34
+ network-object host 56.0.0.50
+object-group network EXT_ESSEX_BTUH
+ description VPN for Essex Basildon Hospital T20181219.0009
+ network-object host 10.173.91.241
+object-group network STRATA_InTouch_Pathway5_BTUH
+ description VPN for Essex Basildon Hospital T20181219.0009
+ network-object object esxintouch01
+object-group service HSCN_EXT_ESSEX_Basildon_tcp-in tcp
+ description access VPN for Essex Basildon Hospital - T20181219.0009
+ port-object eq 3389
+ port-object eq https
+object-group service HSCN_EXT_ESSEX_Basildon_tcp-out tcp
+ description access VPN for Essex Basildon Hospital - T20181219.0009 T20190131.0001
+ port-object eq 8731
+ port-object eq 3389
+ port-object eq 9001
+object-group service OpenCDR_SQL tcp
+ port-object eq 1433
+object-group network SOUTHPORT_INTOUCH_HOSTS
+ network-object host 10.44.126.82
+object-group network Essex_InTouch_Allowed_VPN_hosts
+ network-object host 10.44.126.98
+object-group network NHSi-SFTP-HSCN-V1554
+ description HC NHSi-SFTP-HSCN-V1554
+ network-object host 10.44.112.194
+object-group network OTSUKA-WEB-SVRS-V1571
+ description HC OTSUKA WEB SERVERS - V1571
+ network-object host 10.44.126.157
+ network-object host 10.44.126.158
+object-group network OTSUKA-EXT-FTP
+ description OTSUKA EXTERNAL FTP SERVER
+ network-object host 10.164.65.167
+object-group service OTSUKA-EXT-FTP_TCP-PORTS tcp
+ description OTSUKA EXTERNAL FTP SERVER
+ port-object eq ftp
+ port-object range 5000 5010
+object-group network OTSUKA-EXT-RELAY
+ description OTSUKA EXTERNAL RELAY SERVERS
+ network-object host 155.231.210.221
+ network-object host 155.231.210.222
+ network-object host 155.231.210.253
+ network-object host 155.231.210.254
+object-group service OTSUKA-EXT-RELAY_TCP-PORTS tcp
+ description OTSUKA EXTERNAL RELAY SERVERS
+ port-object eq smtp
+object-group network EXT-SHEMKO-ADDENBROOKES-N3
+ description T20190219.0001 - nginx server to run on port 80
+ network-object host 10.44.121.18
+object-group service EXT-SHEMKO-ADDENBROOKES-N3_TCP-in tcp
+ description T20190219.0001 - nginx server to run on port 80
+ port-object eq www
+ port-object eq 8000
+ port-object eq 8002
+ port-object eq 8080
+object-group network REDWING_BI-LAN-V1585
+ description T20181218.0002 - Redwing RRAS and Jumpbox Server Build / Network Design
+ network-object 10.44.122.200 255.255.255.248
+object-group network AIMES-HSCN-SFTP-LAN-V1583
+ description AIMES Shared HSCN SFTP Server
+ network-object 10.44.120.240 255.255.255.248
+object-group network AIMES-HSCN-SFTP-SRV-V1583
+ description AIMES Shared HSCN SFTP Server
+ network-object host 10.44.120.242
+object-group service AIMES-HSCN-SFTP-SRV_TCP-IN tcp
+ description AIMES Shared HSCN SFTP Server inbound ports
+ port-object eq https
+object-group service NHS-MAIL-RELAY_TCP-PORTS tcp
+ description TCP/25 for NHS MAIL RELAY
+ port-object eq smtp
+access-list Outside_in extended permit icmp any any
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.98 eq https
+access-list Outside_in extended permit icmp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.98
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.98 eq 3389
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.34 eq 3389
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.50 eq 3389
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.66 eq 3389
+access-list Outside_in extended permit tcp object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS host 10.44.126.82 eq 3389
+access-list Outside_in extended permit tcp object-group RLH-VPN-ALLOWED-PEER-HOSTS object-group RLH-VPN-ALLOWED-AIMES-HOSTS object-group STRATA-RLH-VPN-ALLOWED-ports
+access-list Outside_in remark access VPN for Essex Basildon Hospital - T20181219.0009
+access-list Outside_in extended permit tcp object-group EXT_ESSEX_BTUH host 10.44.126.98 object-group HSCN_EXT_ESSEX_Basildon_tcp-in
+access-list Outside_in remark TICKET  T20181114.0033 - N3/HSCN VPN connection for Southport and Omskirk H... (Strata Health)
+access-list Outside_in extended permit tcp object-group EXT_VPN_HOST_SOUTHPORT_ORMSKIRK host 10.44.126.82 object-group HSCN_EXT_SOUTHPORT_ORMSKIRK_tcp-in
+access-list Outside_in extended permit tcp any object-group AIMES-ISOSEC-N3-FL-V1268 object-group ISOSEC-WEB-in
+access-list Outside_in extended permit tcp any object-group NEWCASTLE-REDCAP-N3-WEB-V1366 object-group NEWCASTLE-REDCAP-WEB-in
+access-list Outside_in extended permit tcp any object-group SHEMKO-AWS-N3-WEB-V1363 object-group SHEMKO-AWS-WEB-in
+access-list Outside_in extended permit tcp any object-group NEWCASTLE-REDCAP-N3-SFTP-V1366 object-group NEWCASTLE-REDCAP-SFTP-in
+access-list Outside_in extended permit tcp any object-group LHCIE-UAT-F5-EXT-LAN-V1093 eq https
+access-list Outside_in extended permit tcp object-group Ext-Hillingdon1 object-group dcc.prod.lhcie.nhs.uk-v1090 object-group DCC.prod-TCP-IN
+access-list Outside_in extended permit tcp object-group Ext-Hillingdon1 object-group iec.prod.lhcie.nhs.uk-v1090 object-group iec.prod-TCP-IN
+access-list Outside_in extended permit tcp object-group Ext-Mount1 object-group dcc.prod.lhcie.nhs.uk-v1090 object-group DCC.prod-TCP-IN
+access-list Outside_in remark T20190211.0015 - Cumbria EMIS SDK Prod integration (Strata Health)
+access-list Outside_in extended permit tcp object-group Ext-Mount1 object-group iec.prod.lhcie.nhs.uk-v1090 object-group iec.prod-TCP-IN
+access-list Outside_in remark T20190211.0016 - Cumbria EMIS SDK Beta integration (Strata Health)
+access-list Outside_in extended permit tcp object-group Ext-Hillingdon2 object-group gw.prod.lhcie.nhs.uk-v1090 object-group GW.prod-TCP-IN
+access-list Outside_in extended permit tcp any object-group LHCIE-PROD-F5-EXT-LAN-V1090 eq https
+access-list Outside_in extended permit tcp object-group NEWCASTLE-REDCAP-N3-JB03-V1366-WHITELIST object-group NEWCASTLE-REDCAP-N3-JB03-V1366 object-group NEWCASTLE-REDCAP-N3-JB03_tcp
+access-list Outside_in extended permit tcp any object-group LHCIE-PROD-F5-EXT-LAN-V1090 eq www
+access-list Outside_in extended permit tcp any object-group IBD-REG-WEB01-v1377 object-group IBD-REG-WEB-tcp-in
+access-list Outside_in extended permit tcp any object-group WWL-HSCN-WEB-V1440 object-group WWL-WEB-in
+access-list Outside_in extended permit tcp object-group HOMERTON-HEALTHCARE-NHS-TRUST object-group expp2app01.pp2.lhcie.nhs.uk object-group HOMERTON-ex-pp2-app01-ports-in
+access-list Outside_in extended permit tcp any object-group IMOPSPHERE-LIVE-HSCN-WEB-V1278 object-group IMOPSPHERE-LIVE-WEB-in
+access-list Outside_in extended permit tcp object-group IBD-EXT-SUPPORT-WHITELIST object-group IBD-REG-WEB01-v1377 object-group IBD-RDP-IN-tcp
+access-list Outside_in extended permit tcp any object-group IBD-REG-ssh-v1377 eq ssh
+access-list Outside_in extended permit tcp any object-group HC-Aimes-Pentest-LAN-C3-V1556 object-group HC-Aimes-Pentest-N3_in
+access-list Outside_in extended permit tcp any object-group HC-Aimes-Pentest-LAN-C4-V1558 object-group HC-Aimes-Pentest-N3_in
+access-list Outside_in extended permit tcp host 10.44.116.34 object-group IBD-REG-WEB01-v1377 object-group IBD-RDP-IN-tcp
+access-list Outside_in extended permit tcp any object-group OpenCDRPilot-N3-HC-V1376 object-group OpenCDRPilot-N3-HC-ports-in
+access-list Outside_in extended permit tcp object-group MIG-hg-thirdparty-nhs-uk object-group NEWCASTLE-SILVER-HSCN-WEB object-group NEWCASTLE-SILVER-HSCN-V1294-WEB-port-in
+access-list Outside_in extended permit tcp any host 10.44.126.34 eq https
+access-list Outside_in extended permit tcp object-group HC-Mindwave-WHITELIST-HSCN-V1552 object-group HC-Mindwave-HSCN-V1552 eq ssh
+access-list Outside_in extended permit tcp any object-group HC-OTSUKA-HSCN-V1570 object-group HC-OTSUKA-LOAD-BALports-in
+access-list Outside_in extended permit tcp any object-group IBD-REG-WEB01-v1377 eq https
+access-list Outside_in extended permit tcp object-group Mindwave-PHR-SFTP-WHITELIST object-group Mindwave-PHR-SFTP eq ssh
+access-list Outside_in extended permit tcp any object-group HC-Sleep-LungHealth-Prod-Web-V1575 eq https
+access-list Outside_in extended permit tcp object-group OpenCDR_HSQL_ACCESS_in 10.44.116.248 255.255.255.248 object-group OpenCDR_SQL
+access-list Outside_in extended permit tcp any object-group NHSi-SFTP-HSCN-V1554 eq https
+access-list Outside_in extended permit tcp object-group EXT-SHEMKO-ADDENBROOKES-N3 object-group SHEMKO-AWS-N3-WEB-V1363 object-group EXT-SHEMKO-ADDENBROOKES-N3_TCP-in
+access-list Outside_in extended permit tcp any object-group AIMES-HSCN-SFTP-SRV-V1583 object-group AIMES-HSCN-SFTP-SRV_TCP-IN
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN any object-group BASE_tcp-out
+access-list Aimes-Mgmt-V1025_in extended permit udp object-group Aimes-Mgmt-V1025-LAN object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list Aimes-Mgmt-V1025_in extended permit icmp object-group Aimes-Mgmt-V1025-LAN any
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN any eq 3389
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN any eq ssh
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN any eq https
+access-list Aimes-Mgmt-V1025_in extended permit tcp object-group Aimes-Mgmt-V1025-LAN any eq www
+access-list Aimes-Mgmt-V1025_in extended permit ip object-group Aimes-Mgmt-V1025-LAN any
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit icmp object-group AIMES-ISOSEC-N3-FL-V1268 any
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit tcp object-group AIMES-ISOSEC-N3-FL-V1268 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit udp object-group AIMES-ISOSEC-N3-FL-V1268 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit tcp object-group AIMES-ISOSEC-N3-FL-V1268 any object-group BASE_tcp-out
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit udp object-group AIMES-ISOSEC-N3-FL-V1268 any object-group BASE_udp-out
+access-list AIMES-ISOSEC-N3-FL-V1268_in extended permit tcp object-group AIMES-ISOSEC-N3-FL-V1268 object-group ISOSEC-EXT-CUST object-group ISOSEC-EXT-CUST-ports-out
+access-list NEWCASTLE-REDCAP-N3-V1366_in extended permit icmp object-group NEWCASTLE-REDCAP-N3-WEB-V1366 any
+access-list NEWCASTLE-REDCAP-N3-V1366_in extended permit icmp object-group NEWCASTLE-REDCAP-N3-SFTP-V1366 any
+access-list NEWCASTLE-REDCAP-N3-V1366_in extended permit icmp object-group NEWCASTLE-REDCAP-N3-JB03-V1366 any
+access-list LHCIE-PRD-F5-EXT-V1090_in extended permit icmp object-group LHCIE-PRD-F5-EXT-LAN-V1090 any
+access-list LHCIE-PRD-F5-EXT-V1090_in extended permit tcp object-group LHCIE-PRD-F5-EXT-LAN-V1090 any object-group BASE_tcp-out
+access-list LHCIE-PRD-F5-EXT-V1090_in extended permit udp object-group LHCIE-PRD-F5-EXT-LAN-V1090 any object-group BASE_udp-out
+access-list PCG-N3-JB-V1102_in extended permit tcp object-group PCG-N3-JB-V1102-SRV any object-group BASE_tcp-out
+access-list PCG-N3-JB-V1102_in extended permit udp object-group PCG-N3-JB-V1102-SRV any object-group BASE_udp-out
+access-list PCG-N3-JB-V1102_in extended permit tcp object-group PCG-N3-JB-V1102-SRV any object-group PCG-N3-JB-V1102_tcp
+access-list PCG-N3-JB-V1102_in extended permit icmp object-group PCG-N3-JB-V1102-SRV any
+access-list PCG-N3-JB-V1102_in extended permit tcp object-group PCG-N3-JB-V1102-SRV object-group EXT-PCG-N3-JB-53389 object-group PCG-N3-JB-53389_tcp
+access-list SHEMKO-AWS-N3-V1363_in extended permit icmp object-group SHEMKO-AWS-N3-WEB-V1363 any
+access-list LHCIE-UAT-F5-EXT-V1093_in extended permit icmp object-group LHCIE-UAT-F5-EXT-LAN-V1093 any
+access-list LHCIE-UAT-F5-EXT-V1093_in extended permit tcp object-group LHCIE-UAT-F5-EXT-LAN-V1093 any object-group BASE_tcp-out
+access-list LHCIE-UAT-F5-EXT-V1093_in extended permit udp object-group LHCIE-UAT-F5-EXT-LAN-V1093 any object-group BASE_udp-out
+access-list IBD-REG-HSCN-WEB-V1377_in extended permit udp object-group IBD-REG-LAN-v1377 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list IBD-REG-HSCN-WEB-V1377_in extended permit tcp object-group IBD-REG-LAN-v1377 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list IBD-REG-HSCN-WEB-V1377_in extended permit icmp object-group IBD-REG-LAN-v1377 any
+access-list IBD-REG-HSCN-WEB-V1377_in extended permit tcp object-group IBD-REG-LAN-v1377 any eq 587
+access-list IBD-REG-HSCN-WEB-V1377_in extended permit tcp object-group IBD-REG-LAN-v1377 any eq smtp
+access-list WWL-HSCN-V1440_in extended permit icmp object-group WWL-HSCN-WEB-V1440 any
+access-list WWL-HSCN-V1440_in extended permit udp object-group WWL-HSCN-WEB-V1440 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list WWL-HSCN-V1440_in extended permit tcp object-group WWL-HSCN-WEB-V1440 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list WWL-HSCN-V1440_in extended permit tcp object-group WWL-HSCN-WEB-V1440 object-group NHS-MAIL-RELAY object-group NHS-MAIL-RELAY_TCP-PORTS
+access-list WWL-HSCN-V1440_in extended permit tcp object-group WWL-HSCN-WEB-V1440 object-group WWL-EMAIL-RELAY object-group NHS-MAIL-RELAY_TCP-PORTS
+access-list WWL-HSCN-V1440_in extended permit tcp object-group WWL-HSCN-WEB-V1440 object-group HSCN-mail.nhs.uk-SRV object-group NHS-MAIL-RELAY_TCP-PORTS
+access-list IMOPSPHERE-LIVE-HSCN-V1278_in extended permit icmp object-group IMOPSPHERE-LIVE-HSCN-WEB-V1278 any
+access-list IMOPSPHERE-LIVE-HSCN-V1278_in extended permit udp object-group IMOPSPHERE-LIVE-HSCN-WEB-V1278 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list IMOPSPHERE-LIVE-HSCN-V1278_in extended permit tcp object-group IMOPSPHERE-LIVE-HSCN-WEB-V1278 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list Aimes-Pentest-V1556_in extended permit icmp object-group HC-Aimes-Pentest-LAN-C3-V1556 any
+access-list Aimes-Pentest-V1558_in extended permit icmp object-group HC-Aimes-Pentest-LAN-C4-V1558 any
+access-list OpenCDRPilot-N3-HC-in extended permit icmp object-group OpenCDRPilot-N3-HC-V1376 any
+access-list OpenCDRPilot-N3-HC-in extended permit udp object-group OpenCDRPilot-N3-HC-V1376 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list OpenCDRPilot-N3-HC-in extended permit tcp object-group OpenCDRPilot-N3-HC-V1376 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list OpenCDRPilot-N3-HC-in extended permit tcp object-group OpenCDRPilot-N3-HC-V1376 any object-group BASE_tcp-out
+access-list STRATA-InTouch-pathway1-LAN-V1560_in extended permit tcp object-group STRATA-InTouch-pathway1-LAN-V1560 any eq https
+access-list STRATA-InTouch-pathway1-LAN-V1560_in extended permit icmp object-group STRATA-InTouch-pathway1-LAN-V1560 any
+access-list STRATA-InTouch-pathway1-LAN-V1560_in extended permit tcp host 10.44.126.34 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389 log debugging
+access-list STRATA-InTouch-pathway1-LAN-V1560_in extended permit tcp object-group RLH-VPN-ALLOWED-AIMES-HOSTS object-group RLH-VPN-ALLOWED-PEER-HOSTS object-group STRATA-RLH-VPN-ALLOWED-ports
+access-list STRATA-InTouch-pathway1-LAN-V1560_in extended permit tcp object-group STRATA-InTouch-pathway1-LAN-V1560 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway2-LAN-V1562_in extended permit tcp object-group STRATA-InTouch-pathway2-LAN-V1562 any eq https
+access-list STRATA-InTouch-pathway2-LAN-V1562_in extended permit icmp object-group STRATA-InTouch-pathway2-LAN-V1562 any
+access-list STRATA-InTouch-pathway2-LAN-V1562_in extended permit tcp host 10.44.126.50 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway2-LAN-V1562_in extended permit tcp object-group STRATA-InTouch-pathway2-LAN-V1562 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway3-LAN-V1564_in extended permit tcp object-group STRATA-InTouch-pathway3-LAN-V1564 any eq https
+access-list STRATA-InTouch-pathway3-LAN-V1564_in extended permit icmp object-group STRATA-InTouch-pathway3-LAN-V1564 any
+access-list STRATA-InTouch-pathway3-LAN-V1564_in extended permit tcp host 10.44.126.66 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway3-LAN-V1564_in extended permit tcp 10.44.126.64 255.255.255.248 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit tcp object-group STRATA-InTouch-pathway4-LAN-V1566 any eq https
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit icmp object-group STRATA-InTouch-pathway4-LAN-V1566 any
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in remark T20181114.0033 - N3/HSCN VPN connection for Southport and Omskirk H... (Strata Health)
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit tcp host 10.44.126.82 object-group EXT_VPN_HOST_SOUTHPORT_ORMSKIRK object-group HSCN_EXT_SOUTHPORT_ORMSKIRK_tcp-out
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit tcp host 10.44.126.82 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit icmp host 10.44.126.82 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+access-list STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in extended permit tcp object-group STRATA-InTouch-pathway4-LAN-V1566 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit tcp object-group STRATA-InTouch-pathway5-LAN-V1568 any eq https
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit icmp object-group STRATA-InTouch-pathway5-LAN-V1568 any
+access-list STRATA-InTouch-pathway5-LAN-V1568_in remark description access VPN for Essex Basildon Hospital - T20181219.0009
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit icmp host 10.44.126.98 object-group EXT_ESSEX_BTUH log
+access-list STRATA-InTouch-pathway5-LAN-V1568_in remark description access VPN for Essex Basildon Hospital - T20181219.0009
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit tcp host 10.44.126.98 object-group EXT_ESSEX_BTUH object-group HSCN_EXT_ESSEX_Basildon_tcp-out
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit tcp host 10.44.126.98 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list STRATA-InTouch-pathway5-LAN-V1568_in extended permit tcp object-group STRATA-InTouch-pathway5-LAN-V1568 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS eq 3389
+access-list outside_cryptomap_2 extended permit ip object-group RLH-VPN-ALLOWED-AIMES-HOSTS object-group RLH-VPN-ALLOWED-PEER-HOSTS
+access-list outside_cryptomap_4 extended permit ip host 10.44.126.50 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+access-list outside_cryptomap_5 extended permit ip host 10.44.126.66 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+access-list outside_cryptomap_1 extended permit ip object-group IN-TOUCH-ADMIN-VPN-ALLOWED-AIMES-HOSTS object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+access-list NEWCASTLE-SILVER-HSCN-V1294_in extended permit icmp object-group NEWCASTLE-SILVER-HSCN-V1294-RANGE any
+access-list NEWCASTLE-SILVER-HSCN-V1294_in extended permit tcp object-group NEWCASTLE-SILVER-HSCN-V1294-RANGE object-group MIG-hg-thirdparty-nhs-uk object-group NEWCASTLE-SILVER-HSCN-V1294-WEB-port-in
+access-list NEWCASTLE-SILVER-HSCN-V1294_in extended permit tcp object-group NEWCASTLE-SILVER-HSCN-V1294-RANGE object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list NEWCASTLE-SILVER-HSCN-V1294_in extended permit udp object-group NEWCASTLE-SILVER-HSCN-V1294-RANGE object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list LUNGHEALTH-JB01-V1554_in extended permit icmp object-group HC-LUNGHEALTH-JB01-N3-V1554 any
+access-list LUNGHEALTH-JB01-V1554_in extended permit tcp object-group HC-LUNGHEALTH-JB01-N3-V1554 any object-group HC-LUNGHEALTH-JB01-N3_out
+access-list LUNGHEALTH-JB01-V1554_in extended permit tcp object-group HC-LUNGHEALTH-JB01-N3-V1554 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list LUNGHEALTH-JB01-V1554_in extended permit udp object-group HC-LUNGHEALTH-JB01-N3-V1554 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list Mindwave-HSCN-V1552_in extended permit icmp object-group HC-Mindwave-HSCN-V1552 any
+access-list Mindwave-HSCN-V1552_in extended permit tcp object-group HC-Mindwave-Docker02 object-group EXT-Mindwave-EMAIL-RELAY object-group NHS-EMAIL_tcp-out
+access-list outside_cryptomap_6 extended permit ip host 10.44.126.82 object-group IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS
+access-list OTSUKA-HSCN-V1570_in extended permit icmp object-group HC-OTSUKA-HSCN-V1570 any
+access-list OTSUKA-HSCN-V1570_in extended permit tcp object-group HC-OTSUKA-HSCN-V1570 object-group HC-OTSUKA-LBBL-V1571 object-group HC-OTSUKA-LOAD-BALports-in
+access-list OTSUKA-LBBL-V1571_in extended permit icmp object-group HC-OTSUKA-LBBL-V1571 any
+access-list OTSUKA-LBBL-V1571_in extended permit tcp object-group OTSUKA-WEB-SVRS-V1571 object-group OTSUKA-EXT-FTP object-group OTSUKA-EXT-FTP_TCP-PORTS
+access-list OTSUKA-LBBL-V1571_in extended permit tcp object-group OTSUKA-WEB-SVRS-V1571 object-group OTSUKA-EXT-RELAY object-group OTSUKA-EXT-RELAY_TCP-PORTS
+access-list OTSUKA-LBBL-V1571_in extended permit tcp object-group OTSUKA-WEB-SVRS-V1571 object-group NHS-MAIL-RELAY object-group OTSUKA-EXT-RELAY_TCP-PORTS
+access-list OTSUKA-LBBL-V1571_in extended permit tcp object-group OTSUKA-WEB-SVRS-V1571 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list OTSUKA-LBBL-V1571_in extended permit udp object-group OTSUKA-WEB-SVRS-V1571 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list Sleep-LungHealth-V1575_in extended permit icmp object-group HC-Sleep-LungHealth-Prod-Web-V1575 any
+access-list Sleep-LungHealth-V1575_in extended permit udp object-group HC-Sleep-LungHealth-Prod-Web-V1575 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list REDWING_BI-V1585_in extended permit icmp object-group REDWING_BI-LAN-V1585 any
+access-list REDWING_BI-V1585_in extended permit udp object-group REDWING_BI-LAN-V1585 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list outside_cryptomap_9 extended permit ip object-group SOUTHPORT_INTOUCH_HOSTS object-group EXT_VPN_HOST_SOUTHPORT_ORMSKIRK
+access-list outside_cryptomap_10 extended permit ip object-group Essex_InTouch_Allowed_VPN_hosts object-group EXT_ESSEX_BTUH
+access-list AIMES-SHARED-HSCN-SFTP-FL-V1583_in extended permit tcp object-group AIMES-HSCN-SFTP-SRV-V1583 object-group N3-DNS-SVRS object-group N3-DNS-TCP
+access-list AIMES-SHARED-HSCN-SFTP-FL-V1583_in extended permit udp object-group AIMES-HSCN-SFTP-SRV-V1583 object-group N3-DNS-SVRS object-group N3-DNS-UDP
+access-list AIMES-SHARED-HSCN-SFTP-FL-V1583_in extended permit tcp object-group AIMES-HSCN-SFTP-LAN-V1583 any object-group BASE_tcp-out
+access-list AIMES-SHARED-HSCN-SFTP-FL-V1583_in extended permit udp object-group AIMES-HSCN-SFTP-LAN-V1583 any object-group BASE_udp-out
+pager lines 24
+logging enable
+logging timestamp
+logging standby
+logging buffer-size 10000
+logging asdm-buffer-size 512
+logging monitor debugging
+logging buffered debugging
+logging trap debugging
+logging asdm debugging
+logging host management 192.168.42.254
+no logging message 725011
+no logging message 710005
+mtu outside 1500
+mtu N3-HC 1500
+mtu management 1500
+mtu Aimes-Mgmt-V1025 1500
+mtu AIMES-ISOSEC-N3-FL-V1268 1500
+mtu AIMES-ELK-MON-N3-FL-V1098 1500
+mtu NEWCASTLE-REDCAP-v1366 1500
+mtu LHCIE-PRD-F5-EXT-V1090 1500
+mtu PCG-N3-JB-V1102 1500
+mtu SHEMKO-AWS-V1363 1500
+mtu LHCIE-UAT-F5-EXT-V1093 1500
+mtu LDP-PRE-PROD2-AIMES-AD-N3-V1404 1500
+mtu LDP-TIANI-PRE-PROD2-FEND-N3-V1396 1500
+mtu LDP-TIANI-PRE-PROD2-APP-N3-V1398 1500
+mtu LDP-TIANI-PRE-PROD2-MON-N3-V1400 1500
+mtu LDP-TIANI-PRE-PROD2-DB-N3-V1402 1500
+mtu LDP-FORCARE-PRE-PROD2-N3-V1390 1500
+mtu LDP-INTERSYSTEMS-PRE-PROD2-N3-V1392 1500
+mtu LDP-SYMPHONIC-PRE-PROD2-N3-V1394 1500
+mtu IBD-REG-HSCN-WEB-V1377 1500
+mtu WWL-V1440 1500
+mtu IMOPSPHERE-LIVE-V1278 1500
+mtu Aimes-Pentest-VM-V1556 1500
+mtu Aimes-Pentest-VM-V1558 1500
+mtu OpenCDRPilot-v1376 1500
+mtu STRATA-InTouch-pathway1-V1560 1500
+mtu STRATA-InTouch-pathway2-V1562 1500
+mtu STRATA-InTouch-pathway3-V1564 1500
+mtu STRATA-InTouch-pathway4-V1566 1500
+mtu STRATA-InTouch-pathway5-V1568 1500
+mtu NEWCASTLE-SILVER-HSCN-V1294 1500
+mtu LUNGHEALTH-JB-V1554 1500
+mtu Mindwave-HSCN-V1552 1500
+mtu OTSUKA-HSCN-V1570 1500
+mtu OTSUKA-LBBL-V1571 1500
+mtu Sleep-LUNGHEALTH--Web-HSCN-FL-V1575 1500
+mtu REDWING_BI-HSCN-V1585 1500
+mtu AIMES-SHARED-HSCN-SFTP-FL-V1583 1500
+failover
+failover lan unit primary
+failover lan interface failover GigabitEthernet1/8
+failover link failover GigabitEthernet1/8
+failover interface ip failover 192.168.255.83 255.255.255.0 standby 192.168.255.84
+icmp unreachable rate-limit 1 burst-size 1
+asdm image disk0:/asdm-782.bin
+asdm history enable
+arp timeout 14400
+no arp permit-nonconnected
+arp rate-limit 16384
+nat (Aimes-Mgmt-V1025,IMOPSPHERE-LIVE-V1278) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static IMOPSPHERE-LIVE-HSCN-WEB-V1278 IMOPSPHERE-LIVE-HSCN-WEB-V1278
+nat (Aimes-Mgmt-V1025,OpenCDRPilot-v1376) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static OpenCDRPilot-N3-HC-V1376 OpenCDRPilot-N3-HC-V1376
+nat (Aimes-Mgmt-V1025,OTSUKA-HSCN-V1570) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static HC-OTSUKA-HSCN-V1570 HC-OTSUKA-HSCN-V1570
+nat (Aimes-Mgmt-V1025,LUNGHEALTH-JB-V1554) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static HC-LUNGHEALTH-JB01-N3-V1554 HC-LUNGHEALTH-JB01-N3-V1554
+nat (Aimes-Mgmt-V1025,IBD-REG-HSCN-WEB-V1377) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static IBD-REG-LAN-v1377 IBD-REG-LAN-v1377
+nat (STRATA-InTouch-pathway1-V1560,outside) source static 10.44.126.34 10.44.126.34 destination static IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS no-proxy-arp
+nat (STRATA-InTouch-pathway2-V1562,outside) source static 10.44.126.50 10.44.126.50 destination static IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS no-proxy-arp
+nat (STRATA-InTouch-pathway3-V1564,outside) source static 10.44.126.66 10.44.126.66 destination static IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS no-proxy-arp
+nat (STRATA-InTouch-pathway4-V1566,outside) source static 10.44.126.82 10.44.126.82 destination static IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS no-proxy-arp
+nat (STRATA-InTouch-pathway5-V1568,outside) source static 10.44.126.98 10.44.126.98 destination static IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS IN-TOUCH-ADMIN-VPN-ALLOWED-PEER-HOSTS no-proxy-arp
+nat (STRATA-InTouch-pathway4-V1566,outside) source static sohintouch01 sohintouch01 destination static EXT_VPN_HOST_SOUTHPORT_ORMSKIRK EXT_VPN_HOST_SOUTHPORT_ORMSKIRK no-proxy-arp description description VPN connection for Southport and Omskirk Hospital T20181114.0033
+nat (STRATA-InTouch-pathway5-V1568,outside) source static 10.44.126.98 10.44.126.98 destination static EXT_ESSEX_BTUH EXT_ESSEX_BTUH no-proxy-arp description T20181219.0009 - N3/HSCN VPN connection for Essex (Basildon hospita... (Strata Health)
+nat (Aimes-Mgmt-V1025,NEWCASTLE-REDCAP-v1366) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static NEWCASTLE-REDCAP-N3-JB03-V1366 NEWCASTLE-REDCAP-N3-JB03-V1366
+nat (Aimes-Mgmt-V1025,LHCIE-PRD-F5-EXT-V1090) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static LHCIE-PRD-F5-EXT-LAN-V1090 LHCIE-PRD-F5-EXT-LAN-V1090
+nat (Aimes-Mgmt-V1025,outside) source static Aimes-Mgmt-V1025-LAN Aimes-Mgmt-V1025-LAN destination static obj_any obj_any
+nat (AIMES-ISOSEC-N3-FL-V1268,outside) source static AIMES-ISOSEC-N3-FL-V1268 AIMES-ISOSEC-N3-FL-V1268 destination static obj_any obj_any
+nat (LHCIE-PRD-F5-EXT-V1090,outside) source static LHCIE-PRD-F5-EXT-LAN-V1090 LHCIE-PRD-F5-EXT-LAN-V1090 destination static obj_any obj_any
+nat (PCG-N3-JB-V1102,outside) source static PCG-N3-JB-V1102-SRV PCG-N3-JB-V1102-SRV destination static obj_any obj_any
+nat (NEWCASTLE-REDCAP-v1366,outside) source static NEWCASTLE-REDCAP-N3-WEB-V1366 NEWCASTLE-REDCAP-N3-WEB-V1366 destination static obj_any obj_any
+nat (SHEMKO-AWS-V1363,outside) source static SHEMKO-AWS-N3-WEB-V1363 SHEMKO-AWS-N3-WEB-V1363 destination static obj_any obj_any
+nat (NEWCASTLE-REDCAP-v1366,outside) source static NEWCASTLE-REDCAP-N3-SFTP-V1366 NEWCASTLE-REDCAP-N3-SFTP-V1366 destination static obj_any obj_any
+nat (LHCIE-UAT-F5-EXT-V1093,outside) source static LHCIE-UAT-F5-EXT-LAN-V1093 LHCIE-UAT-F5-EXT-LAN-V1093 destination static obj_any obj_any
+nat (NEWCASTLE-REDCAP-v1366,outside) source static NEWCASTLE-REDCAP-N3-JB03-V1366 NEWCASTLE-REDCAP-N3-JB03-V1366 destination static obj_any obj_any
+nat (IBD-REG-HSCN-WEB-V1377,outside) source static IBD-REG-LAN-v1377 IBD-REG-LAN-v1377 destination static obj_any obj_any
+nat (WWL-V1440,outside) source static WWL-HSCN-WEB-V1440 WWL-HSCN-WEB-V1440 destination static obj_any obj_any
+nat (IMOPSPHERE-LIVE-V1278,outside) source static IMOPSPHERE-LIVE-HSCN-WEB-V1278 IMOPSPHERE-LIVE-HSCN-WEB-V1278 destination static obj_any obj_any
+nat (Aimes-Pentest-VM-V1556,outside) source static HC-Aimes-Pentest-LAN-C3-V1556 HC-Aimes-Pentest-LAN-C3-V1556 destination static obj_any obj_any
+nat (Aimes-Pentest-VM-V1558,outside) source static HC-Aimes-Pentest-LAN-C4-V1558 HC-Aimes-Pentest-LAN-C4-V1558 destination static obj_any obj_any
+nat (OpenCDRPilot-v1376,outside) source static OpenCDRPilot-N3-HC-V1376 OpenCDRPilot-N3-HC-V1376 destination static obj_any obj_any
+nat (STRATA-InTouch-pathway1-V1560,outside) source static STRATA-InTouch-pathway1-LAN-V1560 STRATA-InTouch-pathway1-LAN-V1560 destination static obj_any obj_any
+nat (STRATA-InTouch-pathway2-V1562,outside) source static STRATA-InTouch-pathway2-LAN-V1562 STRATA-InTouch-pathway2-LAN-V1562 destination static obj_any obj_any
+nat (STRATA-InTouch-pathway3-V1564,outside) source static STRATA-InTouch-pathway3-LAN-V1564 STRATA-InTouch-pathway3-LAN-V1564 destination static obj_any obj_any
+nat (STRATA-InTouch-pathway4-V1566,outside) source static STRATA-InTouch-pathway4-LAN-V1566 STRATA-InTouch-pathway4-LAN-V1566 destination static obj_any obj_any
+nat (STRATA-InTouch-pathway5-V1568,outside) source static STRATA-InTouch-pathway5-LAN-V1568 STRATA-InTouch-pathway5-LAN-V1568 destination static obj_any obj_any
+nat (NEWCASTLE-SILVER-HSCN-V1294,outside) source static NEWCASTLE-SILVER-HSCN-V1294-RANGE NEWCASTLE-SILVER-HSCN-V1294-RANGE destination static obj_any obj_any
+nat (LUNGHEALTH-JB-V1554,outside) source static HC-LUNGHEALTH-JB01-N3-V1554 HC-LUNGHEALTH-JB01-N3-V1554 destination static obj_any obj_any
+nat (Mindwave-HSCN-V1552,outside) source static HC-Mindwave-HSCN-V1552 HC-Mindwave-HSCN-V1552 destination static obj_any obj_any
+nat (OTSUKA-HSCN-V1570,OTSUKA-LBBL-V1571) source static HC-OTSUKA-HSCN-V1570 HC-OTSUKA-HSCN-V1570 destination static HC-OTSUKA-LBBL-V1571 HC-OTSUKA-LBBL-V1571
+nat (OTSUKA-LBBL-V1571,outside) source static HC-OTSUKA-LBBL-V1571 HC-OTSUKA-LBBL-V1571 destination static obj_any obj_any
+nat (OTSUKA-HSCN-V1570,outside) source static HC-OTSUKA-HSCN-V1570 HC-OTSUKA-HSCN-V1570 destination static obj_any obj_any
+nat (Sleep-LUNGHEALTH--Web-HSCN-FL-V1575,outside) source static HC-Sleep-LungHealth-Prod-Web-V1575 HC-Sleep-LungHealth-Prod-Web-V1575 destination static obj_any obj_any
+nat (REDWING_BI-HSCN-V1585,outside) source static REDWING_BI-LAN-V1585 REDWING_BI-LAN-V1585 destination static obj_any obj_any
+nat (AIMES-SHARED-HSCN-SFTP-FL-V1583,outside) source static AIMES-HSCN-SFTP-LAN-V1583 AIMES-HSCN-SFTP-LAN-V1583 destination static obj_any obj_any
+!
+object network obj_any
+ nat (any,outside) dynamic interface
+access-group Outside_in in interface outside
+access-group Aimes-Mgmt-V1025_in in interface Aimes-Mgmt-V1025
+access-group AIMES-ISOSEC-N3-FL-V1268_in in interface AIMES-ISOSEC-N3-FL-V1268
+access-group NEWCASTLE-REDCAP-N3-V1366_in in interface NEWCASTLE-REDCAP-v1366
+access-group LHCIE-PRD-F5-EXT-V1090_in in interface LHCIE-PRD-F5-EXT-V1090
+access-group PCG-N3-JB-V1102_in in interface PCG-N3-JB-V1102
+access-group SHEMKO-AWS-N3-V1363_in in interface SHEMKO-AWS-V1363
+access-group LHCIE-UAT-F5-EXT-V1093_in in interface LHCIE-UAT-F5-EXT-V1093
+access-group IBD-REG-HSCN-WEB-V1377_in in interface IBD-REG-HSCN-WEB-V1377
+access-group WWL-HSCN-V1440_in in interface WWL-V1440
+access-group IMOPSPHERE-LIVE-HSCN-V1278_in in interface IMOPSPHERE-LIVE-V1278
+access-group Aimes-Pentest-V1556_in in interface Aimes-Pentest-VM-V1556
+access-group Aimes-Pentest-V1558_in in interface Aimes-Pentest-VM-V1558
+access-group OpenCDRPilot-N3-HC-in in interface OpenCDRPilot-v1376
+access-group STRATA-InTouch-pathway1-LAN-V1560_in in interface STRATA-InTouch-pathway1-V1560
+access-group STRATA-InTouch-pathway2-LAN-V1562_in in interface STRATA-InTouch-pathway2-V1562
+access-group STRATA-InTouch-pathway3-LAN-V1564_in in interface STRATA-InTouch-pathway3-V1564
+access-group STRATA-InTouch-pathway4-LAN-V1566_SOUTHPORT_in in interface STRATA-InTouch-pathway4-V1566
+access-group STRATA-InTouch-pathway5-LAN-V1568_in in interface STRATA-InTouch-pathway5-V1568
+access-group NEWCASTLE-SILVER-HSCN-V1294_in in interface NEWCASTLE-SILVER-HSCN-V1294
+access-group LUNGHEALTH-JB01-V1554_in in interface LUNGHEALTH-JB-V1554
+access-group Mindwave-HSCN-V1552_in in interface Mindwave-HSCN-V1552
+access-group OTSUKA-HSCN-V1570_in in interface OTSUKA-HSCN-V1570
+access-group OTSUKA-LBBL-V1571_in in interface OTSUKA-LBBL-V1571
+access-group Sleep-LungHealth-V1575_in in interface Sleep-LUNGHEALTH--Web-HSCN-FL-V1575
+access-group REDWING_BI-V1585_in in interface REDWING_BI-HSCN-V1585
+access-group AIMES-SHARED-HSCN-SFTP-FL-V1583_in in interface AIMES-SHARED-HSCN-SFTP-FL-V1583
+route outside 0.0.0.0 0.0.0.0 10.38.181.1 1
+route management 172.16.97.0 255.255.255.0 192.168.42.253 1
+route management 195.88.100.3 255.255.255.255 192.168.42.1 1
+timeout xlate 3:00:00
+timeout pat-xlate 0:00:30
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 sctp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+timeout tcp-proxy-reassembly 0:01:00
+timeout floating-conn 0:00:00
+timeout conn-holddown 0:00:15
+timeout igp stale-route 0:01:10
+aaa-server TACACS+ protocol tacacs+
+aaa-server RADIUS protocol radius
+user-identity default-domain LOCAL
+aaa authentication ssh console LOCAL
+aaa authentication http console LOCAL
+aaa authentication login-history
+http server enable
+http 192.168.42.254 255.255.255.255 management
+http 172.16.99.0 255.255.255.0 management
+http 172.16.97.0 255.255.255.0 management
+snmp-server host management 192.168.42.254 community ***** udp-port 161
+snmp-server host management 172.16.97.250 community ***** version 2c udp-port 161
+snmp-server host management 172.16.97.240 community ***** version 2c udp-port 161
+snmp-server location DC2:P2:R03
+snmp-server contact 0151 905 9705
+snmp-server community *****
+snmp-server enable traps syslog
+snmp-server enable traps ipsec start stop
+snmp-server enable traps entity config-change cpu-temperature chassis-temperature chassis-fan-failure accelerator-temperature
+snmp-server enable traps memory-threshold
+snmp-server enable traps interface-threshold
+snmp-server enable traps remote-access session-threshold-exceeded
+snmp-server enable traps connection-limit-reached
+snmp-server enable traps cpu threshold rising
+snmp-server enable traps ikev2 start stop
+snmp-server enable traps nat packet-discard
+snmp-server enable traps config
+service sw-reset-button
+crypto ipsec ikev1 transform-set ESP-AES-256-SHA esp-aes-256 esp-sha-hmac
+crypto ipsec ikev1 transform-set AES-256-SHA-1 esp-aes-256 esp-sha-hmac
+crypto ipsec ikev1 transform-set INTOUCH esp-aes-256 esp-sha-hmac
+crypto ipsec ikev1 transform-set SOUTHPORT esp-aes-256 esp-sha-hmac
+crypto ipsec ikev2 ipsec-proposal ESSEX_PROPOSAL
+ protocol esp encryption aes-256
+ protocol esp integrity sha-256
+crypto ipsec ikev2 ipsec-proposal AES256-SHA1
+ protocol esp encryption aes-256
+ protocol esp integrity sha-1
+crypto ipsec ikev2 ipsec-proposal AES256
+ protocol esp encryption aes-256
+ protocol esp integrity sha-1 md5
+crypto ipsec security-association pmtu-aging infinite
+crypto map outside_map 2 match address outside_cryptomap_2
+crypto map outside_map 2 set peer 195.105.152.253
+crypto map outside_map 2 set ikev1 transform-set INTOUCH
+crypto map outside_map 2 set security-association lifetime seconds 86400
+crypto map outside_map 2 set security-association lifetime kilobytes unlimited
+crypto map outside_map 3 match address outside_cryptomap_1
+crypto map outside_map 3 set pfs
+crypto map outside_map 3 set peer 10.218.65.66
+crypto map outside_map 3 set ikev1 transform-set INTOUCH
+crypto map outside_map 3 set security-association lifetime seconds 86400
+crypto map outside_map 3 set security-association lifetime kilobytes unlimited
+crypto map outside_map 4 match address outside_cryptomap_4
+crypto map outside_map 4 set pfs
+crypto map outside_map 4 set peer 10.218.65.66
+crypto map outside_map 4 set ikev1 transform-set INTOUCH
+crypto map outside_map 4 set security-association lifetime seconds 86400
+crypto map outside_map 4 set security-association lifetime kilobytes unlimited
+crypto map outside_map 5 match address outside_cryptomap_5
+crypto map outside_map 5 set pfs
+crypto map outside_map 5 set peer 10.218.65.66
+crypto map outside_map 5 set ikev1 transform-set INTOUCH
+crypto map outside_map 5 set security-association lifetime seconds 86400
+crypto map outside_map 5 set security-association lifetime kilobytes unlimited
+crypto map outside_map 6 match address outside_cryptomap_6
+crypto map outside_map 6 set pfs
+crypto map outside_map 6 set peer 10.218.65.66
+crypto map outside_map 6 set ikev1 transform-set INTOUCH
+crypto map outside_map 6 set security-association lifetime seconds 86400
+crypto map outside_map 6 set security-association lifetime kilobytes unlimited
+crypto map outside_map 9 match address outside_cryptomap_9
+crypto map outside_map 9 set pfs
+crypto map outside_map 9 set peer 10.33.17.237
+crypto map outside_map 9 set ikev1 transform-set SOUTHPORT
+crypto map outside_map 9 set security-association lifetime seconds 86400
+crypto map outside_map 9 set security-association lifetime kilobytes unlimited
+crypto map outside_map 9 set nat-t-disable
+crypto map outside_map 10 match address outside_cryptomap_10
+crypto map outside_map 10 set pfs group14
+crypto map outside_map 10 set peer 10.173.77.220
+crypto map outside_map 10 set ikev2 ipsec-proposal ESSEX_PROPOSAL
+crypto map outside_map 10 set ikev2 pre-shared-key *****
+crypto map outside_map 10 set security-association lifetime seconds 28800
+crypto map outside_map 10 set security-association lifetime kilobytes unlimited
+crypto map outside_map 10 set nat-t-disable
+crypto map outside_map interface outside
+crypto ca trustpool policy
+crypto isakmp identity address
+crypto ikev2 policy 3
+ encryption aes-256
+ integrity sha256
+ group 14
+ prf sha256
+ lifetime seconds 86400
+crypto ikev2 policy 4
+ encryption aes-256
+ integrity sha256
+ group 14
+ prf sha256
+ lifetime seconds 28800
+crypto ikev2 policy 10
+ encryption aes-256
+ integrity sha
+ group 5 2
+ prf sha
+ lifetime seconds 86400
+crypto ikev2 enable outside
+crypto ikev1 enable outside
+crypto ikev1 policy 1
+ authentication pre-share
+ encryption aes-256
+ hash sha
+ group 2
+ lifetime 86400
+telnet timeout 5
+no ssh stricthostkeycheck
+ssh 192.168.42.254 255.255.255.255 management
+ssh 172.16.99.0 255.255.255.0 management
+ssh 192.168.42.0 255.255.255.0 management
+ssh 172.16.97.0 255.255.255.0 management
+ssh timeout 60
+ssh key-exchange group dh-group1-sha1
+console timeout 0
+management-access management
+
+threat-detection basic-threat
+threat-detection statistics access-list
+no threat-detection statistics tcp-intercept
+ntp server 91.186.12.87 source outside
+group-policy DfltGrpPolicy attributes
+ vpn-tunnel-protocol ikev1 l2tp-ipsec ssl-clientless
+group-policy AES256 internal
+group-policy AES256 attributes
+ vpn-tunnel-protocol ikev1
+group-policy GroupPolicy_ESSEX internal
+group-policy GroupPolicy_ESSEX attributes
+ vpn-tunnel-protocol ikev2
+group-policy GroupPolicy_10.218.65.66 internal
+group-policy GroupPolicy_10.218.65.66 attributes
+ vpn-tunnel-protocol ikev1
+group-policy GroupPolicy_195.105.152.253 internal
+group-policy GroupPolicy_195.105.152.253 attributes
+ vpn-tunnel-protocol ikev1
+group-policy "GroupPolicy-Southport  sohintouch01" internal
+group-policy "GroupPolicy-Southport  sohintouch01" attributes
+ vpn-tunnel-protocol ikev1
+group-policy GroupPolicy_10.173.77.220 internal
+group-policy GroupPolicy_10.173.77.220 attributes
+ vpn-idle-timeout none
+ vpn-tunnel-protocol ikev2
+dynamic-access-policy-record DfltAccessPolicy
+username mlawton password 2fs3Dh7Jq.G/1emH encrypted privilege 15
+username banders password $sha512$5000$z8FnUCC/4y0RnHdHfHwSnw==$l4AiXXBw0yS06MfHkZtgqA== pbkdf2 privilege 15
+username aball password hy2mXA4Z/MzWARlH encrypted privilege 15
+username dlawton password hqHcQeYS4rtMieY. encrypted privilege 15
+tunnel-group 195.105.152.253 type ipsec-l2l
+tunnel-group 195.105.152.253 general-attributes
+ default-group-policy GroupPolicy_195.105.152.253
+tunnel-group 195.105.152.253 ipsec-attributes
+ ikev1 pre-shared-key *****
+tunnel-group 10.218.65.66 type ipsec-l2l
+tunnel-group 10.218.65.66 general-attributes
+ default-group-policy GroupPolicy_10.218.65.66
+tunnel-group 10.218.65.66 ipsec-attributes
+ ikev1 pre-shared-key *****
+tunnel-group 10.33.17.237 type ipsec-l2l
+tunnel-group 10.33.17.237 general-attributes
+ default-group-policy "GroupPolicy-Southport  sohintouch01"
+tunnel-group 10.33.17.237 ipsec-attributes
+ ikev1 pre-shared-key *****
+tunnel-group 10.173.77.220 type ipsec-l2l
+tunnel-group 10.173.77.220 general-attributes
+ default-group-policy GroupPolicy_ESSEX
+tunnel-group 10.173.77.220 ipsec-attributes
+ ikev1 pre-shared-key *****
+ peer-id-validate nocheck
+ ikev2 remote-authentication pre-shared-key *****
+ ikev2 local-authentication pre-shared-key *****
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum client auto
+  message-length maximum 512
+  no tcp-inspection
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map
+  inspect ftp
+  inspect h323 h225
+  inspect h323 ras
+  inspect rsh
+  inspect rtsp
+  inspect esmtp
+  inspect sqlnet
+  inspect skinny
+  inspect sunrpc
+  inspect xdmcp
+  inspect sip
+  inspect netbios
+  inspect tftp
+  inspect ip-options
+!
+service-policy global_policy global
+prompt hostname context
+no call-home reporting anonymous
+Cryptochecksum:5b58855415a36af072db44c3892fdb7c
+: end
+F365-N3-AG#

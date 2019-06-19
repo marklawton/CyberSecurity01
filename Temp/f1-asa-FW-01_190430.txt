@@ -1,0 +1,2616 @@
+30/04/19 AIMES-FW-01 - T20190416.0009 - Server decomissioning
+
+AIMES-FW-01# show run
+: Saved
+:
+ASA Version 7.0(8)
+!
+hostname AIMES-FW-01
+domain-name aimes.net
+enable password D.2tXTsQh3oBcXVd encrypted
+passwd LcVv0.tlaLLKLcbs encrypted
+names
+name 172.16.16.0 ASSURED_TEST_NETWORK
+name 195.88.101.103 DEV-LAN-ASSURED-PUBLIC-IP
+name 195.88.101.104 DEV-LAN-HP-SWITCH
+name 10.0.208.253 NAT-FOR-195_88_101_103
+dns-guard
+!
+interface Ethernet0/0
+ description Outside Interface to Internet
+ nameif Outside
+ security-level 0
+ ip address 195.88.100.4 255.255.254.0 standby 195.88.100.5
+!
+interface Ethernet0/1
+ description MONITOR LAN V999 to S252/S253.MON.NOC
+ nameif MONITOR-LAN
+ security-level 5
+ ip address 172.16.99.11 255.255.255.0 standby 172.16.99.12
+!
+interface Ethernet0/2
+ duplex full
+ nameif DMZ_TRUNK
+ security-level 95
+ no ip address
+!
+interface Ethernet0/2.3
+ description ORACLE DMZ servers
+ vlan 210
+ nameif ORACLE_DMZ
+ security-level 90
+ ip address 192.168.2.1 255.255.255.0 standby 192.168.2.2
+!
+interface Ethernet0/2.4
+ description AIMES DMZ servers
+ vlan 212
+ nameif AIMES_DMZ
+ security-level 80
+ ip address 10.0.4.1 255.255.255.0 standby 10.0.4.2
+!
+interface Ethernet0/2.5
+ description Share infrastructure customers DMZ servers
+ vlan 211
+ nameif SICUST_DMZ
+ security-level 70
+ ip address 10.0.8.1 255.255.255.0 standby 10.0.8.2
+!
+interface Ethernet0/2.6
+ description 7SOFT DMZ servers
+ vlan 213
+ nameif 7SOFT_DMZ
+ security-level 60
+ ip address 10.0.2.1 255.255.255.0 standby 10.0.2.2
+!
+interface Ethernet0/2.7
+ description Aimes FTP01  Vlan 270  CR11693
+ vlan 270
+ nameif AIMES-FTP-V270
+ security-level 50
+ ip address 10.0.70.1 255.255.255.0
+!
+interface Ethernet0/2.8
+ description CIVIL & CORP V202 CR10493
+ vlan 202
+ nameif CIVIL-CORP-202
+ security-level 90
+ ip address 10.0.202.1 255.255.255.0
+!
+interface Ethernet0/2.9
+ description IMP WEB SERVER (PL) cr10752 SHUTDOWN ML 20160926
+ shutdown
+ vlan 301
+ nameif IMP-V301
+ security-level 77
+ ip address 10.0.101.1 255.255.255.0
+!
+interface Ethernet0/2.10
+ description CROSBY COMMS S26.edge.dmz217  free
+ shutdown
+ vlan 10
+ nameif CROSBY_DMZ
+ security-level 77
+ no ip address
+!
+interface Ethernet0/2.11
+ description Aimes IDERA backup  CR8683 free cr10029 moved to f33
+ shutdown
+ vlan 11
+ nameif AIMES-FTP-BKUP
+ security-level 58
+ no ip address
+!
+interface Ethernet0/2.12
+ description Aimes SBS inside FREE
+ shutdown
+ vlan 244
+ nameif Aimes_SBS_LAN
+ security-level 79
+ ip address 172.20.1.250 255.255.255.0 standby 172.20.1.251
+!
+interface Ethernet0/2.13
+ description HRS VM WEB port 6 on s3 & s4.edge.core free CR10307
+ shutdown
+ vlan 13
+ nameif HRS_WEB_DMZ
+ security-level 1
+ no ip address
+!
+interface Ethernet0/2.14
+ description HRS VM SQL port 6 on s3 & s4.edge.core free CR10307
+ shutdown
+ vlan 14
+ nameif HRS_SQL_DMZ
+ security-level 1
+ no ip address
+!
+interface Ethernet0/2.15
+ description WEBASPX CITRIX vlan 224
+ vlan 224
+ nameif WEBASPX-CITRIX
+ security-level 90
+ ip address 192.168.45.254 255.255.255.0 standby 192.168.45.253
+!
+interface Ethernet0/2.16
+ description DENHOLM Logictics (Cloud03) vlan 236 clsed CR11638 FREE
+ vlan 16
+ nameif DENHOLM-VM
+ security-level 76
+ no ip address
+!
+interface Ethernet0/2.17
+ description NONVERBA VM's (Cloud03/Cloud04) vlan 238  FREE 19/12/13
+ shutdown
+ vlan 17
+ nameif free-IF17
+ security-level 99
+ no ip address
+!
+interface Ethernet0/2.18
+ description MIMOVI VM's (Cloud02/Cloud05) vlan 246
+ vlan 246
+ nameif MIMOVI-VM
+ security-level 76
+ ip address 10.0.46.1 255.255.255.0 standby 10.0.46.2
+!
+interface Ethernet0/2.19
+ description LIVERPOOL BAY TV VM's (Cloud03/Cloud04) vlan 248
+ shutdown
+ vlan 19
+ nameif LBAYTV-VM
+ security-level 76
+ no ip address
+!
+interface Ethernet0/2.20
+ description INNOVE-TEST vlan 235
+ vlan 235
+ nameif INNOVE-VM
+ security-level 76
+ ip address 10.0.35.1 255.255.255.0 standby 10.0.35.2
+!
+interface Ethernet0/2.21
+ description ICH_REDCAP vlan 232 CR8203 free cr9384
+ shutdown
+ vlan 21
+ nameif e21
+ security-level 76
+ no ip address
+!
+interface Ethernet0/2.22
+ description DISE CITRUS SOLUTIONS GAMES vlan 251 CR8206 free T20170322.0008
+ shutdown
+ vlan 22
+ nameif DISE-CSGAMES
+ security-level 76
+ ip address 10.0.251.1 255.255.255.0 standby 10.0.251.2
+!
+interface Ethernet0/2.23
+ description IGNITION vlan 231 CR8210
+ vlan 231
+ nameif IGNITION-RM
+ security-level 76
+ ip address 10.0.31.1 255.255.255.0 standby 10.0.31.2
+!
+interface Ethernet0/2.24
+ description ESA IPORT Project vlan 247 CR8500
+ vlan 247
+ nameif IPORT_DMZ
+ security-level 76
+ ip address 10.0.247.1 255.255.255.0 standby 10.0.247.2
+!
+interface Ethernet0/2.25
+ description Aimes Development LAN vlan 208 CR8536
+ vlan 208
+ nameif AIMES-DEV-LAN
+ security-level 95
+ ip address 10.0.208.1 255.255.255.0 standby 10.0.208.2
+!
+interface Ethernet0/3
+ description LAN/STATE Failover Interface
+!
+interface Management0/0
+ nameif management
+ security-level 30
+ ip address 192.168.1.1 255.255.255.0 standby 192.168.1.2
+ management-only
+!
+banner motd *******************************************************
+banner motd * AIMES GRID SERVICES  EDGE LANE -            AF01    *
+banner motd * WARNING: THIS IS A PRIVATE NETWORK                  *
+banner motd * ACCESS IS PERMITTED FOR AUTHORISED PERSONS ONLY     *
+banner motd *******************************************************
+ftp mode passive
+clock timezone GMT/BST 0
+clock summer-time GMT/BDT recurring last Sun Mar 1:00 last Sun Oct 2:00
+object-group network NET_LAN
+ description network subnet for AGS users
+ network-object 192.168.0.0 255.255.255.0
+object-group network NET_DMZ_ORACLE
+ description network subnet for Oracle servers VLAN 210
+ network-object 192.168.2.0 255.255.255.0
+object-group network NET_DMZ_AGS
+ description network subnet for AGS servers VLAN 212
+ network-object 10.0.4.0 255.255.255.0
+object-group network NET_DMZ_7SOFT
+ description network subnet for 7SOFT servers VLAN 213
+ network-object 10.0.2.0 255.255.255.0
+object-group network Sysadmins
+ description support access LAN01.100, LPMc.101, H.102, JVDW.103, M.104 D.105 M2.106 Mt.107 ARFAN.108 JR.109 free.110
+ network-object host 192.168.0.100
+ network-object host 192.168.0.101
+ network-object host 192.168.0.102
+ network-object host 192.168.0.103
+ network-object host 192.168.0.105
+ network-object host 192.168.0.104
+ network-object host 10.0.4.193
+ network-object host 10.0.4.194
+ network-object host 10.0.4.195
+ network-object host 10.0.4.196
+ network-object host 10.0.4.197
+ network-object host 192.168.0.106
+ network-object host 192.168.0.107
+ network-object host 10.0.4.198
+ network-object host 10.0.4.199
+ network-object host 192.168.0.108
+ network-object host 10.0.4.200
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+ network-object host 192.168.0.109
+ network-object host 192.168.0.110
+object-group network OUTSIDE_NTP
+ description access to external NTP server uk.pool.ntp.org
+ network-object host 91.186.12.87
+ network-object host 77.75.105.150
+ network-object host 207.46.232.182
+ network-object host 195.88.100.3
+object-group network OUTSIDE_DNS
+ description access to external DNS servers (193.Fused, 85.Griffin, 194.Virgin, 208.OpenDNS, 195.aimes, 8.Google)
+ network-object host 193.0.249.6
+ network-object host 193.0.249.70
+ network-object host 193.0.249.2
+ network-object host 85.189.102.5
+ network-object host 85.189.39.5
+ network-object host 194.168.4.123
+ network-object host 194.168.8.123
+ network-object host 195.88.100.15
+ network-object host 195.88.101.70
+ network-object host 8.8.8.8
+ network-object host 208.67.220.123
+ network-object host 208.67.222.123
+object-group network NET_DMZ_SICUST
+ description network subnet for shared infrastructure customers servers VLAN 211
+ network-object 10.0.8.0 255.255.255.0
+object-group network EXT_Routers
+ description External Internet routers Fuse Networks + GC + Virgin + Cogent + Console
+ network-object host 195.88.100.1
+ network-object host 195.88.100.2
+ network-object host 195.88.100.3
+ network-object host 195.88.101.58
+ network-object host 195.88.101.59
+ network-object host 149.11.44.154
+ network-object host 195.88.101.56
+object-group network Aimes_Monitors
+ description DMZ servers
+ network-object host 10.0.4.221
+ network-object host 10.0.4.222
+ network-object host 195.88.101.221
+ network-object host 195.88.101.222
+ network-object host 10.0.4.220
+ network-object host 195.88.101.220
+ network-object host 10.0.4.218
+ network-object host 10.0.4.217
+ network-object host 10.0.4.223
+ network-object host 195.88.101.219
+object-group network Aimes_remote_support
+ description Aimes user dedictaed IP for remote support
+ network-object 195.58.74.0 255.255.255.0
+ network-object 94.194.216.0 255.255.248.0
+ network-object host 195.88.101.220
+ network-object host 195.88.100.13
+ network-object host 195.88.100.18
+ network-object host 195.88.100.27
+ network-object host 195.88.100.7
+ network-object host 195.88.100.14
+ network-object host 37.48.240.10
+ network-object host 37.48.240.18
+ network-object host 195.88.100.28
+ network-object host 195.88.100.24
+ network-object host 82.1.143.166
+ network-object host 37.48.240.27
+object-group service Aimes_Remote_ports tcp
+ description Ports required for remote access
+ port-object eq 3389
+ port-object eq ssh
+ port-object eq 9090
+ port-object eq www
+ port-object eq 8080
+ port-object eq 8081
+ port-object eq 8400
+object-group network WWW_DOTNET01_Servers
+ description "DOTNET01 external IP for DEV WEB servers"
+ network-object host 195.88.101.14
+ network-object host 195.88.101.15
+ network-object host 195.88.101.18
+ network-object host 195.88.101.21
+ network-object host 195.88.101.33
+ network-object host 195.88.101.36
+ network-object host 195.88.101.43
+ network-object host 195.88.101.46
+ network-object host 195.88.101.48
+ network-object host 195.88.101.61
+ network-object host 195.88.101.60
+ network-object host 195.88.100.109
+ network-object host 195.88.101.98
+ network-object host 195.88.101.53
+ network-object host 195.88.101.54
+object-group network WWW_DOTNET02_Servers
+ description "DOTNET02 external IP for LIVE WEB servers"
+ network-object host 195.88.101.6
+ network-object host 195.88.101.7
+ network-object host 195.88.101.8
+ network-object host 195.88.101.10
+ network-object host 195.88.101.19
+ network-object host 195.88.101.22
+ network-object host 195.88.101.28
+ network-object host 195.88.101.31
+ network-object host 195.88.101.34
+ network-object host 195.88.101.42
+ network-object host 195.88.101.47
+ network-object host 195.88.101.49
+ network-object host 195.88.101.3
+ network-object host 195.88.101.51
+ network-object host 195.88.101.12
+ network-object host 195.88.101.13
+object-group network WWW_DOTNET03_Servers
+ description "DOTNET03 external IP for QA WEB servers"
+ network-object host 195.88.101.1
+ network-object host 195.88.101.2
+ network-object host 195.88.101.4
+ network-object host 195.88.101.5
+ network-object host 195.88.101.20
+ network-object host 195.88.101.35
+ network-object host 195.88.101.38
+ network-object host 195.88.101.45
+ network-object host 195.88.101.52
+object-group network WWW_PHP02_Servers
+ description "PHP02 external IP for WEB servers"
+ network-object host 195.88.101.73
+ network-object host 195.88.101.78
+ network-object host 195.88.101.80
+ network-object host 195.88.101.72
+ network-object host 195.88.101.74
+ network-object host 195.88.101.75
+ network-object host 195.88.101.85
+object-group network WWW_PHP01_Servers
+ description "PHP01 external IP for WEB servers"
+ network-object host 195.88.101.69
+ network-object host 195.88.101.81
+ network-object host 195.88.101.82
+ network-object host 195.88.101.84
+ network-object host 195.88.101.90
+ network-object host 195.88.101.79
+object-group network WWW_CITYANDCORP_Servers
+ description "Access City and Corp server from Internet CR10493/T20170324.0007"
+ network-object host 195.88.100.120
+ network-object host 195.88.100.119
+ network-object host 195.88.100.93
+object-group network WWW_PLA01_Servers
+ description "PLA01 external IP for Paul Langon server"
+ network-object host 195.88.100.68
+ network-object host 195.88.100.69
+object-group network WWW_Simply_Solutions
+ description "Simply Solutions external IP for WEB sites + cr8417 + cr9606"
+ network-object host 195.88.101.114
+ network-object host 195.88.101.115
+ network-object host 195.88.101.117
+ network-object host 195.88.101.120
+ network-object host 195.88.101.121
+ network-object host 195.88.101.118
+ network-object host 195.88.101.119
+object-group network WWW_Mind_Cloud
+ description "MIND Cloud Mark McNally external IP for WEB sites"
+ network-object host 195.88.100.71
+object-group network www_7SOFT_appservers
+ description "ALL 7SOFT servers accesible from internet"
+ network-object host 195.88.100.129
+ network-object host 195.88.100.130
+ network-object host 195.88.100.131
+ network-object host 195.88.100.135
+ network-object host 195.88.100.136
+ network-object host 195.88.100.137
+ network-object host 195.88.100.138
+ network-object host 195.88.100.140
+ network-object host 195.88.100.141
+ network-object host 195.88.100.143
+ network-object host 195.88.100.144
+ network-object host 195.88.100.145
+ network-object host 195.88.100.146
+ network-object host 195.88.100.147
+ network-object host 195.88.100.149
+ network-object host 195.88.100.150
+ network-object host 195.88.100.151
+ network-object host 195.88.100.152
+ network-object host 195.88.100.153
+ network-object host 195.88.100.154
+ network-object host 195.88.100.155
+ network-object host 195.88.100.156
+ network-object host 195.88.100.157
+ network-object host 195.88.100.159
+ network-object host 195.88.100.160
+ network-object host 195.88.100.161
+ network-object host 195.88.100.162
+ network-object host 195.88.100.163
+ network-object host 195.88.100.164
+ network-object host 195.88.100.165
+ network-object host 195.88.100.166
+ network-object host 195.88.100.167
+ network-object host 195.88.100.168
+ network-object host 195.88.100.169
+ network-object host 195.88.100.171
+ network-object host 195.88.100.172
+ network-object host 195.88.100.173
+ network-object host 195.88.100.174
+ network-object host 195.88.100.175
+ network-object host 195.88.100.176
+ network-object host 195.88.100.177
+ network-object host 195.88.100.178
+ network-object host 195.88.100.179
+ network-object host 195.88.100.180
+ network-object host 195.88.100.184
+ network-object host 195.88.100.185
+ network-object host 195.88.100.186
+ network-object host 195.88.100.187
+ network-object host 195.88.100.188
+ network-object host 195.88.100.189
+ network-object host 195.88.100.193
+ network-object host 195.88.100.194
+ network-object host 195.88.100.195
+ network-object host 195.88.100.196
+ network-object host 195.88.100.197
+ network-object host 195.88.100.198
+ network-object host 195.88.100.199
+ network-object host 195.88.100.200
+ network-object host 195.88.100.201
+ network-object host 195.88.100.202
+ network-object host 195.88.100.203
+ network-object host 195.88.100.204
+ network-object host 195.88.100.205
+ network-object host 195.88.100.206
+ network-object host 195.88.100.207
+ network-object host 195.88.100.208
+ network-object host 195.88.100.209
+ network-object host 195.88.100.210
+ network-object host 195.88.100.211
+ network-object host 195.88.100.212
+ network-object host 195.88.100.213
+ network-object host 195.88.100.214
+ network-object host 195.88.100.215
+ network-object host 195.88.100.216
+ network-object host 195.88.100.217
+ network-object host 195.88.100.218
+ network-object host 195.88.100.219
+ network-object host 195.88.100.220
+ network-object host 195.88.100.221
+ network-object host 195.88.100.222
+ network-object host 195.88.100.223
+ network-object host 195.88.100.226
+ network-object host 195.88.100.227
+ network-object host 195.88.100.228
+ network-object host 195.88.100.229
+ network-object host 195.88.100.230
+ network-object host 195.88.100.231
+ network-object host 195.88.100.232
+ network-object host 195.88.100.233
+ network-object host 195.88.100.234
+ network-object host 195.88.100.235
+ network-object host 195.88.100.236
+ network-object host 195.88.100.237
+ network-object host 195.88.100.238
+ network-object host 195.88.100.239
+ network-object host 195.88.100.240
+ network-object host 195.88.100.241
+ network-object host 195.88.100.242
+ network-object host 195.88.100.243
+ network-object host 195.88.100.244
+ network-object host 195.88.100.245
+ network-object host 195.88.100.246
+ network-object host 195.88.100.248
+ network-object host 195.88.100.254
+ network-object host 195.88.100.255
+ network-object host 195.88.100.182
+ network-object host 195.88.100.183
+object-group network WWW_AIMES_BANDWIDTH
+ description "Aimes DMZ server running bandwidth.aimes.net"
+ network-object host 195.88.101.221
+object-group network WWW_BLUECOAT_PA-WEB
+ description "Hosted WEB BLUECOAT PA WWW Interface external IP for WEB sites"
+ network-object host 195.88.100.95
+object-group network WWW_MONITOR-WEB
+ description "AIMES NETFLOW MONITOR WEB SERVER"
+ network-object host 195.88.101.220
+object-group network WWW_LIMA-Baxter_srv01
+ description "Lima Baxter serv01 (SBS server) external IP"
+ network-object host 195.88.100.91
+object-group network WWW_LIMA-Baxter01
+ description "Lima Baxter01 (TS server) external IP"
+ network-object host 195.88.100.92
+object-group network WWW_Dou_Yi_Dou_Servers
+ description "Dou-Yi-Dou external IP's for server and test server CR8257"
+ network-object host 195.88.101.96
+ network-object host 195.88.101.97
+ network-object host 195.88.101.99
+ network-object host 195.88.101.100
+object-group network WWW_GKDEV
+ description "Aimes Gary King Development server CR8135 external access"
+ network-object host 195.88.101.92
+object-group network WWW_IGNITION-RM
+ description "IGNITION-RM servers CR8210"
+ network-object host 195.88.100.82
+object-group network www_G7AP_appservers
+ description "ALL 7SOFT servers accesible from internet  CR8527"
+ network-object host 195.88.100.130
+ network-object host 195.88.100.170
+object-group network www_public_access
+ description "group of groups for web servers accesible from internet"
+ group-object WWW_DOTNET01_Servers
+ group-object WWW_DOTNET02_Servers
+ group-object WWW_DOTNET03_Servers
+ group-object WWW_PHP02_Servers
+ group-object WWW_PHP01_Servers
+ group-object WWW_CITYANDCORP_Servers
+ group-object WWW_PLA01_Servers
+ group-object WWW_Simply_Solutions
+ group-object www_7SOFT_appservers
+ group-object WWW_AIMES_BANDWIDTH
+ group-object WWW_BLUECOAT_PA-WEB
+ group-object WWW_MONITOR-WEB
+ group-object WWW_Mind_Cloud
+ group-object WWW_LIMA-Baxter_srv01
+ group-object WWW_LIMA-Baxter01
+ group-object WWW_Dou_Yi_Dou_Servers
+ group-object WWW_GKDEV
+ group-object WWW_IGNITION-RM
+ network-object host 195.88.101.9
+ group-object www_G7AP_appservers
+object-group service http_and_https tcp
+ description TCP Ports 80 and 443
+ port-object eq www
+ port-object eq https
+object-group service ftp_and_ftpdata tcp
+ description Ports required for FTP
+ port-object range 28000 30000
+ port-object eq ftp-data
+ port-object eq ftp
+object-group network AIMES_DMZ_to_Oracle_servers
+ description "Oracle database access from Aimes DMZ + CR9834"
+ network-object host 10.0.4.28
+ network-object host 10.0.4.29
+ network-object host 10.0.4.30
+ network-object host 10.0.4.31
+ network-object host 10.0.4.111
+ network-object host 10.0.4.112
+ network-object host 10.0.4.113
+ network-object host 10.0.4.129
+ network-object host 10.0.4.26
+ network-object host 10.0.4.106
+ network-object host 10.0.4.107
+ network-object host 10.0.4.140
+ network-object host 10.0.4.141
+ network-object host 10.0.4.202
+ network-object host 10.0.4.150
+ network-object host 10.0.4.203
+ network-object host 10.0.4.151
+ network-object host 10.0.4.154
+ network-object host 10.0.4.155
+ network-object host 10.0.4.158
+ network-object host 10.0.4.159
+object-group network ORACLE_DMZ_Servers
+ description "ORACLE DMZ Servers "
+ network-object host 192.168.2.101
+ network-object host 192.168.2.102
+ network-object host 192.168.2.115
+ network-object host 192.168.2.130
+object-group network ORACLE_DMZ_ORACLE3B_Server
+ description "ORACLE3B Server "
+ network-object host 192.168.2.115
+object-group service Oracle_Ports tcp
+ description "TCP Ports 1521 and 1433 for Oracle"
+ port-object eq 1433
+ port-object eq sqlnet
+object-group network WEBASPX-CITRIX-LAN
+ description Server network at Edge LANE for webaspx citrix vlan 224
+ network-object 192.168.45.0 255.255.255.0
+object-group network NET_DMZ_MIMOVI
+ description network subnet for RPPTV MIMOVI VM's
+ network-object 10.0.46.0 255.255.255.0
+object-group network NET_DMZ_INNOVE
+ description network subnet for INNOVE-TEST VM's
+ network-object 10.0.35.0 255.255.255.0
+object-group network NET_DMZ_IGNITION-RM
+ description network subnet for IGNITION RM VM's  CR8210
+ network-object 10.0.31.0 255.255.255.0
+object-group network IPORT_LAN
+ description "Subnet for ESA IPORT Project LAN VLAN 247  CR 8500"
+ network-object 10.0.247.0 255.255.255.0
+object-group network NET_AIMES_DEV
+ description Aimes Developers LAN RESTRICT by IP vlan 208 CR8536/CR11309
+ network-object host 10.0.208.20
+ network-object host 10.0.208.30
+ network-object host 10.0.208.40
+ network-object host 10.0.208.50
+ network-object host 10.0.208.70
+ network-object host NAT-FOR-195_88_101_103
+object-group network NET_LAN_SERVICES
+ description network subnet for Support LAN Monitored devices
+ network-object host 192.168.0.100
+ network-object host 192.168.0.203
+object-group network NET_CIVIL-CORP
+ description network subnet for Civil and Corporate vlan 202  Cr10493/T20170324.0007
+ network-object host 10.0.202.110
+ network-object host 10.0.202.121
+ network-object host 10.0.202.122
+object-group network ALL_DMZ
+ description "ALL DMZ access for sysadmins support teams"
+ group-object NET_DMZ_ORACLE
+ group-object NET_DMZ_7SOFT
+ group-object NET_DMZ_SICUST
+ group-object WEBASPX-CITRIX-LAN
+ group-object NET_DMZ_MIMOVI
+ group-object NET_DMZ_INNOVE
+ group-object NET_DMZ_IGNITION-RM
+ group-object IPORT_LAN
+ group-object NET_AIMES_DEV
+ group-object NET_LAN_SERVICES
+ group-object Aimes_Monitors
+ network-object 10.0.208.0 255.255.255.0
+ network-object 10.0.220.0 255.255.255.0
+ group-object NET_CIVIL-CORP
+object-group network FTP_FTP01_Servers
+ description "FTP01 external IP for FTP server"
+ network-object host 195.88.100.65
+ network-object host 195.88.100.44
+object-group network AIMES_DMZ_FTP01_FTP_Servers
+ description "FTP01 internal IP new physical svr CR11693"
+ network-object host 10.0.4.32
+ network-object host 10.0.70.10
+object-group network OUTSIDE_FTP01_SSH_Access
+ description "IP addresses permitted for SSH to FTP01 +CR8984"
+ network-object 165.140.220.46 255.255.255.255
+ network-object 165.140.220.41 255.255.255.255
+ network-object 165.140.222.232 255.255.255.255
+ network-object 165.140.223.4 255.255.255.255
+ network-object 165.140.222.17 255.255.255.255
+ network-object 217.39.114.110 255.255.255.255
+ network-object 81.139.99.151 255.255.255.255
+ network-object 81.139.40.20 255.255.255.255
+ network-object 217.45.234.73 255.255.255.255
+ network-object 12.2.142.7 255.255.255.255
+ network-object host 81.139.163.102
+ network-object host 165.140.4.24
+ network-object host 192.37.46.29
+ network-object host 160.62.4.10
+ network-object host 165.140.223.79
+ network-object host 212.249.11.140
+ network-object host 160.62.2.16
+ network-object host 165.140.219.222
+ network-object host 192.37.93.171
+ network-object host 37.48.241.52
+ network-object host 79.171.36.108
+object-group network SICUST_CITYANDCORP_Servers
+ description "Access City and Corp server to Internet "
+ network-object host 10.0.8.120
+object-group service CITYANDCORP_IN_Ports tcp
+ description "TCP Ports for CITYANDCORP inbound access"
+ port-object eq https
+ port-object eq domain
+object-group service CITYANDCORP_OUT_Ports tcp
+ description "TCP Ports for CITYANDCORP outbound access + CR10563"  and "T20171122.0012: Telnet connection "
+ port-object eq smtp
+ port-object eq ftp
+ port-object eq 4631
+ port-object eq pop3
+ port-object eq 444
+object-group network OUTSIDE_7SOFT_RDP_Access
+ description "Allow List for 7SOFT RDP Steve Wake /CR12345 / CR12746"
+ network-object host 82.133.95.232
+ network-object host 81.6.244.22
+ network-object host 80.94.238.37
+ network-object host 81.134.18.187
+ network-object host 81.6.244.229
+ network-object host 87.194.151.13
+ network-object host 212.159.69.168
+ network-object host 81.149.67.156
+ network-object host 120.151.228.103
+ network-object host 93.125.42.223
+ network-object host 151.225.145.125
+ network-object host 222.94.252.150
+ network-object host 180.109.128.201
+ network-object host 114.221.134.193
+ network-object host 114.221.132.148
+ network-object host 118.239.99.126
+ network-object host 118.239.99.239
+ network-object host 118.239.110.152
+ network-object host 87.81.244.205
+ network-object host 151.227.168.37
+ network-object host 199.244.119.16
+ network-object host 78.151.161.13
+ network-object host 88.96.53.230
+ network-object host 88.98.55.97
+ network-object host 46.20.230.9
+ network-object host 180.109.197.145
+ network-object host 180.111.8.50
+ network-object host 184.72.217.230
+ network-object host 184.72.217.227
+ network-object host 184.72.219.90
+ network-object host 54.236.233.28
+ network-object host 54.236.233.46
+ network-object host 54.235.150.113
+ network-object host 86.132.84.251
+ network-object host 81.133.105.108
+ network-object host 46.247.12.189
+ network-object host 217.33.27.131
+ network-object host 217.33.27.130
+ network-object host 80.209.163.241
+ network-object host 80.209.163.242
+ network-object host 80.209.163.243
+ network-object host 80.209.163.244
+ network-object host 80.209.163.245
+ network-object host 80.209.163.246
+object-group service 7SOFT-2ndweb-TCP-ports tcp
+ description "group of groups for 7SOFT servers accesible from internet"
+ port-object eq 444
+ port-object eq 81
+object-group network WWW_Simply_SIMPLY02
+ description "Simply Solutions SIMPLY02 additional inbound access BART CR9606"
+ network-object host 195.88.101.114
+ network-object host 195.88.101.120
+ network-object host 195.88.101.121
+ network-object host 195.88.101.115
+object-group network WWW_Simply_SIMPLYAP02i1
+ description "Simply Solutions SIMPLYAP02i1 additional inbound access"
+ network-object host 195.88.101.117
+ network-object host 195.88.101.121
+ network-object host 195.88.101.118
+ network-object host 195.88.101.119
+object-group network SICUST_Simply_SIMPLY02
+ description "Simply Solutions SIMPLY02 additional outbound access BART CR9606"
+ network-object host 10.0.8.156
+ network-object host 10.0.8.221
+ network-object host 10.0.8.157
+object-group network SICUST_Simply_SIMPLYAP02-DRAC
+ description "Simply Solutions SIMPLYAP02-DRAC additional outbound access"
+ network-object host 10.0.8.183
+ network-object host 10.0.8.220
+object-group network SICUST_Simply_SIMPLYAP02i1
+ description "Simply Solutions SIMPLYAP02-i1 additional outbound access CRUSTY CR9606"
+ network-object host 10.0.8.184
+ network-object host 10.0.8.221
+ network-object host 10.0.8.185
+ network-object host 10.0.8.186
+object-group service SIMPLY02-TCP-RANGE tcp
+ description TCP Range required for Simply02
+ port-object eq 2229
+ port-object eq domain
+ port-object eq pop3
+ port-object eq smtp
+object-group service SIMPLY02-UDP-RANGE udp
+ description UDP Range Required for simply02
+ port-object eq domain
+object-group network Public_FTP_Servers
+ description FTP Servers with public routable addresses.
+ network-object host 195.88.100.65
+ group-object WWW_Mind_Cloud
+ group-object WWW_BLUECOAT_PA-WEB
+object-group network OUTSIDE_Mind_Cloud-Developers
+ description Ip Address range for Mind Cloud Mark MCnally Developers
+ network-object host 62.44.70.72
+ network-object host 82.109.239.2
+object-group network SICUST_Mind_Cloud_SQL
+ description "MIND Cloud Mark McNally Internal IP for SQL server"
+ network-object host 10.0.8.91
+object-group network OUTSIDE_Mind_Cloud-RDP
+ description " Mark McNally IP FOR RDP FROM server  IP for SQL server"
+ network-object host 217.26.124.162
+object-group network Aimes_speedtest
+ description Aimes speedtest server port 7070
+ network-object host 195.88.101.221
+object-group network OUTSIDE_SYSLOG_sources
+ description Aimes managed devices on the outside sending syslog data
+ network-object 195.88.100.0 255.255.254.0
+ network-object host 195.224.29.205
+ network-object 37.48.240.0 255.255.255.192
+ network-object host 37.48.240.115
+ network-object host 193.110.247.2
+ network-object host 154.51.138.6
+ network-object host 154.51.138.4
+ network-object host 154.51.138.110
+ network-object host 149.11.44.154
+ network-object host 154.51.138.106
+ network-object host 154.51.138.108
+ network-object host 37.48.240.81
+ network-object host 81.149.101.90
+ network-object host 37.48.242.146
+ network-object host 81.149.1.73
+ network-object host 176.35.213.232
+ network-object host 62.216.245.36
+ network-object host 80.229.203.199
+ network-object host 37.48.240.77
+ network-object host 37.48.240.78
+ network-object host 37.48.240.95
+ network-object host 37.48.243.116
+ network-object host 77.44.74.181
+ network-object host 37.48.247.162
+ network-object host 85.91.41.10
+object-group network Aimes_speedtest_real
+ description Aimes speedtest server port 7070
+ network-object 10.0.4.221 255.255.255.255
+object-group network WWW_Mind_Cloud_real
+ description "MIND Cloud Mark McNally external IP for WEB sites"
+ network-object 10.0.8.83 255.255.255.255
+object-group network SIMPLY_DRAC
+ description "Simply Solutions DRAC additional inbound access"
+ network-object host 195.88.101.120
+object-group service SIMPLY_DRAC_PORTS tcp
+ description "TCP Range required inbound for Simply DRAC"
+ port-object eq www
+ port-object eq https
+ port-object eq 3668
+ port-object eq 5869
+ port-object eq 5900
+ port-object eq 5901
+object-group network AXCLOUD-VCENTRE-admin
+ description AXCloud VM centre SUBNETS AT EL
+ network-object 192.168.20.0 255.255.255.0
+object-group network Oracle_Veritas_backup_server
+ description Oracle backup server for PHPnn access
+ network-object host 192.168.2.107
+object-group network PHP_servers
+ description PHP server FTP to Oracle backup server Veritas01
+ network-object host 10.0.4.111
+ network-object host 10.0.4.112
+ network-object host 10.0.4.113
+ network-object host 10.0.4.211
+ network-object host 10.0.4.207
+object-group service SIMPLY03i3-TCP-RANGE tcp
+ description TCP Range required for SimplyAP03-i3 inbound marge.simply-sol.com
+ port-object eq smtp
+ port-object eq 465
+ port-object eq 366
+ port-object eq pop3
+ port-object eq 995
+ port-object eq imap4
+ port-object eq 993
+ port-object eq 32000
+ port-object eq 32001
+object-group network SICUST_Simply_SIMPLYAP03i3
+ description "Simply Solutions SIMPLYAP03-i3 Marge.simplysol.com additional access"
+ network-object host 10.0.8.222
+object-group service SIMPLY03i3-OUTTCP-RANGE tcp
+ description TCP Range required for SimplyAP03-i3 outbound marge.simply-sol.com
+ port-object eq smtp
+ port-object eq 465
+ port-object eq 366
+object-group service CITYANDCORP_CRB_OUT_Ports tcp
+ description "TCP Ports for CITYANDCORP outbound access highports for CRB CR 7314"
+ port-object eq ftp
+ port-object range 1024 65535
+object-group network OUTSIDE_CITYANDCORP_CRB
+ description "CITYANDCORP OUTSIDE FTP SERVER FOR CRB CR 7314"
+ network-object host 194.176.211.226
+ network-object host 194.176.211.228
+object-group network NET_Dou_Yi_Dou_Servers
+ description "Dou-Yi-Dou internal IP's for server + test server CR8257"
+ network-object host 10.0.4.140
+ network-object host 10.0.4.141
+ network-object host 10.0.4.137
+ network-object host 10.0.4.138
+object-group service WWW_Dou_Yi_Dou_ports tcp
+ description TCP Ports required for Dou-Yi-Dou Server outbound
+ port-object eq 1935
+ port-object eq smtp
+ port-object eq 8443
+object-group service WWW_Dou_Yi_Dou_IN tcp
+ description TCP Ports required for Dou-Yi-Dou Server inbound
+ port-object eq 8443
+ port-object eq 1935
+object-group network OUTSIDE_WWW_SIMPLYSOL_1433_ACCESS_LIST
+ description IP Addresses permitted for 1443 SQL access to WWW_SIMPLY_SOL
+ network-object host 84.92.88.130
+ network-object host 80.229.41.123
+ network-object host 81.174.140.132
+ network-object host 195.80.25.123
+ network-object host 95.154.219.67
+ network-object host 217.32.183.57
+ network-object host 212.159.103.247
+object-group network WWW_Aimes_voip_Servers
+ description "Trixbox BC VOIP SIP external IP's for server"
+ network-object host 195.88.101.223
+object-group network Aimes_voip_Servers
+ description "Trixbox BC VOIP SIP internal IP's for server"
+ network-object host 10.0.4.237
+object-group service aimes_voip_tcp_ports tcp
+ description TCP Ports required for VOIP SIP Server
+ port-object eq sip
+ port-object eq 5065
+object-group service aimes_voip_udp_ports udp
+ description UDP Ports required for VOIP SIP Server
+ port-object eq sip
+ port-object eq 5061
+ port-object eq 5065
+object-group network WWW_EXis01
+ description "EXIS server interface external IP customer access  .78 cr9592"
+ network-object host 195.88.100.97
+ network-object host 195.88.100.78
+object-group network OUTSIDE_EXIS_RDP
+ description "INBOUND HOSTS for EXIS servers + cr10415"
+ network-object host 82.109.139.113
+ network-object host 62.255.239.34
+ network-object host 37.48.241.54
+ network-object host 97.74.229.59
+object-group service EXIS_IN_TCP_PORTS tcp
+ description "TCP Range required inbound for EXIS server T20180925.0025-DDOS-8080"
+ port-object eq www
+ port-object eq ftp
+ port-object eq ftp-data
+ port-object eq https
+ port-object eq 8080
+object-group network WWW_WEBASPX01
+ description "WEBASPX server interface external IP customer access"
+ network-object host 195.88.100.99
+ network-object host 195.88.100.100
+object-group network WWW_WEBASPX01_RDP
+ description "WEBASPX server interface external IP for support access"
+ network-object host 195.88.100.99
+object-group network OUTSIDE_WEBASPX01_RDP
+ description "INBOUND HOSTS for WEB ASPX servers + CR8856 +CR9777"
+ network-object host 80.176.73.146
+ network-object host 62.49.18.224
+ network-object host 87.102.126.163
+ network-object host 62.49.62.161
+ network-object host 62.49.24.112
+ network-object host 81.168.2.226
+object-group service WEBASPX01_IN_TCP_PORTS tcp
+ description "TCP Range required inbound for WEB ASPX server"
+ port-object eq www
+ port-object eq smtp
+ port-object eq ftp
+ port-object eq ftp-data
+object-group network SICUST_WEBASPX01_SQL
+ description "WEBASPX01 server interface internal IP for support SQL outbound access"
+ network-object host 192.168.45.20
+object-group network Aimes_voip_phones
+ description "BC VOIP SIP phones (DHCP) to external providers"
+ network-object host 10.0.4.183
+ network-object host 10.0.4.184
+ network-object host 10.0.4.185
+ network-object host 10.0.4.186
+ network-object host 10.0.4.187
+ network-object host 10.0.4.188
+ network-object host 10.0.4.189
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+object-group network EXT_RIM_BES
+ description "Aimes External RIM blackberry server "
+ network-object host 93.186.25.33
+ network-object host 193.109.81.33
+object-group network WWW_WEBASPX_CITRIX
+ description "Cloud WEBASPX CITRIX XENAPP servers +CR8856+cr9271"
+ network-object host 195.88.100.112
+ network-object host 195.88.100.113
+object-group service WEBASPX-CITRIX-TCP-PORTS tcp
+ description "Cloud WEBASPX CITRIX XENAPP server INBOUND TCP PORTS"
+ port-object eq www
+ port-object eq https
+object-group service DDS01-RADMIN-TCP-PORTS tcp
+ description "DDS01 INBOUND TCP PORTS for admin CR 8090"
+ port-object eq 1112
+object-group network WWW_MIMOVI
+ description "RPPTV-MIMOVI server CR8128"
+ network-object host 195.88.100.105
+object-group network OUTSIDE_MIMOVI_SUPPORT
+ description "INBOUND HOSTS for RPPTV-MIMOVI Support team CR8128/../CR10698"
+ network-object host 109.254.92.57
+ network-object host 194.234.4.60
+ network-object host 78.31.177.143
+ network-object host 176.121.242.181
+ network-object host 195.234.4.60
+ network-object 94.178.254.0 255.255.255.0
+ network-object host 134.249.176.181
+ network-object host 131.227.95.136
+ network-object host 131.227.23.35
+object-group service MIMOVI-SUPPORT-TCP-PORTS tcp
+ description "RPPTV-MIMOVI servers SUPPORT INBOUND TCP PORTS CR8128"
+ port-object eq ssh
+object-group service MIMOVI-INBOUND-TCP-PORTS tcp
+ description "RPPTV-MIMOVI servers ANY INBOUND TCP PORTS CR8128 & CR8310/T20180904.0009"
+ port-object eq www
+ port-object eq ftp
+ port-object eq https
+object-group network AIMES_GKDEV
+ description "Aimes Gary Kink Development server CR8135"
+ network-object host 195.88.101.93
+object-group service Aimes_GKDEV-TCP tcp
+ description TCP Range required for Aimes GKDEV server inbound CR8135
+ port-object eq 3389
+object-group network WWW_INNOVE
+ description "Innove-test server CR8167 + CR9051"
+ network-object host 195.88.100.126
+ network-object host 195.88.101.171
+ network-object host 195.88.101.172
+ network-object host 195.88.101.173
+ network-object host 195.88.101.174
+ network-object host 195.88.101.175
+ network-object host 195.88.100.127
+ network-object host 195.88.100.77
+ network-object host 195.88.100.81
+ network-object host 195.88.100.110
+ network-object host 195.88.100.116
+ network-object host 195.88.100.117
+object-group network OUTSIDE_INNOVE_SUPPORT
+ description "INBOUND HOSTS for INNOVE TV Support team CR8167"
+ network-object 0.0.0.0 0.0.0.0
+object-group service INNOVE-SUPPORT-TCP-PORTS tcp
+ description "INNOVE servers SUPPORT INBOUND TCP PORTS CR8167"
+ port-object eq 3389
+ port-object eq ftp
+object-group service INNOVE-INBOUND-TCP-PORTS tcp
+ description "INNOVE WEB servers ANY INBOUND TCP PORTS CR8167 & CR8172 & CR8192"
+ port-object eq www
+ port-object eq https
+ port-object eq 46186
+ port-object eq 59834
+object-group network WWW_MODS_Servers
+ description "Access MODS server from Internet B739 CR8175"
+ network-object host 195.88.100.73
+ network-object host 195.88.100.74
+object-group network SICUST_MODS_Servers
+ description "Access MODS server to Internet "
+ network-object host 10.0.8.45
+ network-object host 10.0.8.46
+object-group service MODS_IN_Ports tcp
+ description "TCP Ports for MODS inbound access"
+ port-object eq www
+ port-object eq https
+ port-object eq ftp
+ port-object eq ssh
+ port-object eq smtp
+ port-object eq pop3
+ port-object eq 1433
+ port-object eq 5063
+ port-object eq 3389
+object-group service MODS_OUT_Ports tcp
+ description "TCP Ports for MODS outbound access"
+ port-object eq www
+ port-object eq https
+ port-object eq ftp
+ port-object eq ssh
+ port-object eq smtp
+ port-object eq pop3
+ port-object eq 1433
+ port-object eq 5063
+object-group network WWW_WEBDAV_TEST
+ description "Aimes Fibrenet WEBDAV Test "
+ network-object host 195.88.101.91
+object-group service WEBDAV_IN_TCP_Ports tcp
+ description "TCP Ports for WEBDAV inbound access"
+ port-object eq www
+ port-object eq https
+ port-object eq ssh
+object-group network WWW_MODS_FTP
+ description "Access MODS FTP server from Internet CR8199"
+ network-object host 195.88.100.74
+object-group service MODS_FTPIN_Ports tcp
+ description "Access MODS FTP server from Internet CR8199"
+ port-object range 7000 7500
+ port-object range 1024 65535
+object-group network SICUST_MODS_FTP
+ description "Access MODS server to Internet for FTP "
+ network-object host 10.0.8.46
+object-group network WWW_PLA01_8080
+ description "PLA01 external IP for Paul Langon test server"
+ network-object host 195.88.100.68
+object-group service PLA01IN_Ports tcp
+ description "Access PLA01 WEBDAV test from Internet CR8213"
+ port-object eq 8080
+object-group network INT_PLA01_8080
+ description "PLA01 internal IP for Paul Langon test server"
+ network-object host 10.0.4.103
+object-group network WWW_AIMES_NTP
+ description "Aimes DMZ server running NTP services"
+ network-object host 195.88.101.221
+ network-object host 10.0.4.221
+object-group network WWW_CPEM01
+ description "External IP's for Container Port Emulator server CR8391+CR9834"
+ network-object host 195.88.100.109
+ network-object host 195.88.101.53
+ network-object host 195.88.101.54
+object-group service CPEM01_SUPPORT_Ports tcp
+ description "TCP Ports for Container Port Emulator server support inbound access"
+ port-object eq 3389
+object-group network WWW_7SOFT_SUPPORT_ACCESS
+ description "BASE IP of servers needing direct access from 7SOFT support CR8464 & CR8521"
+ network-object host 195.88.100.250
+ network-object host 195.88.100.252
+ network-object host 195.88.100.134
+ network-object host 195.88.100.133
+ network-object host 195.88.100.224
+ network-object host 195.88.100.191
+ network-object host 195.88.100.192
+ network-object host 195.88.100.226
+ network-object host 195.88.100.190
+ network-object host 195.88.100.225
+ network-object host 195.88.100.197
+ network-object host 195.88.100.253
+ network-object host 195.88.100.251
+ network-object host 195.88.100.247
+ network-object host 195.88.100.249
+ network-object host 195.88.100.227
+ network-object host 195.88.100.193
+ network-object host 195.88.100.184
+ network-object host 195.88.100.142
+ network-object host 195.88.100.148
+ network-object host 195.88.100.158
+ network-object host 195.88.101.160
+object-group service 7SOFT-SUPPORT-PORTS tcp
+ description "Allow Standard RDP/VNC Ports for 7soft support access CR8464"
+ port-object eq 3389
+object-group network OUTSIDE_G7AP_RDP_Access
+ description "Allow List for G7 RDP Steve Wake + CR9705..CR11538/T20170830.0031"
+ group-object OUTSIDE_7SOFT_RDP_Access
+ network-object host 87.194.151.13
+ network-object host 37.19.26.18
+ network-object host 83.200.230.32
+ network-object host 176.227.133.105
+ network-object host 185.3.89.105
+ network-object host 81.168.28.106
+ network-object host 199.244.119.16
+ network-object host 92.30.109.180
+object-group network WWW_G7AP_SUPPORT_ACCESS
+ description "Allow List for G7 RDP Steve Wake CR11391"
+ network-object host 195.88.100.181
+ network-object host 195.88.100.183
+object-group network EXT_SUPPORT_IPORT
+ description "ESA IPORT external IP for support access CR8500/CR9059"
+ network-object host 217.150.118.170
+ network-object host 195.88.100.14
+ network-object host 88.210.182.128
+object-group service iport_support_Ports tcp
+ description "ESA IPORT TCP Ports external support access CR8500"
+ port-object eq ssh
+ port-object eq 3389
+object-group network INT_PLW7
+ description "Internal IP's Paul Langan VM W7 Android testing  CR8520"
+ network-object host 10.0.4.160
+object-group network FTP_195_88_101_84
+ description "PHP01 LLCS  external FTP access CR8530"
+ network-object host 195.88.101.84
+object-group network SQL_Simply_SIMPLY02
+ description "Simply Solutions SIMPLY02 additional inbound access CR8617 BART CR9606"
+ network-object host 195.88.101.114
+object-group network EXTSQL_Simply_SIMPLY02
+ description "External access to Simply Solutions SIMPLY02 additional inbound access CR8617 CR9101"
+ network-object host 94.192.252.107
+ network-object 0.0.0.0 0.0.0.0
+object-group service SQL_Simply_SIMPLY02-SQL-TCP-PORTS tcp
+ description "Simply_SIMPLY02 servers SUPPORT INBOUND TCP PORTS CR8617"
+ port-object eq 1433
+object-group network FTP_IGNITION-RM
+ description "IGNITION RM REMOTE FTP customer CR8652"
+ network-object host 212.248.166.71
+ network-object host 195.88.100.14
+object-group service IGNITION_RM-FTP-TCP-PORTS tcp
+ description "IGNITION RM REMOTE FTP customer CR8652"
+ port-object eq ftp
+object-group network AIMES-CP-GMAIL
+ description Aimes Container ports POP3 outbound imap.gmail.com, paris.01@aimescic.net CR8728 +CR9805+CR9834
+ network-object host 10.0.4.150
+ network-object host 10.0.4.28
+ network-object host 10.0.4.203
+ network-object host 10.0.4.155
+ network-object host 10.0.4.158
+object-group service AIMES-CP-GMAIL-TCP tcp
+ description "Aimes POP3 outbound GMAIL access CR8728"
+ port-object eq 993
+object-group service INNOVE-OUTBOUND-TCP tcp
+ description "INNOVE LAN OUTBOUND PORTS + CR8757 + CR8759"
+ port-object eq smtp
+ port-object eq ftp
+ port-object eq 3389
+ port-object eq 8172
+ port-object eq 5986
+object-group network WWW_AIMES-SPEEDTEST
+ description Aimes speedtest mini service
+ network-object host 195.88.101.219
+object-group network EXT_AIMES-SPEEDTEST
+ description remote networks allowed to access speedtest server
+ network-object 195.88.100.0 255.255.254.0
+ network-object 37.48.240.0 255.255.248.0
+object-group service AIMES-SPEEDTEST-TCP tcp
+ description "Aimes speedtest mini port"
+ port-object eq 9090
+object-group network ext_simply-colo_access
+ description remote access to Simply Sol co-lo servers CR8987 CR8987 CR9073
+ network-object host 87.127.29.205
+ network-object host 87.127.194.50
+ network-object host 86.164.38.247
+ network-object host 86.172.146.203
+object-group network simply-colo_servers
+ description Simply Sol co-lo servers CRUSTY 101.117 BART 114 LISA .121 CR8922
+ network-object host 195.88.101.117
+ network-object host 195.88.101.114
+ network-object host 195.88.101.121
+object-group network Aimes_FTP02
+ description "FTP02 server PLagan containerport/iport/esa/IOT CR8980 CR12405"
+ network-object host 195.88.100.44
+ network-object host 195.88.100.67
+object-group service ftp02-TCP-PORTS tcp
+ description "Ports required for Aimes FTP02 access  CR8980  CR12405"
+ port-object range 20000 21000
+ port-object eq 990
+ port-object eq ftp
+ port-object eq ssh
+object-group network OUTSIDE_FTP01_FTP_Servers
+ description "IP's of external FTP servers FTP01 can send to CR8984"
+ network-object host 79.171.36.108
+ network-object host 10.0.70.10
+object-group service OUTBOUND_FTP01_ports tcp
+ description "TCP Ports for FTP 01 oubound FTP access"
+ port-object eq ftp
+object-group network LBAY-STREAMER-v248
+ description vlan 248 LBAY-STREAMER internal IP  CR9131
+ network-object host 10.0.48.20
+object-group network AIMES-CP-FTP
+ description Aimes Container ports FTP outbound to 62.189.154.27 CR9151+CR9834+CR9965
+ network-object host 10.0.4.150
+ network-object host 10.0.4.155
+ network-object host 10.0.4.158
+ network-object host 10.0.4.203
+object-group network EXT-CP-FTP
+ description Aimes Container ports FTP to external ftp.paris-tms.com IP CR9151
+ network-object host 62.189.154.27
+object-group service AIMES-CP-FTP-TCP tcp
+ description "Aimes FTP outbound access CR9151"
+ port-object eq ftp
+object-group network LBAY-WEB-v248
+ description vlan 248 LBAY-WEB internal IP CMAP CR9198
+ network-object host 10.0.48.10
+object-group network EXT-BLOOM-MDAC-CMAP-NODES
+ description external IP for BLOOM MDAC CMAP NODES F38 CR9233
+ network-object host 37.48.241.73
+object-group network AIMES_REMOTE_FW_SUPP
+ description LANS behind DC2 firewalls for Aimes sysadmins management
+ network-object 10.3.162.0 255.255.255.0
+ network-object 10.8.100.0 255.255.255.0
+ network-object 10.8.102.0 255.255.255.0
+ network-object 10.3.166.0 255.255.255.0
+ network-object 10.0.220.0 255.255.255.0
+ network-object 10.0.245.0 255.255.255.0
+ network-object 10.0.58.0 255.255.255.0
+ network-object 10.0.12.0 255.255.255.0
+ network-object 10.5.96.0 255.255.224.0
+ network-object 10.0.42.0 255.255.255.0
+ network-object 192.168.20.0 255.255.255.0
+ network-object 10.0.19.0 255.255.255.0
+ network-object 10.0.40.0 255.255.255.0
+ network-object 10.0.41.0 255.255.255.0
+ network-object 10.0.43.0 255.255.255.0
+ network-object 10.0.28.0 255.255.255.0
+ network-object 10.0.50.0 255.255.255.0
+ network-object 10.17.47.103 255.255.255.255
+ network-object 10.0.53.0 255.255.255.0
+ network-object 10.0.250.0 255.255.255.0
+ network-object 10.0.27.0 255.255.255.0
+ network-object 10.0.198.0 255.255.255.0
+object-group network WWW_AIMES_SMTP
+ description "Aimes DMZ server running SMTP RELAY services 10.0.4.221"
+ network-object host 195.88.101.221
+object-group network OUTSIDE_SMTP_sources
+ description Aimes managed devices on the outside sending smtp for relay (office 365)
+ network-object host 193.110.247.30
+ network-object host 37.48.240.42
+ network-object host 195.88.100.17
+ network-object host 37.48.240.10
+ network-object host 37.48.240.17
+ network-object host 37.48.241.170
+ network-object host 154.51.138.98
+ network-object host 154.51.138.106
+ network-object host 154.51.138.108
+ network-object host 195.88.100.20
+ network-object host 154.51.138.6
+ network-object host 37.48.243.126
+ network-object host 154.51.138.16
+ network-object host 185.30.10.29
+ network-object host 37.48.243.206
+ network-object host 37.48.240.115
+ network-object host 154.51.138.21
+ network-object host 37.48.246.46
+ network-object host 37.48.243.102
+ network-object host 37.48.240.232
+ network-object host 37.48.241.30
+ network-object host 37.48.241.249
+ network-object host 37.48.240.75
+ network-object host 37.48.245.70
+ network-object host 37.48.247.4
+ network-object host 195.88.101.70
+ network-object host 37.48.240.60
+ network-object host 37.48.240.61
+ network-object host 37.48.243.94
+ network-object host 37.48.243.86
+ network-object host 37.48.240.116
+ network-object host 37.48.245.106
+ network-object host 37.48.240.36
+ network-object host 37.48.240.16
+ network-object host 37.48.240.51
+ network-object host 37.48.240.58
+ network-object host 37.48.240.20
+ network-object host 37.48.240.22
+ network-object host 37.48.243.92
+ network-object host 37.48.247.56
+ network-object host 37.48.247.57
+ network-object host 185.83.121.251
+ network-object host 37.48.241.12
+ network-object host 37.48.241.14
+ network-object host 185.83.122.114
+ network-object host 185.83.122.115
+ network-object host 185.83.122.116
+ network-object host 185.83.122.117
+ network-object host 185.83.122.118
+ network-object host 195.88.100.7
+ network-object host 185.83.123.170
+ network-object host 37.48.243.116
+ network-object host 85.91.41.10
+object-group network EXT-EXIS02-SQL
+ description "external OUBOUND HOST for exis sql access   CR9389      "
+ network-object host 63.123.82.68
+object-group network INT-EXIS02-SRV
+ description "Internal EXIS host for SQL outbound   CR9389  "
+ network-object host 10.0.8.30
+object-group service exis02-sql_Ports tcp
+ description "EXIS SQL outbound ports CR9389      "
+ port-object eq 3306
+object-group network WWW-LP-221
+ description Simply Sol / Learning Portfolio LISA 10.0.8.221 CR9605
+ network-object host 195.88.101.121
+object-group service LP-221-TCP-PORTS tcp
+ description TCP for Simply Sol / Learning Portfolio LISA 10.0.8.221 CR9605
+ port-object eq 22229
+object-group network AIMES-LMH-IN
+ description lmh-dns to .223 for drive mount
+ network-object host 195.88.101.219
+object-group network AIMES-LMH-EXT
+ description lmh-dns to .223 for drive mount
+ network-object host 195.88.101.209
+ network-object host 195.88.101.210
+object-group network SICUST_Simply_SMTP
+ description "Simply Solutions SMTP Access for Server CR9850"
+ network-object host 10.0.8.184
+ network-object host 195.88.101.117
+object-group service SIMPLY_SMTP-TCP tcp
+ description "Simply Solutions SMTP Access for Server CR9850"
+ port-object eq smtp
+object-group network AIMES_DEV_60
+ description Aimes Developers LAN RESTRICT by IP vlan 208 CR9937
+ network-object host 10.0.208.60
+object-group network AIMES_DEV_60_SUPPORT
+ description Aimes Developers LAN IP addresses for support access from 10.0.208.60 CR9937
+ network-object host 10.0.4.32
+ network-object host 10.0.4.150
+ network-object host 10.0.4.154
+ network-object host 10.0.4.158
+object-group service AIMES_DEV_60_out_Ports tcp
+ description "OUTBOUND TCP Ports for  10.0.208.60  CR9937/CR10382/CR11110/CR11395"
+ port-object eq 3389
+ port-object eq 50187
+ port-object eq 1443
+ port-object eq 8172
+object-group network www_7SOFT_FTP_IP
+ description "FTP Access for 7SOFT server 195.88.100.179"
+ network-object host 195.88.100.179
+object-group network INT_TESTKITCHEN-01
+ description "Internal IP for TEST KITCHEN GIT server on DEV LAN  CR10135"
+ network-object host 10.0.208.200
+object-group network WWW_TESTKITCHEN-01
+ description "External IP for TEST KITCHEN GIT server on DEV LAN  CR10135"
+ network-object host 195.88.101.71
+object-group service TESTKITCHEN-01_tcp-inout tcp
+ description "inbound & outbound ports for TEST KITCHEN GIT server on DEV LAN  CR10135"
+ port-object eq www
+ port-object eq https
+ port-object eq ftp
+ port-object range 21000 21010
+object-group service TESTKITCHEN-01_tcp-in tcp
+ description "inbound ports for TEST KITCHEN GIT server on DEV LAN  CR10135"
+ port-object eq ssh
+object-group network WWW_TESTKITCHEN-NODE01
+ description "External IP for TEST KITCHEN NODE server on DEV LAN 10.0.208.210  CR10219"
+ network-object host 195.88.100.70
+object-group network INT_TESTKITCHEN-NODE01
+ description "Internal IP for TEST KITCHEN NODE server on DEV LAN 10.0.208.210  CR10219"
+ network-object host 10.0.208.210
+object-group service TESTKITCHEN-NODE01_tcp-inout tcp
+ description "in/out bound ports for TEST KITCHEN NODE server on DEV LAN  CR10219"
+ port-object eq www
+ port-object eq https
+ port-object eq ssh
+ port-object eq ftp
+object-group service TESTKITCHEN-NODE01_tcp-out tcp
+ description "out bound ports for TEST KITCHEN NODE server on DEV LAN  CR10219"
+ port-object eq domain
+object-group service TESTKITCHEN-NODE01_udp-out udp
+ description "out bound ports for TEST KITCHEN NODE server on DEV LAN  CR10219"
+ port-object eq domain
+ port-object eq ntp
+object-group network WWW_IPORT-TEST
+ description "ESA IPORT-TEST & IPORT-UAT servers external access CR9329/CR10294"
+ network-object host 195.88.100.114
+ network-object host 10.0.247.11
+ network-object host 195.88.100.115
+ network-object host 10.0.247.21
+object-group service iport-TEST_inout_Ports tcp
+ description "ESA IPORT TEST & UAT TCP Ports IN & OUT CR9329/../CR10813"
+ port-object eq ftp
+ port-object eq 10101
+ port-object eq 465
+ port-object eq 10100
+ port-object eq https
+ port-object eq 10102
+ port-object eq www
+ port-object eq 8080
+ port-object eq 9091
+ port-object eq smtp
+ port-object eq 8444
+object-group network WWW_MON-SNMP
+ description Aimes SNMP monitor server 10.0.4.216
+ network-object host 195.88.100.11
+ network-object host 10.0.4.216
+object-group service WWW_MON-SNMP_udp-Ports udp
+ description "INBOUND udp Ports for  10.0.4.216 SNMP server  CR9715 "
+ port-object eq snmp
+ port-object eq snmptrap
+object-group service WWW_MON-SNMP_tcp-Ports tcp
+ description "INBOUND tcp Ports for  10.0.4.216 SNMP server  "
+ port-object eq www
+ port-object eq 8980
+object-group network EXT_MON-SNMP
+ description external devices allowed to use SNMP to SNMP monitor server 10.0.4.216/195.88.100.11
+ network-object host 37.48.240.1
+ network-object host 37.48.240.2
+ network-object host 37.48.240.3
+ network-object host 37.48.240.14
+ network-object host 37.48.240.26
+ network-object host 37.48.240.21
+ network-object host 195.88.100.1
+ network-object host 195.88.101.58
+ network-object host 195.88.101.59
+ network-object host 37.48.240.6
+ network-object host 195.88.100.26
+ network-object host 37.48.240.42
+ network-object host 195.88.101.70
+ network-object host 195.88.101.129
+ network-object host 37.48.240.32
+ network-object host 80.229.203.199
+ network-object host 37.48.240.81
+ network-object host 37.48.247.162
+ network-object host 37.48.240.56
+ network-object host 37.48.240.54
+ network-object host 37.48.240.95
+ network-object host 37.48.240.51
+ network-object host 37.48.242.254
+ network-object host 172.16.99.103
+object-group network EXT_Aimes-SNMP
+ description Aimes service desk test server remote access
+ network-object host 37.48.240.10
+ network-object host 82.17.234.170
+object-group network WWW_IPORT-VISL
+ description "ESA IPORT-VISL servers external access CR10628"
+ network-object host 195.88.100.118
+ network-object host 10.0.247.31
+object-group service iport-VISL_inout_Ports tcp
+ description "ESA IPORT VISL TCP Ports IN & OUT CR10628"
+ port-object eq https
+object-group service iport-VISL_support_Ports tcp
+ description "ESA IPORT VISL support TCP Ports IN  CR10628"
+ port-object eq 3389
+object-group service EXIS-TCBUILD_IN_TCP_PORTS tcp
+ description "TCP Range required inbound for EXIS server tcbuild.cloudapp.net cr10664"
+ port-object eq 10933
+object-group network INNOVE02_SVR
+ description "INNOVE02 server base internal IP  cr10690"
+ network-object host 10.0.35.40
+object-group network EXT_INNOVE_SFTP
+ description "INNOVE02 server externl SFTP server to Kinnear.wigan.gov.uk access cr10690"
+ network-object host 212.132.132.16
+object-group service INNOVE02-SFTP_OUT_TCP_PORTS tcp
+ description "TCP Range required outbound for INNOVE02 server to Kinnear.wigan.gov.uk cr10690"
+ port-object eq 5112
+object-group network EXT_CIVANDCORP_SUPPORT
+ description "CIVIL and CORP external support for DB backups v202 cr10744/cr11341 / CR11392 / CR12544"
+ network-object host 62.31.234.242
+ network-object host 206.183.111.25
+ network-object host 81.134.41.116
+object-group service EXT-CIVILANDCORP-SUPPORT_IN_TCP_PORTS tcp
+ description "CIVIL and Corp TCP inbound support ports v202 cr10744 webdeploy CR11342"
+ port-object eq ftp
+ port-object eq www
+ port-object eq 8172
+ port-object range 8400 8499
+object-group service BASE_tcp-out tcp
+ description network TCP ports allowed outbound
+ port-object eq www
+ port-object eq https
+ port-object eq domain
+ port-object eq smtp
+ port-object eq 587
+ port-object eq 465
+object-group service BASE_udp-out udp
+ description network UDP ports allowed outbound
+ port-object eq domain
+ port-object eq ntp
+object-group service R1SOFT_replication-ports tcp
+ description TCP Range required for CDPSOFT Replication server IN/OUT
+ port-object eq 1167
+ port-object eq www
+object-group network WWW-R1SOFT
+ description Aimes backup server for r1soft IDERA02 external  cr10752
+ network-object host 37.48.240.12
+object-group network WWW-IMP-WEB-SVR
+ description "IMP WEB SERVER (PL) V301 external access cr10752"
+ network-object host 195.88.101.8
+ network-object host 195.88.101.112
+object-group network IGNITION_RM-DC3-SVR
+ description "IGNITION RM DC3 VM CR10829"
+ network-object host 154.51.138.23
+object-group service IGNITION_RM-SCP-TCP-PORTS tcp
+ description "IGNITION RM  ports between DC2/DC3 VMs CR10829"
+ port-object eq ssh
+object-group network EXT-ftp-paris-tms-srv
+ description "AIMES ContainerPort FTP outbound CR10863"
+ network-object host 46.227.54.14
+object-group network INT-ftp-paris-tms-srv
+ description "AIMES ContainerPort FTP outbound CR10863"
+ network-object host 10.0.4.28
+ network-object host 10.0.4.30
+object-group service CP-PARIS-TMS-TCP-PORTS tcp
+ description "Container Port ports FTP outbound CR10863"
+ port-object eq ftp
+object-group network Aimes_Support_access
+ description "ALL DMZ access for sysadmins support teams"
+ group-object NET_DMZ_ORACLE
+ group-object NET_DMZ_7SOFT
+ group-object NET_DMZ_SICUST
+ group-object WEBASPX-CITRIX-LAN
+ group-object NET_DMZ_MIMOVI
+ group-object NET_DMZ_INNOVE
+ group-object NET_DMZ_IGNITION-RM
+ group-object IPORT_LAN
+ group-object NET_AIMES_DEV
+ group-object NET_LAN_SERVICES
+ group-object Aimes_Monitors
+ network-object 10.0.208.0 255.255.255.0
+ network-object 10.0.220.0 255.255.255.0
+ group-object NET_CIVIL-CORP
+ network-object 172.10.0.0 255.255.254.0
+ network-object 10.10.10.0 255.255.255.0
+ network-object 10.0.26.0 255.255.255.0
+ network-object 10.200.0.0 255.255.248.0
+ network-object 192.168.95.0 255.255.255.0
+ network-object 10.0.58.0 255.255.255.0
+ network-object 10.0.12.0 255.255.255.0
+ network-object 10.5.96.0 255.255.224.0
+ network-object 10.0.42.0 255.255.255.0
+ network-object 192.168.20.0 255.255.255.0
+ network-object 10.0.19.0 255.255.255.0
+ network-object 10.0.40.0 255.255.255.0
+ network-object 10.0.41.0 255.255.255.0
+ network-object 10.0.43.0 255.255.255.0
+ network-object 10.0.28.0 255.255.255.0
+ network-object 10.0.50.0 255.255.255.0
+ network-object 10.17.47.103 255.255.255.255
+ network-object 10.0.53.0 255.255.255.0
+ network-object 10.0.250.0 255.255.255.0
+ network-object 10.0.27.0 255.255.255.0
+ network-object 10.0.198.0 255.255.255.0
+ network-object 10.0.199.0 255.255.255.0
+ network-object 10.0.152.0 255.255.255.0
+ network-object 10.0.156.0 255.255.255.0
+ network-object 10.0.39.0 255.255.255.0
+ network-object 10.0.153.0 255.255.255.0
+ network-object 10.0.155.0 255.255.255.0
+ network-object 10.0.159.0 255.255.255.0
+ network-object 10.0.151.0 255.255.255.0
+ network-object 192.168.10.250 255.255.255.255
+ network-object 10.0.70.0 255.255.255.0
+object-group network AIMES_FTP01_V270
+ description "FTP01 internal IP support access CR11693"
+ network-object host 10.0.70.10
+ network-object host 10.0.70.20
+object-group network EXT_SSH_IGNITION-RM02
+ description "IGNITION RM REMOTE FTP customer outbound CR11145"
+ network-object host 82.71.60.54
+object-group network AIMES-Paul.Langan-FTP
+ description paul needs DOTNET01 to talk to new ftp CR11897
+ network-object host 10.0.4.24
+ network-object host 195.88.101.8
+ network-object 10.0.4.0 255.255.255.0
+object-group network MATLAB_MIMOVI
+ description "RPPTV-MIMOVI server MATLAB GPU CR11994"
+ network-object host 195.88.100.103
+ network-object host 10.0.46.210
+object-group network OUTSIDE_MATLAB_MIMOVI_SUPPORT
+ description "INBOUND HOSTS for MATLAB-MIMOVI Support team CR11994/T20180424.0005 "
+ network-object host 195.234.4.60
+ network-object host 195.234.4.64
+ network-object 176.108.0.0 255.255.224.0
+ network-object host 192.173.3.108
+ network-object host 192.173.3.109
+ network-object host 192.173.3.110
+ network-object host 192.173.3.111
+ network-object host 192.173.3.112
+ network-object host 192.173.3.113
+ network-object host 192.173.3.114
+ network-object host 192.173.3.115
+ network-object host 62.31.130.240
+ network-object host 37.48.240.18
+object-group service MIMOVI-MATLAB-INBOUND-ANY-TCP-PORTS tcp
+ description "MATLAB-MIMOVI servers ANY INBOUND TCP PORTS CR11994"
+ port-object eq www
+ port-object eq https
+object-group service MIMOVI-MATLAB-INBOUND-TCP-PORTS tcp
+ description "MATLAB-MIMOVI servers ANY INBOUND TCP PORTS CR11994"
+ port-object eq ftp-data
+ port-object eq ftp
+ port-object eq 31415
+object-group service MIMOVI-MATLAB-INBOUND-SSH-TCP-PORTS tcp
+ description "MATLAB-MIMOVI servers ANY INBOUND TCP PORTS CR11994"
+ port-object eq ssh
+object-group network WWW_CITYANDCORP_FTP01
+ description "Access City and Corp server from Internet CR12822"
+ network-object host 195.88.100.120
+object-group network WWW_CITYANDCORP_FTP_USER
+ description "user for ftp City and Corp server from Internet CR12822"
+ network-object host 176.35.110.84
+object-group service ftp_and_ftpdata_Civ-Corp tcp
+ description Ports required for FTP CR12822
+ port-object range 28000 30000
+ port-object eq ftp-data
+ port-object eq ftp
+object-group network CITYANDCORP_file_uploads_out
+ description "Access City and Corp server required for file_uploads_ports_out CR12877"
+ network-object host 195.88.100.120
+ network-object host 10.0.202.110
+object-group network CITYANDCORP_file_uploads_WHITELIST
+ description "Access City and Corp WHITELIST required for file_uploads_ports_out CR12877"
+ network-object host 157.203.143.152
+ network-object host 157.203.142.154
+ network-object host 217.115.66.4
+object-group service CITYANDCORP_file_uploads_ports_out tcp
+ description Ports required for file_uploads_ports_out CR12877 T20170228.0004
+ port-object range 8400 8499
+ port-object eq ftp
+ port-object range 33000 42999
+object-group network Aimes_Monitors_AAS
+ description Azure Monitor servers
+ network-object host 185.83.122.114
+ network-object host 185.83.122.115
+ network-object host 37.48.240.18
+ network-object host 37.48.240.15
+ network-object host 37.48.240.16
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+ network-object host DEV-LAN-HP-SWITCH
+object-group network AIMES-Paul.Langan-SNMP-FW
+ description paul DEV LAN SNMP testing
+ network-object host NAT-FOR-195_88_101_103
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+object-group network AIMES-Paul.Langan-SNMP-SW
+ description paul DEV LAN SNMP testing to test Switch
+ network-object host 172.16.16.253
+ network-object host DEV-LAN-HP-SWITCH
+ network-object host 172.16.16.1
+ network-object host NAT-FOR-195_88_101_103
+object-group service AIMES-Paul.Langan-SNMP-LAN_UDP udp
+ description paul DEV LAN SNMP testing
+ port-object eq snmp
+ port-object eq snmptrap
+object-group service AIMES-Paul.Langan-SNMP-LAN_TCP tcp
+ description paul DEV LAN SNMP support access
+ port-object eq ssh
+ port-object eq www
+ port-object eq https
+ port-object eq smtp
+object-group network WWW_IGNITION-RM-support
+ description WWW_IGNITION-RM-support
+ network-object host 154.51.138.23
+ network-object host 37.48.240.18
+ network-object host 82.71.60.54
+ network-object host 86.16.59.123
+object-group network DM_INLINE_NETWORK_2
+ network-object host NAT-FOR-195_88_101_103
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+ network-object host DEV-LAN-HP-SWITCH
+object-group network DM_INLINE_NETWORK_4
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-FW
+object-group network DM_INLINE_NETWORK_5
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-FW
+object-group network DM_INLINE_NETWORK_6
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-SW
+ group-object AIMES-Paul.Langan-SNMP-FW
+object-group network DM_INLINE_NETWORK_7
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-FW
+ group-object AIMES-Paul.Langan-SNMP-SW
+object-group service DM_INLINE_UDP_2 udp
+ group-object AIMES-Paul.Langan-SNMP-LAN_UDP
+ port-object eq syslog
+object-group network DM_INLINE_NETWORK_8
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-SW
+ group-object AIMES-Paul.Langan-SNMP-FW
+object-group network DM_INLINE_NETWORK_9
+ network-object ASSURED_TEST_NETWORK 255.255.255.0
+ group-object AIMES-Paul.Langan-SNMP-SW
+ group-object AIMES-Paul.Langan-SNMP-FW
+object-group network IGNITION-RM-03
+ description "IGNITION-RM servers T20170209.0005"
+ network-object host 185.83.123.102
+object-group service WWW_IGNITION-RM-SSH tcp
+ description TCP Ports 22 ssh T20170209.0005
+ port-object eq ssh
+object-group service DM_INLINE_TCP_2 tcp
+ port-object eq www
+ port-object eq https
+object-group network DM_INLINE_NETWORK_1
+ network-object host NAT-FOR-195_88_101_103
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+ network-object host DEV-LAN-HP-SWITCH
+object-group network DM_INLINE_NETWORK_10
+ network-object host NAT-FOR-195_88_101_103
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+object-group network DM_INLINE_NETWORK_3
+ network-object host NAT-FOR-195_88_101_103
+ network-object host DEV-LAN-ASSURED-PUBLIC-IP
+object-group network CITYANDCORP_SUPPORT_IN_WHITELIST
+ description T20170724.0003 - High Volume of unknown login attempts (Civil And Corporate)
+ network-object host 81.134.41.116
+ network-object host 94.30.49.135
+ network-object host 82.71.23.143
+ network-object host 37.48.240.18
+ network-object host 81.86.67.43
+object-group service CITYANDCORP_SUPPORT_IN_Ports tcp
+ description "RDP Ports for CITYANDCORP inbound access T20170724.0003 - High Volume of unknown login attempts (Civil And Corporate)"
+ port-object eq 3389
+object-group network Ext-AIMES-Support
+ description Aimes external IP's with access to server lan
+ network-object host 195.88.100.4
+ network-object host 37.48.240.15
+ network-object host 37.48.240.18
+ network-object host 37.48.240.16
+object-group network NET_AIMES_DEV_LAN
+ description Aimes Developers LAN lan 208
+ network-object 10.0.208.0 255.255.255.0
+object-group network KNOWN-DDOS-THREATS
+ description known ddos bots attacking Aimes clients
+ network-object host 23.225.141.70
+ network-object host 139.99.118.123
+ network-object host 107.0.121.20
+ network-object host 220.243.135.169
+ network-object host 220.243.135.154
+ network-object host 45.195.133.8
+ network-object host 165.225.64.59
+ network-object host 200.182.72.68
+ network-object host 63.143.42.249
+ network-object host 149.56.180.254
+ network-object host 67.75.2.38
+ network-object host 34.228.240.168
+ network-object host 212.112.152.95
+ network-object host 182.75.122.138
+ network-object host 81.157.243.213
+ network-object host 51.219.74.42
+ network-object host 154.85.11.21
+ network-object host 117.18.232.131
+ network-object host 104.27.154.184
+ network-object host 35.201.183.114
+ network-object host 191.125.167.215
+ network-object host 103.37.233.28
+ network-object host 162.251.94.239
+object-group network OUTSIDE_EXIS_SUPPORT
+ description "INBOUND HOSTS for EXIS04 server support T20181024.0006"
+ network-object host 62.255.239.34
+object-group service EXIS-SUPPORT_IN_TCP_PORTS tcp
+ description "TCP Range required inbound for EXIS server support T20181024.0006"
+ port-object eq ssh
+ port-object eq telnet
+ port-object eq 135
+ port-object eq 445
+ port-object range 1025 1030
+ port-object range 5000 6000
+ port-object range 49152 65535
+object-group service EXIS-SUPPORT_IN_UDP_PORTS udp
+ description "UDP Range required inbound for EXIS server support T20181024.0006"
+ port-object eq snmp
+ port-object eq snmptrap
+ port-object eq syslog
+object-group service EXIS-ANY_OUT_TCP_PORTS tcp
+ description T20190314.0012 - Open port 445
+ port-object eq 445
+object-group network EXT_EXis01_ANY
+ description T20190314.0012 - Open port 445
+ network-object host 62.255.239.34
+access-list lan_in extended permit ip any any
+access-list lan_in extended permit icmp any any
+access-list outside_in extended deny ip object-group KNOWN-DDOS-THREATS any
+access-list outside_in extended permit icmp any any
+access-list outside_in extended permit udp object-group EXT_Routers object-group Aimes_Monitors eq 9996
+access-list outside_in extended permit tcp object-group Aimes_remote_support object-group Aimes_Monitors object-group Aimes_Remote_ports
+access-list outside_in extended permit tcp any object-group www_public_access object-group http_and_https
+access-list outside_in extended permit tcp any object-group FTP_FTP01_Servers object-group ftp_and_ftpdata
+access-list outside_in extended permit tcp object-group OUTSIDE_FTP01_SSH_Access object-group FTP_FTP01_Servers eq ssh
+access-list outside_in extended permit tcp any object-group WWW_CITYANDCORP_Servers object-group CITYANDCORP_IN_Ports
+access-list outside_in extended permit tcp any object-group www_7SOFT_appservers object-group 7SOFT-2ndweb-TCP-ports
+access-list outside_in extended permit udp any object-group WWW_Simply_SIMPLY02 object-group SIMPLY02-UDP-RANGE
+access-list outside_in extended permit udp any object-group WWW_Simply_SIMPLYAP02i1 object-group SIMPLY02-UDP-RANGE
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq domain
+access-list outside_in extended permit tcp any object-group Public_FTP_Servers object-group ftp_and_ftpdata
+access-list outside_in extended permit tcp any object-group WWW_Mind_Cloud eq ssh
+access-list outside_in extended permit tcp any object-group WWW_Mind_Cloud eq smtp
+access-list outside_in extended permit tcp any object-group Aimes_speedtest eq 7070
+access-list outside_in extended permit udp object-group OUTSIDE_SYSLOG_sources object-group Aimes_Monitors eq syslog
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 range 50000 50009
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter_srv01 eq 3389
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter_srv01 eq smtp
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter01 eq 3389
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter01 eq 448
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter01 eq citrix-ica
+access-list outside_in extended permit tcp any object-group WWW_LIMA-Baxter01 eq 2598
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLY02 object-group SIMPLY02-TCP-RANGE
+access-list outside_in extended permit tcp any object-group WWW_Dou_Yi_Dou_Servers object-group WWW_Dou_Yi_Dou_IN
+access-list outside_in extended permit tcp host 194.143.169.188 host 195.88.100.92 eq ftp
+access-list outside_in extended permit tcp host 194.143.169.188 host 195.88.100.92 eq ftp-data
+access-list outside_in extended permit tcp any object-group WWW_Aimes_voip_Servers object-group aimes_voip_tcp_ports
+access-list outside_in extended permit udp any object-group WWW_Aimes_voip_Servers object-group aimes_voip_udp_ports
+access-list outside_in extended permit tcp any host 195.88.101.114 eq 990
+access-list outside_in extended permit tcp any object-group WWW_EXis01 object-group EXIS_IN_TCP_PORTS
+access-list outside_in extended permit tcp any object-group WWW_WEBASPX01 object-group WEBASPX01_IN_TCP_PORTS
+access-list outside_in extended permit tcp object-group OUTSIDE_WEBASPX01_RDP object-group WWW_WEBASPX01_RDP eq 3389
+access-list outside_in extended permit tcp object-group OUTSIDE_WEBASPX01_RDP object-group WWW_WEBASPX01_RDP eq 1433
+access-list outside_in extended permit udp host 94.168.45.49 object-group WWW_Aimes_voip_Servers
+access-list outside_in extended permit tcp any object-group WWW_WEBASPX_CITRIX object-group WEBASPX-CITRIX-TCP-PORTS
+access-list outside_in extended permit tcp object-group OUTSIDE_WEBASPX01_RDP object-group WWW_WEBASPX_CITRIX eq 3389
+access-list outside_in extended permit tcp any host 195.88.100.102 eq https
+access-list outside_in extended permit tcp object-group OUTSIDE_MIMOVI_SUPPORT object-group WWW_MIMOVI object-group MIMOVI-SUPPORT-TCP-PORTS
+access-list outside_in extended permit icmp object-group OUTSIDE_MIMOVI_SUPPORT object-group WWW_MIMOVI
+access-list outside_in extended permit tcp any object-group WWW_MIMOVI object-group MIMOVI-INBOUND-TCP-PORTS
+access-list outside_in extended permit tcp object-group OUTSIDE_INNOVE_SUPPORT object-group WWW_INNOVE object-group INNOVE-SUPPORT-TCP-PORTS
+access-list outside_in extended permit icmp object-group OUTSIDE_INNOVE_SUPPORT object-group WWW_INNOVE
+access-list outside_in extended permit tcp any object-group WWW_INNOVE object-group INNOVE-INBOUND-TCP-PORTS
+access-list outside_in extended permit tcp any object-group WWW_MODS_Servers object-group MODS_IN_Ports
+access-list outside_in extended permit icmp any object-group WWW_MODS_Servers
+access-list outside_in extended permit tcp any object-group WWW_WEBDAV_TEST object-group WEBDAV_IN_TCP_Ports
+access-list outside_in extended permit tcp any object-group WWW_MODS_FTP object-group MODS_FTPIN_Ports
+access-list outside_in extended permit tcp any object-group WWW_PLA01_8080 object-group PLA01IN_Ports
+access-list outside_in extended permit udp 195.88.100.0 255.255.254.0 object-group WWW_AIMES_NTP eq ntp
+access-list outside_in extended permit tcp object-group OUTSIDE_7SOFT_RDP_Access object-group WWW_7SOFT_SUPPORT_ACCESS object-group 7SOFT-SUPPORT-PORTS
+access-list outside_in extended permit tcp any object-group www_G7AP_appservers object-group 7SOFT-2ndweb-TCP-ports
+access-list outside_in extended permit tcp object-group OUTSIDE_G7AP_RDP_Access object-group WWW_G7AP_SUPPORT_ACCESS object-group 7SOFT-SUPPORT-PORTS
+access-list outside_in extended permit tcp any object-group FTP_195_88_101_84 object-group ftp_and_ftpdata
+access-list outside_in extended permit tcp object-group EXTSQL_Simply_SIMPLY02 object-group SQL_Simply_SIMPLY02 object-group SQL_Simply_SIMPLY02-SQL-TCP-PORTS
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq 2229
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLY02 eq ftp
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq ftp
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq ftp-data
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq 990
+access-list outside_in extended permit tcp any object-group WWW_Simply_SIMPLYAP02i1 eq ssh
+access-list outside_in extended permit tcp object-group OUTSIDE_WWW_SIMPLYSOL_1433_ACCESS_LIST object-group WWW_Simply_SIMPLY02 eq 1433
+access-list outside_in extended permit tcp object-group FTP_IGNITION-RM object-group WWW_IGNITION-RM object-group IGNITION_RM-FTP-TCP-PORTS
+access-list outside_in extended permit udp object-group EXT_Routers object-group Aimes_Monitors eq syslog
+access-list outside_in extended permit tcp object-group EXT_AIMES-SPEEDTEST object-group WWW_AIMES-SPEEDTEST object-group AIMES-SPEEDTEST-TCP
+access-list outside_in extended permit ip object-group ext_simply-colo_access object-group simply-colo_servers
+access-list outside_in extended permit tcp any object-group Aimes_FTP02 object-group ftp02-TCP-PORTS
+access-list outside_in extended permit tcp object-group OUTSIDE_SMTP_sources object-group WWW_AIMES_SMTP eq smtp
+access-list outside_in extended permit tcp any object-group WWW-LP-221 object-group LP-221-TCP-PORTS
+access-list outside_in extended permit ip object-group AIMES-LMH-EXT object-group AIMES-LMH-IN
+access-list outside_in extended permit tcp any object-group SICUST_Simply_SMTP object-group SIMPLY_SMTP-TCP
+access-list outside_in extended permit tcp any object-group www_7SOFT_FTP_IP eq ftp
+access-list outside_in extended permit tcp any object-group WWW_TESTKITCHEN-01 object-group TESTKITCHEN-01_tcp-inout
+access-list outside_in extended permit tcp any object-group WWW_TESTKITCHEN-01 object-group TESTKITCHEN-01_tcp-in
+access-list outside_in extended permit tcp any object-group WWW_TESTKITCHEN-NODE01 object-group TESTKITCHEN-NODE01_tcp-inout
+access-list outside_in extended permit tcp any object-group WWW_IPORT-TEST object-group iport-TEST_inout_Ports
+access-list outside_in extended permit tcp object-group EXT_SUPPORT_IPORT object-group WWW_IPORT-TEST object-group iport_support_Ports
+access-list outside_in extended permit udp object-group Aimes_remote_support object-group WWW_MON-SNMP object-group WWW_MON-SNMP_udp-Ports
+access-list outside_in extended permit udp object-group EXT_MON-SNMP object-group WWW_MON-SNMP object-group WWW_MON-SNMP_udp-Ports
+access-list outside_in extended permit tcp object-group EXT_Aimes-SNMP object-group WWW_MON-SNMP object-group WWW_MON-SNMP_tcp-Ports
+access-list outside_in extended permit tcp any object-group WWW_IPORT-VISL object-group iport-VISL_inout_Ports
+access-list outside_in extended permit tcp object-group EXT_SUPPORT_IPORT object-group WWW_IPORT-VISL object-group iport-VISL_support_Ports
+access-list outside_in extended permit tcp object-group EXT_CIVANDCORP_SUPPORT object-group WWW_CITYANDCORP_Servers object-group EXT-CIVILANDCORP-SUPPORT_IN_TCP_PORTS
+access-list outside_in extended permit tcp any object-group WWW-IMP-WEB-SVR object-group http_and_https
+access-list outside_in extended permit tcp object-group WWW-R1SOFT object-group WWW-IMP-WEB-SVR object-group R1SOFT_replication-ports
+access-list outside_in extended permit ip object-group AIMES-Paul.Langan-FTP object-group AIMES_FTP01_V270
+access-list outside_in extended permit tcp object-group OUTSIDE_MATLAB_MIMOVI_SUPPORT object-group MATLAB_MIMOVI object-group MIMOVI-MATLAB-INBOUND-TCP-PORTS
+access-list outside_in extended permit tcp any object-group MATLAB_MIMOVI object-group MIMOVI-MATLAB-INBOUND-ANY-TCP-PORTS
+access-list outside_in extended permit tcp object-group OUTSIDE_MATLAB_MIMOVI_SUPPORT object-group MATLAB_MIMOVI object-group MIMOVI-MATLAB-INBOUND-SSH-TCP-PORTS
+access-list outside_in extended permit tcp any host DEV-LAN-ASSURED-PUBLIC-IP object-group DM_INLINE_TCP_2
+access-list outside_in extended permit udp any object-group DM_INLINE_NETWORK_10 eq domain
+access-list outside_in extended permit icmp any object-group DM_INLINE_NETWORK_3
+access-list outside_in extended permit tcp any host 195.88.101.8 eq www
+access-list outside_in extended permit tcp object-group WWW_CITYANDCORP_FTP_USER object-group WWW_CITYANDCORP_FTP01 object-group ftp_and_ftpdata_Civ-Corp
+access-list outside_in extended permit udp object-group Aimes_Monitors_AAS object-group DM_INLINE_NETWORK_7 object-group DM_INLINE_UDP_2
+access-list outside_in extended permit udp object-group Aimes_Monitors_AAS object-group DM_INLINE_NETWORK_6 object-group AIMES-Paul.Langan-SNMP-LAN_UDP
+access-list outside_in extended permit tcp object-group Aimes_Monitors_AAS object-group DM_INLINE_NETWORK_4 object-group AIMES-Paul.Langan-SNMP-LAN_TCP
+access-list outside_in extended permit tcp object-group Aimes_Monitors_AAS object-group DM_INLINE_NETWORK_8 object-group AIMES-Paul.Langan-SNMP-LAN_TCP
+access-list outside_in extended permit icmp object-group Aimes_Monitors_AAS object-group DM_INLINE_NETWORK_9
+access-list outside_in extended permit tcp object-group WWW_IGNITION-RM-support object-group WWW_IGNITION-RM eq ssh
+access-list outside_in extended permit tcp object-group CITYANDCORP_SUPPORT_IN_WHITELIST object-group WWW_CITYANDCORP_Servers object-group CITYANDCORP_SUPPORT_IN_Ports
+access-list outside_in extended permit tcp object-group IGNITION-RM-03 object-group WWW_IGNITION-RM object-group WWW_IGNITION-RM-SSH
+access-list outside_in extended permit tcp object-group Aimes_remote_support object-group WWW_MON-SNMP eq www
+access-list outside_in extended permit tcp object-group OUTSIDE_EXIS_SUPPORT object-group WWW_EXis01 object-group EXIS-SUPPORT_IN_TCP_PORTS
+access-list outside_in extended permit udp object-group OUTSIDE_EXIS_SUPPORT object-group WWW_EXis01 object-group EXIS-SUPPORT_IN_UDP_PORTS
+access-list Aimes_DMZ_in extended permit tcp object-group NET_DMZ_AGS any eq www
+access-list Aimes_DMZ_in extended permit tcp object-group NET_DMZ_AGS any eq https
+access-list Aimes_DMZ_in extended permit udp object-group NET_DMZ_AGS object-group OUTSIDE_NTP eq ntp
+access-list Aimes_DMZ_in extended permit tcp object-group NET_DMZ_AGS object-group OUTSIDE_DNS eq domain
+access-list Aimes_DMZ_in extended permit udp object-group NET_DMZ_AGS object-group OUTSIDE_DNS eq domain
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_Monitors object-group EXT_Routers eq snmp
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_Monitors object-group EXT_Routers eq 9996
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Monitors any
+access-list Aimes_DMZ_in extended permit ip object-group Aimes_Monitors any
+access-list Aimes_DMZ_in extended permit tcp object-group AIMES_DMZ_to_Oracle_servers object-group NET_DMZ_ORACLE object-group Oracle_Ports
+access-list Aimes_DMZ_in extended permit tcp object-group AIMES_DMZ_to_Oracle_servers object-group ORACLE_DMZ_Servers object-group Oracle_Ports
+access-list Aimes_DMZ_in extended permit icmp object-group NET_DMZ_AGS object-group NET_DMZ_ORACLE
+access-list Aimes_DMZ_in extended permit icmp object-group NET_DMZ_AGS object-group NET_LAN
+access-list Aimes_DMZ_in extended permit tcp object-group NET_DMZ_AGS any eq smtp
+access-list Aimes_DMZ_in extended permit icmp object-group NET_DMZ_AGS any
+access-list Aimes_DMZ_in extended permit tcp object-group PHP_servers object-group Oracle_Veritas_backup_server object-group ftp_and_ftpdata
+access-list Aimes_DMZ_in extended permit tcp object-group NET_Dou_Yi_Dou_Servers any object-group WWW_Dou_Yi_Dou_ports
+access-list Aimes_DMZ_in extended permit tcp object-group Aimes_voip_Servers any object-group aimes_voip_tcp_ports
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_voip_Servers any object-group aimes_voip_udp_ports
+access-list Aimes_DMZ_in extended permit udp object-group Aimes_voip_phones any
+access-list Aimes_DMZ_in extended permit tcp object-group Aimes_voip_phones any object-group aimes_voip_tcp_ports
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_voip_phones any
+access-list Aimes_DMZ_in extended permit tcp object-group INT_PLA01_8080 any object-group PLA01IN_Ports
+access-list Aimes_DMZ_in extended permit tcp object-group INT_PLW7 any eq ftp
+access-list Aimes_DMZ_in extended permit tcp object-group AIMES-CP-GMAIL any object-group AIMES-CP-GMAIL-TCP
+access-list Aimes_DMZ_in extended permit tcp object-group AIMES_DMZ_FTP01_FTP_Servers object-group OUTSIDE_FTP01_FTP_Servers object-group OUTBOUND_FTP01_ports
+access-list Aimes_DMZ_in extended permit tcp object-group AIMES-CP-FTP object-group EXT-CP-FTP object-group AIMES-CP-FTP-TCP
+access-list Aimes_DMZ_in extended permit icmp object-group AIMES_REMOTE_FW_SUPP object-group Sysadmins
+access-list Aimes_DMZ_in extended permit udp object-group WWW_MON-SNMP any object-group WWW_MON-SNMP_udp-Ports
+access-list Aimes_DMZ_in extended permit tcp object-group INT-ftp-paris-tms-srv object-group EXT-ftp-paris-tms-srv object-group CP-PARIS-TMS-TCP-PORTS
+access-list Aimes_DMZ_in extended permit icmp object-group Aimes_Support_access object-group Sysadmins
+access-list Aimes_DMZ_in extended permit icmp object-group Sysadmins any
+access-list Aimes_DMZ_in extended permit ip object-group Sysadmins any
+access-list Aimes_DMZ_in extended permit tcp object-group NET_DMZ_AGS object-group AIMES_DMZ_FTP01_FTP_Servers eq ftp
+access-list SICUST_DMZ_in extended permit tcp object-group NET_DMZ_SICUST any eq www
+access-list SICUST_DMZ_in extended permit tcp object-group NET_DMZ_SICUST any eq https
+access-list SICUST_DMZ_in extended permit icmp object-group NET_DMZ_SICUST object-group NET_LAN
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_CITYANDCORP_Servers any object-group CITYANDCORP_OUT_Ports
+access-list SICUST_DMZ_in extended permit udp object-group SICUST_Simply_SIMPLY02 any object-group SIMPLY02-UDP-RANGE
+access-list SICUST_DMZ_in extended permit tcp object-group NET_DMZ_SICUST any eq smtp
+access-list SICUST_DMZ_in extended permit icmp object-group NET_DMZ_SICUST object-group NET_DMZ_AGS
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Mind_Cloud_SQL object-group OUTSIDE_Mind_Cloud-RDP eq 3389
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLYAP03i3 any object-group SIMPLY03i3-OUTTCP-RANGE
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_CITYANDCORP_Servers object-group OUTSIDE_CITYANDCORP_CRB object-group CITYANDCORP_CRB_OUT_Ports
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLY02 any object-group SIMPLY02-TCP-RANGE
+access-list SICUST_DMZ_in extended permit tcp host 10.0.8.213 any eq ftp
+access-list SICUST_DMZ_in extended permit tcp host 10.0.8.213 any eq ftp-data
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Mind_Cloud_SQL object-group OUTSIDE_Mind_Cloud-RDP eq ftp
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_MODS_Servers any object-group MODS_OUT_Ports
+access-list SICUST_DMZ_in extended permit icmp object-group SICUST_MODS_Servers any
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_MODS_FTP any object-group MODS_FTPIN_Ports
+access-list SICUST_DMZ_in extended permit tcp object-group NET_DMZ_SICUST object-group OUTSIDE_DNS eq domain
+access-list SICUST_DMZ_in extended permit udp object-group NET_DMZ_SICUST object-group OUTSIDE_DNS eq domain
+access-list SICUST_DMZ_in extended permit udp object-group NET_DMZ_SICUST object-group OUTSIDE_NTP eq ntp
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLY02 any eq ftp
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLYAP02-DRAC any
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLYAP02i1 any
+access-list SICUST_DMZ_in extended permit udp object-group SICUST_Simply_SIMPLYAP02i1 any
+access-list SICUST_DMZ_in extended permit tcp object-group SICUST_Simply_SIMPLY02 object-group OUTSIDE_WWW_SIMPLYSOL_1433_ACCESS_LIST eq 1433
+access-list SICUST_DMZ_in extended permit tcp host 10.0.8.156 any eq 990
+access-list SICUST_DMZ_in extended permit tcp object-group INT-EXIS02-SRV object-group EXT-EXIS02-SQL object-group exis02-sql_Ports
+access-list SICUST_DMZ_in extended permit tcp object-group INT-EXIS02-SRV object-group OUTSIDE_EXIS_SUPPORT object-group EXIS-SUPPORT_IN_TCP_PORTS
+access-list SICUST_DMZ_in extended permit udp object-group INT-EXIS02-SRV object-group OUTSIDE_EXIS_SUPPORT object-group EXIS-SUPPORT_IN_UDP_PORTS
+access-list nonat-lan extended permit ip object-group NET_LAN object-group ALL_DMZ
+access-list nonat-AGS extended permit ip object-group NET_DMZ_AGS object-group ALL_DMZ
+access-list nonat-AGS extended permit ip object-group Sysadmins object-group ALL_DMZ
+access-list nonat-AGS extended permit ip object-group Sysadmins object-group Aimes_Support_access
+access-list nonat-AGS extended permit ip object-group NET_DMZ_AGS object-group AIMES_DMZ_FTP01_FTP_Servers
+access-list nonat-AGS extended permit ip host 10.0.4.216 host 172.16.99.103
+access-list nonat-AGS extended permit ip object-group NET_DMZ_AGS 195.88.101.252 255.255.255.252
+access-list nonat-Oracle extended permit ip object-group NET_DMZ_ORACLE object-group NET_DMZ_AGS
+access-list nonat-Oracle extended permit ip object-group NET_DMZ_ORACLE object-group NET_AIMES_DEV
+access-list nonat-Oracle extended permit ip object-group NET_DMZ_ORACLE object-group AIMES_DMZ_FTP01_FTP_Servers
+access-list Oracle_DMZ_in extended permit icmp object-group NET_DMZ_ORACLE object-group NET_DMZ_AGS
+access-list Oracle_DMZ_in extended permit icmp object-group NET_DMZ_ORACLE object-group NET_LAN
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE any eq smtp
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE object-group AIMES_DMZ_FTP01_FTP_Servers eq ssh
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE object-group AIMES_DMZ_FTP01_FTP_Servers object-group ftp_and_ftpdata
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE any eq www
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE any eq https
+access-list Oracle_DMZ_in extended permit udp object-group NET_DMZ_ORACLE object-group OUTSIDE_NTP eq ntp
+access-list Oracle_DMZ_in extended permit tcp object-group NET_DMZ_ORACLE object-group OUTSIDE_DNS eq domain
+access-list Oracle_DMZ_in extended permit udp object-group NET_DMZ_ORACLE object-group OUTSIDE_DNS eq domain
+access-list Oracle_DMZ_in extended permit icmp object-group NET_DMZ_ORACLE object-group NET_AIMES_DEV
+access-list CC-V202_DMZ_in extended permit tcp object-group NET_CIVIL-CORP any eq www
+access-list CC-V202_DMZ_in extended permit tcp object-group NET_CIVIL-CORP any eq https
+access-list CC-V202_DMZ_in extended permit udp object-group NET_CIVIL-CORP object-group OUTSIDE_NTP eq ntp
+access-list CC-V202_DMZ_in extended permit tcp object-group NET_CIVIL-CORP object-group OUTSIDE_DNS eq domain
+access-list CC-V202_DMZ_in extended permit udp object-group NET_CIVIL-CORP object-group OUTSIDE_DNS eq domain
+access-list CC-V202_DMZ_in extended permit icmp object-group NET_CIVIL-CORP object-group NET_LAN
+access-list CC-V202_DMZ_in extended permit icmp object-group NET_CIVIL-CORP object-group NET_DMZ_AGS
+access-list CC-V202_DMZ_in extended permit tcp object-group NET_CIVIL-CORP any object-group CITYANDCORP_OUT_Ports
+access-list CC-V202_DMZ_in extended permit tcp object-group NET_CIVIL-CORP object-group OUTSIDE_CITYANDCORP_CRB object-group CITYANDCORP_CRB_OUT_Ports
+access-list CC-V202_DMZ_in extended permit tcp object-group CITYANDCORP_file_uploads_out object-group CITYANDCORP_file_uploads_WHITELIST object-group CITYANDCORP_file_uploads_ports_out
+access-list nonat-CC_v202 extended permit ip object-group NET_CIVIL-CORP object-group NET_DMZ_AGS
+access-list nonat-CC_v202 extended permit ip object-group NET_CIVIL-CORP object-group NET_LAN
+access-list 7SOFT_DMZ_in extended permit udp object-group NET_DMZ_7SOFT any
+access-list 7SOFT_DMZ_in extended permit icmp object-group NET_DMZ_7SOFT object-group NET_LAN
+access-list 7SOFT_DMZ_in extended permit tcp object-group NET_DMZ_7SOFT any
+access-list 7SOFT_DMZ_in extended permit tcp object-group NET_DMZ_7SOFT any eq www
+access-list 7SOFT_DMZ_in extended permit tcp object-group NET_DMZ_7SOFT any eq https
+access-list 7SOFT_DMZ_in extended permit udp object-group NET_DMZ_7SOFT object-group OUTSIDE_NTP eq ntp
+access-list 7SOFT_DMZ_in extended permit tcp object-group NET_DMZ_7SOFT object-group OUTSIDE_DNS eq domain
+access-list 7SOFT_DMZ_in extended permit udp object-group NET_DMZ_7SOFT object-group OUTSIDE_DNS eq domain
+access-list 7SOFT_DMZ_in extended permit tcp object-group NET_DMZ_7SOFT any eq smtp
+access-list 7SOFT_DMZ_in extended permit icmp object-group NET_DMZ_7SOFT any
+access-list WEBASPX_CITRIX_in extended permit icmp object-group WEBASPX-CITRIX-LAN any
+access-list WEBASPX_CITRIX_in extended permit tcp object-group WEBASPX-CITRIX-LAN any eq www
+access-list WEBASPX_CITRIX_in extended permit tcp object-group WEBASPX-CITRIX-LAN any eq https
+access-list WEBASPX_CITRIX_in extended permit tcp object-group WEBASPX-CITRIX-LAN object-group OUTSIDE_DNS eq domain
+access-list WEBASPX_CITRIX_in extended permit udp object-group WEBASPX-CITRIX-LAN object-group OUTSIDE_DNS eq domain
+access-list WEBASPX_CITRIX_in extended permit udp object-group WEBASPX-CITRIX-LAN object-group OUTSIDE_NTP eq ntp
+access-list WEBASPX_CITRIX_in extended permit tcp object-group SICUST_WEBASPX01_SQL object-group OUTSIDE_WEBASPX01_RDP eq 1433
+access-list WEBASPX_CITRIX_in extended permit tcp object-group SICUST_WEBASPX01_SQL any eq smtp
+access-list WEBASPX_CITRIX_in extended permit tcp object-group WEBASPX-CITRIX-LAN host 10.0.4.221 eq smtp
+access-list nonat-webaspx-citrix extended permit ip 192.168.45.0 255.255.255.0 192.168.20.0 255.255.255.0
+access-list nonat-webaspx-citrix extended permit ip 192.168.45.0 255.255.255.0 object-group Aimes_Monitors
+access-list nonat-webaspx-citrix extended permit ip 192.168.45.0 255.255.255.0 object-group Sysadmins
+access-list nonat-A-FTP-v270 extended permit ip object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_DMZ_AGS
+access-list nonat-A-FTP-v270 extended permit ip object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_LAN
+access-list nonat-A-FTP-v270 extended permit ip object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_DMZ_ORACLE
+access-list nonat-A-FTP-v270 extended permit ip object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_AIMES_DEV
+access-list A-FTP_v270_in extended permit tcp object-group AIMES_DMZ_FTP01_FTP_Servers any object-group BASE_tcp-out
+access-list A-FTP_v270_in extended permit udp object-group AIMES_DMZ_FTP01_FTP_Servers any object-group BASE_udp-out
+access-list A-FTP_v270_in extended permit icmp object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_LAN
+access-list A-FTP_v270_in extended permit icmp object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_DMZ_AGS
+access-list A-FTP_v270_in extended permit icmp object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_DMZ_ORACLE
+access-list A-FTP_v270_in extended permit tcp object-group AIMES_DMZ_FTP01_FTP_Servers object-group OUTSIDE_FTP01_FTP_Servers object-group OUTBOUND_FTP01_ports
+access-list A-FTP_v270_in extended permit tcp object-group AIMES_DMZ_FTP01_FTP_Servers object-group NET_DMZ_ORACLE object-group Oracle_Ports
+access-list A-FTP_v270_in extended permit tcp object-group AIMES_DMZ_FTP01_FTP_Servers object-group ORACLE_DMZ_Servers object-group Oracle_Ports
+access-list A-FTP_v270_in extended permit icmp object-group AIMES_FTP01_V270 any
+access-list Mimovi_DMZ_in extended permit tcp object-group NET_DMZ_MIMOVI any eq www
+access-list Mimovi_DMZ_in extended permit tcp object-group NET_DMZ_MIMOVI any eq https
+access-list Mimovi_DMZ_in extended permit udp object-group NET_DMZ_MIMOVI object-group OUTSIDE_NTP eq ntp
+access-list Mimovi_DMZ_in extended permit tcp object-group NET_DMZ_MIMOVI object-group OUTSIDE_DNS eq domain
+access-list Mimovi_DMZ_in extended permit udp object-group NET_DMZ_MIMOVI object-group OUTSIDE_DNS eq domain
+access-list Mimovi_DMZ_in extended permit icmp object-group NET_DMZ_MIMOVI object-group NET_LAN
+access-list Mimovi_DMZ_in extended permit icmp object-group NET_DMZ_MIMOVI object-group NET_DMZ_AGS
+access-list Mimovi_DMZ_in extended permit tcp object-group NET_DMZ_MIMOVI any eq ftp
+access-list Mimovi_DMZ_in extended permit tcp object-group MATLAB_MIMOVI any object-group BASE_tcp-out
+access-list Mimovi_DMZ_in extended permit udp object-group MATLAB_MIMOVI any object-group BASE_udp-out
+access-list nonat-Mimovi extended permit ip object-group NET_DMZ_MIMOVI object-group NET_DMZ_AGS
+access-list nonat-Mimovi extended permit ip object-group NET_DMZ_MIMOVI object-group NET_LAN
+access-list INNOVE_DMZ_in extended permit tcp object-group NET_DMZ_INNOVE any eq www
+access-list INNOVE_DMZ_in extended permit tcp object-group NET_DMZ_INNOVE any eq https
+access-list INNOVE_DMZ_in extended permit udp object-group NET_DMZ_INNOVE object-group OUTSIDE_NTP eq ntp
+access-list INNOVE_DMZ_in extended permit tcp object-group NET_DMZ_INNOVE object-group OUTSIDE_DNS eq domain
+access-list INNOVE_DMZ_in extended permit udp object-group NET_DMZ_INNOVE object-group OUTSIDE_DNS eq domain
+access-list INNOVE_DMZ_in extended permit icmp object-group NET_DMZ_INNOVE object-group NET_LAN
+access-list INNOVE_DMZ_in extended permit icmp object-group NET_DMZ_INNOVE object-group NET_DMZ_AGS
+access-list INNOVE_DMZ_in extended permit tcp object-group NET_DMZ_INNOVE any object-group INNOVE-OUTBOUND-TCP
+access-list INNOVE_DMZ_in extended permit tcp object-group INNOVE02_SVR object-group EXT_INNOVE_SFTP object-group INNOVE02-SFTP_OUT_TCP_PORTS
+access-list nonat-INNOVE extended permit ip object-group NET_DMZ_INNOVE object-group NET_DMZ_AGS
+access-list nonat-INNOVE extended permit ip object-group NET_DMZ_INNOVE object-group NET_LAN
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM any eq www
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM any eq https
+access-list IGRM_DMZ_in extended permit udp object-group NET_DMZ_IGNITION-RM object-group OUTSIDE_NTP eq ntp
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM object-group OUTSIDE_DNS eq domain
+access-list IGRM_DMZ_in extended permit udp object-group NET_DMZ_IGNITION-RM object-group OUTSIDE_DNS eq domain
+access-list IGRM_DMZ_in extended permit icmp object-group NET_DMZ_IGNITION-RM object-group NET_LAN
+access-list IGRM_DMZ_in extended permit icmp object-group NET_DMZ_IGNITION-RM object-group NET_DMZ_AGS
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM any eq ftp
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM any eq smtp
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM object-group IGNITION_RM-DC3-SVR object-group IGNITION_RM-SCP-TCP-PORTS
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM object-group EXT_SSH_IGNITION-RM02 object-group IGNITION_RM-SCP-TCP-PORTS
+access-list IGRM_DMZ_in extended permit tcp object-group NET_DMZ_IGNITION-RM object-group IGNITION-RM-03 object-group WWW_IGNITION-RM-SSH
+access-list nonat-IGRM extended permit ip object-group NET_DMZ_IGNITION-RM object-group NET_DMZ_AGS
+access-list nonat-IGRM extended permit ip object-group NET_DMZ_IGNITION-RM object-group NET_LAN
+access-list nonat-iport extended permit ip object-group IPORT_LAN object-group Aimes_Monitors
+access-list nonat-iport extended permit ip object-group IPORT_LAN object-group NET_LAN
+access-list IPORT_DMZ_in extended permit tcp object-group IPORT_LAN any eq www
+access-list IPORT_DMZ_in extended permit tcp object-group IPORT_LAN any eq https
+access-list IPORT_DMZ_in extended permit udp object-group IPORT_LAN object-group OUTSIDE_NTP eq ntp
+access-list IPORT_DMZ_in extended permit tcp object-group IPORT_LAN object-group OUTSIDE_DNS eq domain
+access-list IPORT_DMZ_in extended permit udp object-group IPORT_LAN object-group OUTSIDE_DNS eq domain
+access-list IPORT_DMZ_in extended permit icmp object-group IPORT_LAN object-group Aimes_Monitors
+access-list IPORT_DMZ_in extended permit icmp object-group IPORT_LAN object-group NET_LAN
+access-list IPORT_DMZ_in extended permit tcp object-group WWW_IPORT-TEST any object-group iport-TEST_inout_Ports
+access-list AMIES_DEV_in extended permit ip object-group NET_AIMES_DEV any
+access-list AMIES_DEV_in extended permit icmp object-group NET_AIMES_DEV any
+access-list AMIES_DEV_in extended permit tcp object-group AIMES_DEV_60 object-group AIMES_DEV_60_SUPPORT object-group AIMES_DEV_60_out_Ports
+access-list AMIES_DEV_in extended permit tcp object-group INT_TESTKITCHEN-01 any object-group TESTKITCHEN-01_tcp-inout
+access-list AMIES_DEV_in extended permit tcp object-group INT_TESTKITCHEN-NODE01 any object-group TESTKITCHEN-NODE01_tcp-inout
+access-list AMIES_DEV_in extended permit icmp object-group INT_TESTKITCHEN-01 any
+access-list AMIES_DEV_in extended permit icmp object-group INT_TESTKITCHEN-NODE01 any
+access-list AMIES_DEV_in extended permit tcp object-group INT_TESTKITCHEN-01 any object-group TESTKITCHEN-NODE01_tcp-out
+access-list AMIES_DEV_in extended permit udp object-group INT_TESTKITCHEN-01 any object-group TESTKITCHEN-NODE01_udp-out
+access-list AMIES_DEV_in extended permit tcp object-group AIMES_DEV_60 any eq www
+access-list AMIES_DEV_in extended permit tcp object-group AIMES_DEV_60 any eq https
+access-list AMIES_DEV_in extended permit udp object-group AIMES_DEV_60 object-group OUTSIDE_NTP eq ntp
+access-list AMIES_DEV_in extended permit tcp object-group AIMES_DEV_60 object-group OUTSIDE_DNS eq domain
+access-list AMIES_DEV_in extended permit udp object-group AIMES_DEV_60 object-group OUTSIDE_DNS eq domain
+access-list AMIES_DEV_in extended permit tcp object-group AIMES_DEV_60 any object-group AIMES_DEV_60_out_Ports
+access-list AMIES_DEV_in extended permit tcp object-group NET_AIMES_DEV object-group AIMES_FTP01_V270
+access-list AMIES_DEV_in extended permit tcp object-group AIMES-Paul.Langan-FTP object-group AIMES_FTP01_V270
+access-list AMIES_DEV_in extended permit udp object-group DM_INLINE_NETWORK_2 any eq domain
+access-list AMIES_DEV_in extended permit ip object-group DM_INLINE_NETWORK_1 any
+access-list AMIES_DEV_in extended permit tcp object-group NET_AIMES_DEV_LAN object-group OUTSIDE_DNS eq domain
+access-list AMIES_DEV_in extended permit udp object-group NET_AIMES_DEV_LAN object-group OUTSIDE_DNS eq domain
+access-list AMIES_DEV_in extended permit udp object-group NET_AIMES_DEV_LAN object-group OUTSIDE_NTP eq ntp
+access-list AMIES_DEV_in extended permit icmp object-group NET_AIMES_DEV_LAN object-group Sysadmins
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV object-group NET_DMZ_AGS
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV object-group NET_DMZ_ORACLE
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV object-group IPORT_LAN
+access-list nonat-AIMES-DEV extended permit ip object-group AIMES_DEV_60 object-group NET_DMZ_AGS
+access-list nonat-AIMES-DEV extended permit ip object-group AIMES_DEV_60 object-group NET_LAN
+access-list nonat-AIMES-DEV extended permit ip object-group INT_TESTKITCHEN-01 object-group NET_DMZ_AGS
+access-list nonat-AIMES-DEV extended permit ip object-group INT_TESTKITCHEN-NODE01 object-group NET_LAN
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV object-group Sysadmins
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV object-group AIMES_FTP01_V270
+access-list nonat-AIMES-DEV extended permit ip object-group NET_AIMES_DEV_LAN object-group Sysadmins
+pager lines 24
+logging enable
+logging buffered debugging
+logging trap informational
+logging asdm informational
+logging host AIMES_DMZ 10.0.4.221
+logging host MONITOR-LAN 172.16.99.250
+no logging message 710005
+mtu Outside 1500
+mtu MONITOR-LAN 1500
+mtu DMZ_TRUNK 1500
+mtu ORACLE_DMZ 1500
+mtu AIMES_DMZ 1500
+mtu SICUST_DMZ 1500
+mtu 7SOFT_DMZ 1500
+mtu AIMES-FTP-V270 1500
+mtu CIVIL-CORP-202 1500
+mtu IMP-V301 1500
+mtu CROSBY_DMZ 1500
+mtu AIMES-FTP-BKUP 1500
+mtu Aimes_SBS_LAN 1500
+mtu HRS_WEB_DMZ 1500
+mtu HRS_SQL_DMZ 1500
+mtu WEBASPX-CITRIX 1500
+mtu DENHOLM-VM 1500
+mtu free-IF17 1500
+mtu MIMOVI-VM 1500
+mtu LBAYTV-VM 1500
+mtu INNOVE-VM 1500
+mtu e21 1500
+mtu DISE-CSGAMES 1500
+mtu IGNITION-RM 1500
+mtu IPORT_DMZ 1500
+mtu AIMES-DEV-LAN 1500
+mtu management 1500
+failover
+failover lan unit secondary
+failover lan interface failover Ethernet0/3
+failover link failover Ethernet0/3
+failover interface ip failover 192.168.255.1 255.255.255.0 standby 192.168.255.2
+icmp permit any Outside
+icmp permit any parameter-problem Outside
+icmp permit any mask-reply Outside
+icmp permit any source-quench Outside
+icmp permit any time-exceeded Outside
+icmp permit any timestamp-reply Outside
+icmp permit any unreachable Outside
+icmp permit any information-reply Outside
+icmp deny any Outside
+asdm image disk0:/asdm-508.bin
+no asdm history enable
+arp timeout 14400
+nat-control
+global (Outside) 1 interface
+global (Outside) 208 195.88.100.17 netmask 255.255.254.0
+global (Outside) 2081 195.88.100.13 netmask 255.255.254.0
+nat (MONITOR-LAN) 0 access-list nonat-lan
+nat (MONITOR-LAN) 1 0.0.0.0 0.0.0.0
+nat (ORACLE_DMZ) 0 access-list nonat-Oracle
+nat (ORACLE_DMZ) 1 0.0.0.0 0.0.0.0
+nat (AIMES_DMZ) 0 access-list nonat-AGS
+nat (AIMES_DMZ) 1 0.0.0.0 0.0.0.0
+nat (SICUST_DMZ) 1 0.0.0.0 0.0.0.0
+nat (7SOFT_DMZ) 1 0.0.0.0 0.0.0.0
+nat (AIMES-FTP-V270) 0 access-list nonat-A-FTP-v270
+nat (AIMES-FTP-V270) 1 0.0.0.0 0.0.0.0
+nat (CIVIL-CORP-202) 0 access-list nonat-CC_v202
+nat (CIVIL-CORP-202) 1 0.0.0.0 0.0.0.0
+nat (AIMES-FTP-BKUP) 1 0.0.0.0 0.0.0.0
+nat (WEBASPX-CITRIX) 0 access-list nonat-webaspx-citrix
+nat (WEBASPX-CITRIX) 1 0.0.0.0 0.0.0.0
+nat (MIMOVI-VM) 0 access-list nonat-Mimovi
+nat (MIMOVI-VM) 1 0.0.0.0 0.0.0.0
+nat (INNOVE-VM) 0 access-list nonat-INNOVE
+nat (INNOVE-VM) 1 0.0.0.0 0.0.0.0
+nat (IGNITION-RM) 0 access-list nonat-IGRM
+nat (IGNITION-RM) 1 0.0.0.0 0.0.0.0
+nat (IPORT_DMZ) 0 access-list nonat-iport
+nat (IPORT_DMZ) 1 0.0.0.0 0.0.0.0
+nat (AIMES-DEV-LAN) 0 access-list nonat-AIMES-DEV
+nat (AIMES-DEV-LAN) 208 10.0.208.128 255.255.255.240
+nat (AIMES-DEV-LAN) 2081 0.0.0.0 0.0.0.0
+static (AIMES_DMZ,Outside) 195.88.101.14 10.0.4.36 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.15 10.0.4.37 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.18 10.0.4.40 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.33 10.0.4.59 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.36 10.0.4.62 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.43 10.0.4.81 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.46 10.0.4.93 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.48 10.0.4.98 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.6 10.0.4.22 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.7 10.0.4.23 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.10 10.0.4.26 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.19 10.0.4.42 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.28 10.0.4.54 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.31 10.0.4.57 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.34 10.0.4.60 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.42 10.0.4.73 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.47 10.0.4.94 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.1 10.0.4.17 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.2 10.0.4.18 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.3 10.0.4.19 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.4 10.0.4.20 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.5 10.0.4.21 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.20 10.0.4.43 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.38 10.0.4.64 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.45 10.0.4.92 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.73 10.0.4.119 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.100.65 10.0.4.32 netmask 255.255.255.255
+static (ORACLE_DMZ,AIMES_DMZ) 192.168.2.130 192.168.2.130 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.129 10.0.2.85 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.130 10.0.2.86 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.131 10.0.2.87 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.135 10.0.2.110 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.136 10.0.2.111 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.137 10.0.2.112 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.138 10.0.2.113 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.140 10.0.2.115 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.141 10.0.2.116 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.143 10.0.2.118 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.144 10.0.2.119 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.145 10.0.2.120 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.146 10.0.2.121 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.147 10.0.2.122 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.149 10.0.2.124 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.150 10.0.2.125 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.151 10.0.2.126 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.152 10.0.2.127 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.153 10.0.2.128 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.154 10.0.2.129 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.155 10.0.2.130 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.156 10.0.2.131 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.157 10.0.2.132 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.159 10.0.2.134 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.160 10.0.2.135 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.161 10.0.2.136 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.162 10.0.2.137 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.163 10.0.2.138 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.164 10.0.2.139 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.165 10.0.2.140 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.166 10.0.2.141 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.167 10.0.2.142 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.168 10.0.2.143 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.169 10.0.2.144 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.170 10.0.2.145 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.171 10.0.2.146 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.172 10.0.2.147 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.173 10.0.2.148 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.174 10.0.2.149 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.175 10.0.2.158 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.176 10.0.2.159 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.177 10.0.2.160 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.178 10.0.2.161 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.179 10.0.2.162 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.180 10.0.2.163 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.182 10.0.2.165 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.185 10.0.2.168 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.186 10.0.2.169 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.187 10.0.2.170 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.188 10.0.2.171 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.189 10.0.2.172 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.194 10.0.2.191 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.195 10.0.2.192 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.196 10.0.2.193 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.198 10.0.2.195 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.199 10.0.2.196 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.200 10.0.2.197 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.201 10.0.2.198 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.202 10.0.2.199 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.203 10.0.2.200 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.204 10.0.2.202 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.205 10.0.2.203 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.206 10.0.2.204 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.207 10.0.2.205 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.208 10.0.2.206 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.209 10.0.2.207 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.210 10.0.2.208 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.211 10.0.2.209 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.212 10.0.2.210 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.213 10.0.2.211 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.214 10.0.2.222 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.215 10.0.2.223 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.216 10.0.2.224 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.217 10.0.2.225 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.218 10.0.2.226 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.219 10.0.2.227 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.220 10.0.2.228 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.221 10.0.2.229 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.222 10.0.2.230 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.223 10.0.2.231 netmask 255.255.255.255
+static (SICUST_DMZ,Outside) 195.88.101.113 10.0.8.155 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.228 10.0.2.216 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.229 10.0.2.217 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.230 10.0.2.218 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.231 10.0.2.219 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.51 10.0.4.74 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.52 10.0.4.83 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.220 10.0.4.220 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.78 10.0.4.124 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.81 10.0.4.127 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.232 10.0.2.239 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.233 10.0.2.240 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.234 10.0.2.241 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.235 10.0.2.242 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.236 10.0.2.243 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.237 10.0.2.244 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.238 10.0.2.245 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.239 10.0.2.246 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.100.95 10.0.4.219 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.82 10.0.4.128 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.100.91 10.0.8.212 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.100.92 10.0.8.213 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.96 10.0.4.140 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.97 10.0.4.141 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.100.69 10.0.4.104 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.100.71 10.0.8.83 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.72 10.0.4.118 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.11 10.0.4.75 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.74 10.0.4.120 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.240 10.0.2.180 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.241 10.0.2.181 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.242 10.0.2.182 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.243 10.0.2.183 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.244 10.0.2.184 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.223 10.0.4.237 netmask 255.255.255.255 dns
+static (WEBASPX-CITRIX,Outside) 195.88.100.112 192.168.45.10 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.80 10.0.4.126 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.75 10.0.4.121 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.245 10.0.2.248 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.246 10.0.2.249 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.248 10.0.2.250 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.254 10.0.2.251 netmask 255.255.255.255
+static (7SOFT_DMZ,Outside) 195.88.100.255 10.0.2.252 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.12 10.0.4.76 netmask 255.255.255.255 dns
+static (MIMOVI-VM,Outside) 195.88.100.105 10.0.46.200 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.93 10.0.4.147 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.61 10.0.4.108 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.84 10.0.4.212 netmask 255.255.255.255 dns
+static (WEBASPX-CITRIX,Outside) 195.88.100.113 192.168.45.30 netmask 255.255.255.255 dns
+static (WEBASPX-CITRIX,Outside) 195.88.100.99 192.168.45.20 netmask 255.255.255.255 dns
+static (WEBASPX-CITRIX,Outside) 195.88.100.100 192.168.45.21 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.92 10.0.4.148 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.126 10.0.35.20 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.60 10.0.4.88 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.100.73 10.0.8.45 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.100.74 10.0.8.46 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.91 10.0.4.153 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.101.171 10.0.35.21 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.101.172 10.0.35.22 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.101.173 10.0.35.23 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.101.174 10.0.35.24 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.101.175 10.0.35.25 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.100.68 10.0.4.103 netmask 255.255.255.255 dns
+static (IGNITION-RM,Outside) 195.88.100.82 10.0.31.20 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.99 10.0.4.137 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.100 10.0.4.138 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.49 10.0.4.99 netmask 255.255.255.255
+static (AIMES_DMZ,Outside) 195.88.101.85 10.0.4.208 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.250 10.0.2.21 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.252 10.0.2.22 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.134 10.0.2.23 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.133 10.0.2.24 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.224 10.0.2.25 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.191 10.0.2.26 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.192 10.0.2.27 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.226 10.0.2.28 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.190 10.0.2.29 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.225 10.0.2.30 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.197 10.0.2.31 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.253 10.0.2.32 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.251 10.0.2.33 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.247 10.0.2.34 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.249 10.0.2.35 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.227 10.0.2.36 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.193 10.0.2.37 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.184 10.0.2.38 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.183 10.0.2.43 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.181 10.0.2.42 netmask 255.255.255.255
+static (IPORT_DMZ,Outside) 195.88.100.114 10.0.247.11 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.142 10.0.2.41 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.148 10.0.2.40 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.100.158 10.0.2.39 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.13 10.0.4.77 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.221 10.0.4.221 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.219 10.0.4.223 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.100.67 10.0.4.132 netmask 255.255.255.255
+static (INNOVE-VM,Outside) 195.88.100.127 10.0.35.40 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.77 10.0.35.41 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.81 10.0.35.42 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.110 10.0.35.43 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.116 10.0.35.44 netmask 255.255.255.255 dns
+static (INNOVE-VM,Outside) 195.88.100.117 10.0.35.45 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.9 10.0.4.39 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.100.109 10.0.4.151 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.98 10.0.4.152 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.21 10.0.4.44 netmask 255.255.255.255 dns
+static (7SOFT_DMZ,Outside) 195.88.101.160 10.0.2.164 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.69 10.0.4.115 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.114 10.0.8.156 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.120 10.0.8.220 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.121 10.0.8.221 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.117 10.0.8.184 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.118 10.0.8.185 netmask 255.255.255.255 dns
+static (SICUST_DMZ,Outside) 195.88.101.119 10.0.8.186 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.100.11 10.0.4.216 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.53 10.0.4.155 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.54 10.0.4.159 netmask 255.255.255.255 dns
+static (AIMES-DEV-LAN,Outside) 195.88.101.71 10.0.208.200 netmask 255.255.255.255 dns
+static (AIMES-DEV-LAN,Outside) 195.88.100.70 10.0.208.210 netmask 255.255.255.255 dns
+static (IPORT_DMZ,Outside) 195.88.100.115 10.0.247.21 netmask 255.255.255.255 dns
+static (IPORT_DMZ,Outside) 195.88.100.118 10.0.247.31 netmask 255.255.255.255 dns
+static (CIVIL-CORP-202,Outside) 195.88.100.120 10.0.202.110 netmask 255.255.255.255 dns
+static (AIMES-FTP-V270,Outside) 195.88.100.44 10.0.70.10 netmask 255.255.255.255 dns
+static (MIMOVI-VM,Outside) 195.88.100.103 10.0.46.210 netmask 255.255.255.255 dns
+static (AIMES_DMZ,Outside) 195.88.101.8 10.0.4.24 netmask 255.255.255.255 dns
+static (Outside,AIMES-DEV-LAN) 172.16.16.253 DEV-LAN-HP-SWITCH netmask 255.255.255.255 dns
+static (AIMES-DEV-LAN,Outside) DEV-LAN-ASSURED-PUBLIC-IP NAT-FOR-195_88_101_103 netmask 255.255.255.255 dns
+static (AIMES-DEV-LAN,Outside) DEV-LAN-HP-SWITCH 10.0.208.254 netmask 255.255.255.255
+static (CIVIL-CORP-202,Outside) 195.88.100.119 10.0.202.121 netmask 255.255.255.255 dns
+static (CIVIL-CORP-202,Outside) 195.88.100.93 10.0.202.122 netmask 255.255.255.255 dns
+access-group outside_in in interface Outside
+access-group lan_in in interface MONITOR-LAN
+access-group Oracle_DMZ_in in interface ORACLE_DMZ
+access-group Aimes_DMZ_in in interface AIMES_DMZ
+access-group SICUST_DMZ_in in interface SICUST_DMZ
+access-group 7SOFT_DMZ_in in interface 7SOFT_DMZ
+access-group A-FTP_v270_in in interface AIMES-FTP-V270
+access-group CC-V202_DMZ_in in interface CIVIL-CORP-202
+access-group WEBASPX_CITRIX_in in interface WEBASPX-CITRIX
+access-group Mimovi_DMZ_in in interface MIMOVI-VM
+access-group INNOVE_DMZ_in in interface INNOVE-VM
+access-group IGRM_DMZ_in in interface IGNITION-RM
+access-group IPORT_DMZ_in in interface IPORT_DMZ
+access-group AMIES_DEV_in in interface AIMES-DEV-LAN
+route Outside 0.0.0.0 0.0.0.0 195.88.100.1 1
+route Outside 62.253.1.244 255.255.255.252 195.88.101.59 1
+route Outside 0.0.0.0 0.0.0.0 195.88.101.56 30
+route Outside 0.0.0.0 0.0.0.0 195.88.101.59 20
+route Outside 0.0.0.0 0.0.0.0 195.88.101.58 10
+route Outside 46.18.175.204 255.255.255.252 195.88.101.58 1
+route MONITOR-LAN 195.88.101.252 255.255.255.252 172.16.99.103 1
+route AIMES_DMZ 10.8.100.0 255.255.255.0 10.0.4.232 1
+route AIMES_DMZ 10.3.162.0 255.255.255.0 10.0.4.238 1
+route AIMES_DMZ 10.3.166.0 255.255.255.0 10.0.4.238 1
+route AIMES_DMZ 10.8.102.0 255.255.255.0 10.0.4.232 1
+route AIMES_DMZ 10.0.220.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.0.245.0 255.255.255.0 10.0.4.227 1
+route AIMES_DMZ 172.10.0.0 255.255.254.0 10.0.4.236 1
+route AIMES_DMZ 10.10.10.0 255.255.255.0 10.0.4.236 1
+route AIMES_DMZ 10.0.26.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.200.0.0 255.255.0.0 10.0.4.236 1
+route AIMES_DMZ 192.168.95.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.0.58.0 255.255.255.0 10.0.4.33 1
+route AIMES_DMZ 10.0.12.0 255.255.255.0 10.0.4.241 1
+route AIMES_DMZ 10.5.96.0 255.255.224.0 10.0.4.241 1
+route AIMES_DMZ 192.168.20.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.19.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.40.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.41.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.43.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.28.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.50.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.17.47.103 255.255.255.255 10.0.4.13 1
+route AIMES_DMZ 10.0.53.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.250.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.27.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.198.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.199.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.152.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.156.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.39.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.153.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 192.168.10.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.155.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.159.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.151.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.42.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 192.168.0.0 255.255.255.0 10.0.4.253 1
+route AIMES-DEV-LAN ASSURED_TEST_NETWORK 255.255.255.0 NAT-FOR-195_88_101_103 1
+timeout xlate 3:00:00
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00
+timeout mgcp-pat 0:05:00 sip 0:30:00 sip_media 0:02:00
+timeout uauth 0:05:00 absolute
+username mlawton password 2fs3Dh7Jq.G/1emH encrypted privilege 15
+username banders password QLdEKZo9yvFDjs6g encrypted privilege 15
+username aball password hy2mXA4Z/MzWARlH encrypted privilege 15
+username dlawton password hqHcQeYS4rtMieY. encrypted privilege 15
+aaa authentication http console LOCAL
+aaa authentication ssh console LOCAL
+aaa authentication telnet console LOCAL
+http server enable
+http 37.48.240.18 255.255.255.255 Outside
+http 192.168.0.0 255.255.255.0 MONITOR-LAN
+http 172.16.99.0 255.255.255.0 MONITOR-LAN
+http 192.168.1.0 255.255.255.0 management
+snmp-server host MONITOR-LAN 172.16.99.250 community A1m3sT35tro version 2c udp-port 161
+snmp-server host AIMES_DMZ 10.0.4.191 community monitor version 2c udp-port 161
+snmp-server host AIMES_DMZ 10.0.4.216 community monitor
+snmp-server host MONITOR-LAN 172.16.99.240 community monitor version 2c udp-port 161
+snmp-server location AIMES DC2:C1:B3 & RO2
+snmp-server contact G Lawton
+snmp-server community monitor
+snmp-server enable traps snmp authentication linkup linkdown coldstart
+snmp-server enable traps syslog
+snmp-server enable traps ipsec start stop
+snmp-server enable traps entity config-change fru-insert fru-remove
+snmp-server enable traps remote-access session-threshold-exceeded
+crypto ipsec security-association lifetime seconds 28800
+crypto ipsec security-association lifetime kilobytes 4608000
+telnet timeout 5
+ssh 37.48.240.18 255.255.255.255 Outside
+ssh 192.168.0.100 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.101 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.102 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.103 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.105 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.104 255.255.255.255 MONITOR-LAN
+ssh 192.168.0.108 255.255.255.255 MONITOR-LAN
+ssh 172.16.99.240 255.255.255.255 MONITOR-LAN
+ssh 172.16.99.250 255.255.255.255 MONITOR-LAN
+ssh 172.16.99.241 255.255.255.255 MONITOR-LAN
+ssh timeout 15
+console timeout 0
+dhcpd address 10.0.208.129-10.0.208.142 AIMES-DEV-LAN
+dhcpd dns 195.88.100.15 195.88.101.70
+dhcpd lease 14400
+dhcpd ping_timeout 100
+dhcpd domain devlan.aimes.net
+dhcpd enable AIMES-DEV-LAN
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map global_policy
+ class inspection_default
+  inspect dns maximum-length 896
+  inspect ftp
+  inspect h323 h225
+  inspect h323 ras
+  inspect rsh
+  inspect rtsp
+  inspect sqlnet
+  inspect skinny
+  inspect sunrpc
+  inspect xdmcp
+  inspect sip
+  inspect netbios
+  inspect tftp
+!
+service-policy global_policy global
+ntp server 195.88.100.3 source Outside prefer
+ntp server 91.186.12.87 source Outside
+Cryptochecksum:542fbead58e1ae9502354a19443799dc
+: end
+AIMES-FW-01#

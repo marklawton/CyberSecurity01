@@ -1,0 +1,790 @@
+17/10/18   F27 : APZ V7 IP access
+
+f27-edge-ipv6# sh run
+: Saved
+:
+PIX Version 7.2(4)
+!
+hostname f27-edge-ipv6
+domain-name aimes.net
+enable password D.2tXTsQh3oBcXVd encrypted
+passwd 2KFQnbNIdI.2KYOU encrypted
+names
+name 172.16.99.242 AIMES-VWEBMON-01 description LAMP WEB server for NOC LAN only
+name 172.16.99.250 NETXMS
+name 172.16.99.240 PRTG description SNMP Monitor
+name 172.16.99.225 OBSERVIUM description SNMP monitor
+name 172.16.99.229 SYSLOG_999 description Logging Host in Management LAN
+name 172.16.99.247 eSight_Server description Huawei temp test monitor
+!
+interface Ethernet0
+ description Outside Interface to Internet s2.p18 vlan3
+ nameif outside
+ security-level 0
+ ip address 37.48.240.27 255.255.255.0
+ ipv6 address 2a00:7640:0:3::27/64
+ ipv6 nd suppress-ra
+!
+interface Ethernet1
+ description LAN Users & support interface p23A
+ nameif LAN
+ security-level 100
+ ip address 192.168.0.1 255.255.255.0
+ ipv6 address 2a00:7640:0:1::27/64
+ ipv6 nd prefix 2a00:7640:0:1::/64
+!
+interface Ethernet2
+ description MONITOR LAN V999 to S251.MON.NOC
+ speed 100
+ duplex full
+ nameif MONITOR-LAN
+ security-level 96
+ ip address 172.16.99.1 255.255.255.0
+ ipv6 nd suppress-ra
+!
+interface Ethernet3
+ description AIMES support switches s53/s54.edge.core p9/p9
+ nameif SUPPORT-TRUNK
+ security-level 95
+ no ip address
+ ipv6 nd suppress-ra
+!
+interface Ethernet3.1
+ description AIMES CORE switches s53/s54.edge.core p9/p9
+ vlan 212
+ nameif AIMES_DMZ
+ security-level 49
+ ip address 10.0.4.253 255.255.255.0
+ ipv6 address 2a00:7640:0:212::253/64
+ ipv6 nd suppress-ra
+!
+interface Ethernet3.2
+ description AIMES Support DC2 vlan 300
+ vlan 300
+ nameif DC2_SUPPORT
+ security-level 50
+ ip address 10.22.30.1 255.255.255.0
+!
+interface Ethernet3.3
+ description DC2 monitoring infrastructure vlan 299
+ vlan 299
+ nameif DC2_INFRASTRUCTURE
+ security-level 50
+ ip address 10.22.32.1 255.255.248.0
+!
+interface Ethernet4
+ description RRAS to support Aimes 2FA
+ nameif RRAS-AIMES
+ security-level 98
+ ip address 172.16.250.1 255.255.255.0
+!
+interface Ethernet5
+ description Aimes Office LAN  CR9313 S17.p20
+ nameif AIMES-OFFICE
+ security-level 51
+ ip address 172.20.1.254 255.255.255.0
+!
+banner motd *******************************************************
+banner motd * AIMES GRID SERVICES  EDGE LANE -      f27.edge.ipv6 *
+banner motd * WARNING: THIS IS A PRIVATE NETWORK                  *
+banner motd * ACCESS IS PERMITTED FOR AUTHORISED PERSONS ONLY     *
+banner motd *******************************************************
+ftp mode passive
+clock timezone GMT/BST 0
+clock summer-time GMT/BDT recurring last Sun Mar 1:00 last Sun Oct 2:00
+dns server-group DefaultDNS
+ domain-name aimes.net
+object-group network LAN_IPV6
+ description "IPV6 range for LAN 192.168.0.0/24 "
+ network-object 2a00:7640:0:1::/64
+object-group network NET_DMZ_AGS_IPV6
+ description network subnet for AGS servers VLAN 212 for IPV6
+ network-object 2a00:7640:0:212::/64
+object-group service BASE_tcp-out tcp
+ description network TCP ports allowed outbound
+ port-object eq www
+ port-object eq https
+ port-object eq domain
+ port-object eq smtp
+object-group service BASE_udp-out udp
+ description network UDP ports allowed outbound
+ port-object eq domain
+ port-object eq ntp
+object-group service SUPPORT_tcp-out tcp
+ description network TCP ports allowed Support LAN 212
+ port-object eq smtp
+object-group service SUPPORT_udp-out udp
+ description network UDP ports allowed to Support LAN 212
+ port-object eq domain
+ port-object eq ntp
+ port-object eq syslog
+ port-object eq 6343
+object-group network Sysadmins
+ description support access LAN01.100, LPMc.101, H.102, JVDW.103, M.104 D.105 M2.106 Mt.107 ARFAN.108 JR.109 free.110
+ network-object host 192.168.0.100
+ network-object host 192.168.0.101
+ network-object host 192.168.0.102
+ network-object host 192.168.0.103
+ network-object host 192.168.0.105
+ network-object host 192.168.0.104
+ network-object host 192.168.0.106
+ network-object host 192.168.0.107
+ network-object host 10.0.4.193
+ network-object host 10.0.4.194
+ network-object host 10.0.4.195
+ network-object host 10.0.4.196
+ network-object host 10.0.4.197
+ network-object host 10.0.4.198
+ network-object host 10.0.4.199
+ network-object host 192.168.0.108
+ network-object host 10.0.4.200
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+ network-object host 192.168.0.109
+ network-object host 192.168.0.110
+ network-object host 10.0.4.192
+object-group network REMOTE_WWW_IPV6_SUPPORT
+ description "Aimes WEB server suport access "
+ network-object host 195.88.100.4
+ network-object host 195.88.100.11
+ network-object host 195.88.100.13
+ network-object host 195.88.100.17
+object-group network NET_DENY-Access_IPV4
+ description customer networks/subnets that should NOT connect to each other
+ network-object 192.168.0.0 255.255.255.0
+ network-object 10.22.32.0 255.255.248.0
+ network-object 10.22.30.0 255.255.255.0
+object-group network NET_DENY-Access_IPV6
+ description customer networks/subnets that should NOT connect to each other
+ network-object 2a00:7640:0:212::/64
+ network-object 2a00:7640:0:1::/64
+object-group network Aimes_Monitors
+ description Aimes DMZ servers/monitors
+ network-object host 10.0.4.221
+ network-object host 10.0.4.222
+ network-object host 10.0.4.220
+ network-object host 10.0.4.218
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+ network-object host 172.16.99.221
+ network-object host NETXMS
+ network-object host PRTG
+ network-object host 10.0.4.223
+ network-object host OBSERVIUM
+ network-object host 172.16.99.100
+object-group service ADMZ_tcp-out tcp
+ description network TCP ports allowed outbound to Aimes Monitor DMZ 212
+ port-object eq smtp
+object-group network OUT_Aimes_FTP01
+ description Aimes outside ftp server  cr8592
+ network-object host 195.88.100.65
+object-group service AFTP_tcp-out tcp
+ description network TCP ports allowed outbound to Aimes FTP01 cr8592
+ port-object eq ftp
+object-group network NET_VLAN300
+ description "IPV4 range for DC2 Aimes support "
+ network-object 10.22.30.0 255.255.255.0
+object-group network NET_VLAN299
+ description "IPV4 DC2 infrstaructure Servers that can access the internet + CR8909"
+ network-object host 10.22.32.5
+ network-object host 10.22.32.6
+ network-object host 10.22.32.3
+ network-object host 10.22.32.10
+ network-object host 10.22.32.9
+ network-object host 10.22.32.4
+ network-object host 10.22.32.7
+ network-object host 10.22.32.26
+ network-object host 10.22.32.27
+object-group network WWW_DC2TS_IPV4_SERVER
+ description "IPV4 DC2TS RDP server VM on XEN server"
+ network-object host 37.48.240.254
+ network-object host 10.22.32.9
+object-group network REMOTE_DC2_SUPPORT
+ description "DC2 RDP TS server support access - 148.252.211.244 keysource T20180326.0006"
+ network-object host 195.88.100.4
+ network-object host 195.88.100.11
+ network-object host 86.163.18.173
+ network-object host 195.88.100.14
+ network-object host 195.88.100.13
+ network-object host 195.88.100.17
+ network-object host 148.252.211.244
+object-group network ROCKFORD-PDU_VLAN299
+ description "IPV4 DC2 infrstaructure APC PDU D07 (NAT) for rockford-it remote access cr9249"
+ network-object host 37.48.240.251
+ network-object host 37.48.240.252
+object-group network EXT-ROCKFORD-IT-SUPPORT
+ description "IPV4 External sup[port access DC2 infrstaructure APC PDU  cr9249"
+ network-object host 195.88.100.4
+ network-object 62.249.241.160 255.255.255.248
+ network-object 37.48.244.16 255.255.255.240
+ network-object 93.95.8.0 255.255.255.192
+object-group service ROCKFORD-PDU_tcp-in tcp
+ description "TCP ports allowed inbound to D07 APC PDU for Rockford-it cr9249"
+ port-object eq www
+object-group network AIMES-OFFICE-LAN
+ description "IPV4 AIMES OFFICE LAN (for office 365) cr9313 "
+ network-object 172.20.1.0 255.255.255.0
+object-group network INT-DC2-ACS
+ description Aimes DC2-03-ACS for Idera DC3 CR9686
+ network-object host 10.22.32.5
+object-group network WWW-DC2-ACS
+ description Aimes extarnal IP for DC2-03-ACS for Idera DC3 CR9686
+ network-object host 37.48.240.253
+object-group network DC3-IDERA
+ description Aimes IDERA server in DC3 CR9686
+ network-object host 154.51.138.16
+object-group service IDERA_replication-ports tcp
+ description TCP Ports required for IDERA Replication server IN/OUT CR9686
+ port-object eq 1167
+ port-object eq www
+object-group network WWW_DC2VPN_IPV4_SERVER
+ description "IPV4 DC2.05.VPN RRAS server VM on XEN server"
+ network-object host 10.22.30.50
+ network-object host 37.48.240.250
+object-group service DC2-VPN-ports udp
+ description UDP Ports required for L2TP RRAS access IN/OUT _ prot50 CR10247
+ port-object eq isakmp
+ port-object eq 4500
+ port-object eq 1701
+object-group network DMZ-R1SOFT
+ description Aimes backup server for r1soft CR8779/CR10028
+ network-object host 37.48.240.12
+object-group network Aimes_Support_access
+ description "ALL DMZ access for sysadmins support teams"
+ network-object 10.0.208.0 255.255.255.0
+ network-object 10.0.220.0 255.255.255.0
+ network-object 172.10.0.0 255.255.254.0
+ network-object 10.10.10.0 255.255.255.0
+ network-object 10.0.26.0 255.255.255.0
+ network-object 10.200.0.0 255.255.248.0
+ network-object 192.168.95.0 255.255.255.0
+ network-object 10.0.58.0 255.255.255.0
+ network-object 10.0.12.0 255.255.255.0
+ network-object 10.5.96.0 255.255.224.0
+ network-object 10.0.42.0 255.255.255.0
+ network-object 192.168.20.0 255.255.255.0
+ network-object 10.0.19.0 255.255.255.0
+ network-object 10.0.40.0 255.255.255.0
+ network-object 10.0.41.0 255.255.255.0
+ network-object 10.0.43.0 255.255.255.0
+ network-object 10.0.28.0 255.255.255.0
+ network-object 10.0.50.0 255.255.255.0
+ network-object 10.0.53.0 255.255.255.0
+ network-object 10.0.250.0 255.255.255.0
+ network-object 10.0.27.0 255.255.255.0
+ network-object 10.0.198.0 255.255.255.0
+ network-object 10.0.199.0 255.255.255.0
+ network-object 10.0.152.0 255.255.255.0
+ network-object 10.0.156.0 255.255.255.0
+ network-object 10.0.153.0 255.255.255.0
+ network-object 10.0.155.0 255.255.255.0
+ network-object 10.0.159.0 255.255.255.0
+ network-object 10.0.151.0 255.255.255.0
+ network-object 192.168.10.250 255.255.255.255
+ network-object 192.168.2.0 255.255.255.0
+ network-object 10.0.2.0 255.255.255.0
+ network-object 10.0.8.0 255.255.255.0
+ network-object 192.168.45.0 255.255.255.0
+ network-object 10.0.46.0 255.255.255.0
+ network-object 10.0.48.0 255.255.255.0
+ network-object 10.0.35.0 255.255.255.0
+ network-object 10.0.251.0 255.255.255.0
+ network-object 10.0.31.0 255.255.255.0
+ network-object 10.0.247.0 255.255.255.0
+ network-object 10.0.201.0 255.255.255.0
+ network-object 10.0.202.0 255.255.255.0
+ network-object 10.0.101.0 255.255.255.0
+ network-object 10.8.100.0 255.255.255.0
+ network-object 10.0.39.0 255.255.255.0
+ network-object 10.8.181.0 255.255.255.0
+ network-object 10.0.236.0 255.255.255.0
+ network-object 10.0.70.0 255.255.255.0
+ network-object 10.22.30.0 255.255.255.0
+ network-object 10.22.32.0 255.255.248.0
+ network-object 10.201.0.0 255.255.248.0
+ network-object 192.168.223.0 255.255.255.0
+ network-object 10.241.83.0 255.255.255.0
+ network-object 10.241.84.0 255.255.255.0
+ network-object 192.168.5.0 255.255.255.0
+ network-object 192.168.31.0 255.255.255.0
+ network-object host 10.0.26.4
+ network-object 10.5.177.0 255.255.255.0
+ network-object 10.16.100.0 255.255.255.0
+ network-object 192.168.181.0 255.255.255.0
+ network-object 192.168.227.0 255.255.255.0
+object-group network NET_LAN
+ description network subnet for support users
+ network-object 192.168.0.0 255.255.255.0
+object-group network Aimes_Support_NAT
+ description Aimes support access to for Monitor LAN
+ network-object 10.6.100.0 255.255.255.0
+ network-object 10.3.166.0 255.255.255.0
+ network-object 10.0.193.0 255.255.255.0
+ network-object 10.0.39.0 255.255.255.0
+ network-object 10.0.12.0 255.255.255.0
+object-group network NET_DMZ_AGS
+ description network subnet for AGS servers VLAN 212
+ network-object 10.0.4.0 255.255.255.0
+object-group network Aimes_snmp_monitor
+ description " access for snmp monitor testing solarwinds"
+ network-object host NETXMS
+ network-object host PRTG
+ network-object host 172.16.99.100
+ network-object host OBSERVIUM
+ network-object host 10.0.4.190
+ network-object host 10.0.4.191
+ network-object host eSight_Server
+object-group network NET_VLAN999
+ description "IPV4 range for DC2 Aimes Monitor LAN"
+ network-object 172.16.99.0 255.255.255.0
+object-group service MON_udp-out udp
+ description network MONITOR UDP ports allowed outbound
+ port-object eq snmp
+ port-object eq snmptrap
+ port-object eq echo
+object-group service IPMI udp
+ description Allow Port 623 for Dell IPMI
+ port-object eq 623
+object-group service ZABBIX udp
+ port-object eq 10050
+object-group icmp-type PING
+ icmp-object echo
+ icmp-object echo-reply
+ icmp-object traceroute
+ icmp-object unreachable
+object-group service AIMES_MON_WEB tcp
+ description for_ AIMES_MON_WEB
+ port-object eq www
+ port-object eq https
+object-group network REMOTE_azure-mgnt_lan
+ description "Aimes sysadmins APZ & DPZ management VLANS "
+ network-object 192.168.223.0 255.255.255.0
+ network-object 192.168.227.0 255.255.255.0
+object-group network Aimes_Support_access_RRAS
+ description "RRAS access for sysadmins support team"
+ network-object 172.16.250.0 255.255.255.0
+ network-object 172.16.251.0 255.255.255.0
+object-group network AIMES-SBS-LAN-NEW
+ description "IPV4 AIMES SBS LAN NEW (for new sage) Autotask  "
+ network-object host 172.20.1.201
+ network-object host 37.48.240.119
+object-group network NET_ARK-VDI-V31
+ description "IPV4 range for ARK VDI F02"
+ network-object 192.168.31.0 255.255.255.0
+object-group service SNMP_UDP udp
+ description for SNMP monitoring
+ port-object eq snmp
+ port-object eq snmptrap
+object-group network ABC_NETWORK
+ description ABC at Breckfield house
+ network-object host 10.0.26.4
+ network-object 192.168.95.0 255.255.255.0
+object-group network monitor_srv_v999
+ description monitor server v999 for elk
+ network-object host 172.16.99.221
+object-group network Aimes_ELK01
+ description Aimes-ELK01 V212
+ network-object host 10.0.4.125
+object-group service ELK_elasticsearch_ports tcp
+ description for ELK monitoring
+ port-object eq 9200
+ port-object eq 9300
+ port-object eq 5601
+object-group service DELL-IPMI-SNMP-SYSLOG-UDP-PORTS udp
+ group-object IPMI
+ group-object MON_udp-out
+ port-object eq syslog
+object-group service SNMP-TCP-PORTS tcp
+ port-object eq 161
+ port-object eq 162
+object-group service EXPLICIT_DENY_SMB_NETBIOS_TCP_ports_in tcp
+ description CYBER ESSENTIALS REQUIREMENT
+ port-object eq 445
+object-group service EXPLICIT_DENY_SMB_NETBIOS_UDP_ports_in udp
+ description CYBER ESSENTIALS REQUIREMENT
+ port-object eq 139
+ port-object eq netbios-dgm
+ port-object eq netbios-ns
+access-list Aimes-Office-LAN_in extended permit icmp object-group AIMES-OFFICE-LAN object-group Aimes_Monitors
+access-list Aimes-Office-LAN_in extended permit icmp object-group AIMES-OFFICE-LAN object-group Sysadmins
+access-list Aimes-Office-LAN_in extended permit udp 172.20.1.0 255.255.255.0 object-group Aimes_Monitors object-group SNMP_UDP inactive
+access-list Aimes-Office-LAN_in extended deny ip object-group AIMES-OFFICE-LAN object-group NET_LAN
+access-list Aimes-Office-LAN_in extended deny icmp object-group AIMES-OFFICE-LAN object-group Aimes_Monitors
+access-list Aimes-Office-LAN_in extended permit ip object-group AIMES-OFFICE-LAN any
+access-list Aimes-Office-LAN_in extended permit icmp object-group AIMES-OFFICE-LAN any
+access-list Aimes-Office-LAN_in extended permit tcp object-group AIMES-OFFICE-LAN object-group DMZ-R1SOFT object-group IDERA_replication-ports
+access-list nonat-Aimes-office extended permit ip object-group AIMES-OFFICE-LAN object-group NET_VLAN299
+access-list nonat-Aimes-office extended permit ip object-group AIMES-OFFICE-LAN object-group WWW_DC2TS_IPV4_SERVER
+access-list nonat-Aimes-office extended permit ip object-group AIMES-OFFICE-LAN object-group NET_LAN
+access-list nonat-Aimes-office extended permit ip object-group AIMES-OFFICE-LAN object-group Aimes_Monitors
+access-list outside_in extended permit icmp any any
+access-list outside_in extended permit tcp object-group REMOTE_DC2_SUPPORT object-group WWW_DC2TS_IPV4_SERVER eq 3389
+access-list outside_in extended permit tcp object-group EXT-ROCKFORD-IT-SUPPORT object-group ROCKFORD-PDU_VLAN299 object-group ROCKFORD-PDU_tcp-in
+access-list outside_in extended permit tcp object-group DC3-IDERA object-group WWW-DC2-ACS object-group IDERA_replication-ports
+access-list outside_in extended permit ip object-group REMOTE_DC2_SUPPORT object-group WWW_DC2VPN_IPV4_SERVER
+access-list outside_in extended permit udp any object-group WWW_DC2VPN_IPV4_SERVER object-group DC2-VPN-ports
+access-list outside_in extended permit esp any object-group WWW_DC2VPN_IPV4_SERVER
+access-list outside_in extended permit ip object-group Aimes_Support_access_RRAS object-group NET_LAN
+access-list outside_in extended permit tcp object-group DMZ-R1SOFT object-group AIMES-SBS-LAN-NEW object-group IDERA_replication-ports
+access-list outside_in extended permit udp host 37.48.240.3 host 37.48.240.16 eq tftp
+access-list LAN_in extended permit ip object-group NET_LAN any
+access-list LAN_in extended permit icmp object-group NET_LAN any
+access-list LAN_in extended permit esp object-group NET_LAN any
+access-list LAN_in extended permit gre object-group NET_LAN any
+access-list LAN_in remark remove if possible
+access-list LAN_in extended permit udp object-group NET_LAN object-group Aimes_Monitors object-group SNMP_UDP
+access-list nonat-LAN extended permit ip object-group Sysadmins object-group Aimes_Support_access
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group Aimes_Monitors
+access-list nonat-LAN extended permit ip object-group Aimes_snmp_monitor object-group NET_DMZ_AGS 
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group AIMES-OFFICE-LAN
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group NET_VLAN999
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group NET_VLAN299
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group Aimes_Support_access_RRAS
+access-list nonat-LAN extended permit ip object-group NET_LAN host 10.0.4.168
+access-list nonat-LAN extended permit ip object-group NET_LAN object-group NET_ARK-VDI-V31
+access-list vlan300_in extended permit tcp object-group NET_VLAN300 any object-group BASE_tcp-out
+access-list vlan300_in extended permit udp object-group NET_VLAN300 any object-group BASE_udp-out
+access-list vlan300_in extended permit icmp object-group NET_VLAN300 any
+access-list vlan300_in extended permit udp object-group NET_VLAN300 object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan300_in extended permit icmp object-group NET_VLAN300 object-group Aimes_Monitors
+access-list vlan300_in extended permit tcp object-group INT-DC2-ACS object-group DC3-IDERA object-group IDERA_replication-ports
+access-list vlan300_in extended permit udp object-group WWW_DC2VPN_IPV4_SERVER any object-group DC2-VPN-ports
+access-list vlan300_in extended permit esp object-group WWW_DC2VPN_IPV4_SERVER any
+access-list vlan299_in extended permit tcp object-group NET_VLAN299 any object-group BASE_tcp-out
+access-list vlan299_in extended permit udp object-group NET_VLAN299 any object-group BASE_udp-out
+access-list vlan299_in extended permit icmp object-group NET_VLAN299 any
+access-list vlan299_in extended permit tcp object-group NET_VLAN299 object-group Aimes_Monitors eq smtp
+access-list vlan299_in extended permit udp object-group NET_VLAN299 object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan299_in extended permit tcp object-group NET_VLAN299 object-group Aimes_Monitors eq ftp
+access-list vlan212_in extended permit icmp object-group Aimes_Monitors any
+access-list vlan212_in extended permit udp object-group Aimes_Monitors any object-group SNMP_UDP
+access-list vlan212_in extended permit icmp object-group Sysadmins any
+access-list vlan212_in extended permit icmp any object-group Sysadmins
+access-list vlan212_in extended permit icmp any host 10.0.4.190 inactive
+access-list vlan212_in extended permit icmp any host 10.0.4.191 inactive
+access-list vlan212_in extended permit icmp object-group NET_DMZ_AGS object-group Aimes_Monitors
+access-list vlan212_in extended permit udp object-group NET_DMZ_AGS object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan212_in extended permit udp 10.0.4.0 255.255.255.0 object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan212_in extended permit icmp 10.0.4.0 255.255.255.0 object-group Aimes_Monitors
+access-list vlan212_in extended permit tcp any host NETXMS eq smtp
+access-list vlan212_in extended permit icmp 192.168.95.0 255.255.255.0 object-group Aimes_Monitors
+access-list vlan212_in extended permit icmp object-group ABC_NETWORK object-group Aimes_Monitors
+access-list vlan212_in extended permit udp object-group ABC_NETWORK object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan212_in extended permit udp object-group Aimes_Support_NAT object-group Aimes_Monitors object-group SNMP_UDP
+access-list vlan212_in extended permit icmp object-group Aimes_Support_NAT object-group Aimes_Monitors
+access-list nonat-vlan212 extended permit ip object-group Aimes_Monitors any
+access-list nonat-vlan212 extended permit ip object-group Aimes_Monitors object-group Aimes_Support_access
+access-list nonat-vlan212 extended permit ip object-group Aimes_Monitors object-group NET_LAN
+access-list nonat-vlan212 extended permit ip object-group Aimes_Monitors host 172.16.99.221
+access-list nonat-vlan212 extended permit ip host 10.0.4.168 object-group Sysadmins
+access-list nonat-vlan212 extended permit ip object-group ABC_NETWORK object-group Aimes_Monitors
+access-list nonat-vlan300 extended permit ip object-group NET_VLAN300 object-group Aimes_Monitors
+access-list nonat-vlan300 extended permit ip object-group NET_VLAN300 object-group Sysadmins
+access-list nonat-vlan299 extended permit ip object-group NET_VLAN299 object-group Aimes_Monitors
+access-list nonat-vlan299 extended permit ip object-group NET_VLAN299 object-group Sysadmins
+access-list nonat-vlan299 extended permit ip object-group NET_VLAN299 object-group AIMES-OFFICE-LAN
+access-list vlan999_in extended permit tcp object-group NET_VLAN999 any object-group BASE_tcp-out
+access-list vlan999_in extended permit udp object-group NET_VLAN999 any object-group BASE_udp-out
+access-list vlan999_in extended permit udp object-group NET_VLAN999 any object-group MON_udp-out
+access-list vlan999_in extended permit tcp object-group NET_VLAN999 any object-group SNMP-TCP-PORTS
+access-list vlan999_in extended permit icmp object-group NET_VLAN999 any
+access-list vlan999_in extended permit udp object-group NET_VLAN999 object-group Aimes_Monitors eq echo
+access-list vlan999_in extended permit udp object-group Aimes_Monitors any object-group DELL-IPMI-SNMP-SYSLOG-UDP-PORTS log disable
+access-list vlan999_in extended permit icmp object-group Aimes_Monitors any
+access-list vlan999_in extended permit icmp object-group Aimes_Monitors any echo
+access-list vlan999_in extended permit icmp object-group REMOTE_azure-mgnt_lan object-group Sysadmins
+access-list vlan999_in extended permit tcp object-group NET_VLAN999 object-group Aimes_Monitors eq ftp
+access-list vlan999_in extended permit udp host 37.48.240.16 host 37.48.240.3 eq tftp
+access-list vlan999_in extended permit icmp object-group NET_ARK-VDI-V31 any
+access-list vlan999_in extended permit ip 172.16.99.0 255.255.255.0 host 192.168.0.108
+access-list vlan999_in extended permit tcp host NETXMS any eq smtp
+access-list vlan999_in extended permit icmp host 172.16.99.80 host 192.168.35.250
+access-list vlan999_in extended permit tcp host 172.16.99.80 host 192.168.35.250 eq 5601
+access-list vlan999_in remark RLBUHT SNMP Monitoring
+access-list vlan999_in extended permit udp object-group Aimes_Monitors 10.6.100.0 255.255.255.0 object-group SNMP_UDP
+access-list nonat-vlan999 extended permit ip object-group NET_VLAN999 object-group NET_DMZ_AGS
+access-list nonat-vlan999 extended permit ip object-group NET_VLAN999 object-group Aimes_Monitors
+access-list nonat-vlan999 extended permit ip object-group NET_ARK-VDI-V31 object-group Sysadmins
+access-list nonat-vlan999 extended permit ip object-group NET_VLAN999 object-group ABC_NETWORK
+access-list nonat-vlan999 extended permit ip object-group NET_VLAN999 object-group NET_VLAN300
+access-list nonat-vlan999 extended permit ip object-group NET_VLAN999 object-group Aimes_Support_NAT
+access-list RRAS-AIMES_in extended permit ip object-group Aimes_Support_access_RRAS object-group NET_LAN
+access-list RRAS-AIMES_in extended permit icmp object-group Aimes_Support_access_RRAS object-group NET_LAN
+access-list RRAS-AIMES_in extended permit icmp host 172.16.251.6 host 192.168.0.104
+
+access-list RRAS-AIMES_in extended permit icmp object-group Aimes_Support_access_RRAS 192.168.70.0 255.255.255.0
+
+access-list nonat-RRAS-AIMES_in extended permit ip object-group Aimes_Support_access_RRAS object-group NET_LAN
+
+access-list nonat-RRAS-AIMES_in extended permit ip object-group Aimes_Support_access_RRAS 192.168.70.0 255.255.255.0
+
+
+pager lines 22
+logging enable
+logging buffered debugging
+logging trap informational
+logging asdm informational
+logging host AIMES_DMZ 10.0.4.221
+logging host MONITOR-LAN SYSLOG_999
+no logging message 710005
+mtu outside 1500
+mtu LAN 1500
+mtu MONITOR-LAN 1500
+mtu SUPPORT-TRUNK 1500
+mtu AIMES_DMZ 1500
+mtu DC2_SUPPORT 1500
+mtu DC2_INFRASTRUCTURE 1500
+mtu RRAS-AIMES 1500
+mtu AIMES-OFFICE 1500
+ipv6 icmp permit any outside
+ipv6 icmp permit any parameter-problem outside
+ipv6 icmp permit any time-exceeded outside
+ipv6 icmp permit any unreachable outside
+ipv6 icmp permit 2a00:7640::/32 neighbor-advertisement outside
+ipv6 icmp permit any LAN
+ipv6 icmp permit any SUPPORT-TRUNK
+ipv6 icmp permit any AIMES_DMZ
+ipv6 icmp permit any RRAS-AIMES
+ipv6 route outside 2001:470:11:5d::1/128 2a00:7640:0:3::3 5
+ipv6 route outside ::/0 2a00:7640:0:3::2 10
+ipv6 route outside ::/0 2a00:7640:0:3::3 20
+ipv6 access-list ipv6-outside_in permit icmp6 any any echo-reply
+ipv6 access-list ipv6-outside_in permit icmp6 any any
+ipv6 access-list ipv6-outside_in permit icmp6 any any echo
+ipv6 access-list ipv6-outside_in permit icmp6 any any 0
+ipv6 access-list ipv6-outside_in permit icmp any any
+ipv6 access-list ipv6-LAN_in permit ip object-group LAN_IPV6 any
+ipv6 access-list ipv6-LAN_in permit icmp6 object-group LAN_IPV6 any
+ipv6 access-list ipv6-LAN_in permit icmp6 object-group LAN_IPV6 any echo
+ipv6 access-list ipv6-LAN_in permit icmp6 object-group LAN_IPV6 any echo-reply
+ipv6 access-list ipv6-LAN_in permit icmp object-group LAN_IPV6 any
+ipv6 access-list ipv6-v212_in permit tcp object-group NET_DMZ_AGS_IPV6 any object-group BASE_tcp-out
+ipv6 access-list ipv6-v212_in permit udp object-group NET_DMZ_AGS_IPV6 any object-group BASE_udp-out
+ipv6 access-list ipv6-v212_in permit icmp6 object-group NET_DMZ_AGS_IPV6 any
+ipv6 access-list ipv6-v212_in permit icmp6 object-group NET_DMZ_AGS_IPV6 any echo
+ipv6 access-list ipv6-v212_in permit icmp6 object-group NET_DMZ_AGS_IPV6 any echo-reply
+ipv6 access-list ipv6-v212_in permit icmp object-group NET_DMZ_AGS_IPV6 any
+no failover
+icmp unreachable rate-limit 1 burst-size 1
+icmp permit any outside
+icmp permit any parameter-problem outside
+icmp permit any mask-reply outside
+icmp permit any source-quench outside
+icmp permit any time-exceeded outside
+icmp permit any timestamp-reply outside
+icmp permit any unreachable outside
+icmp permit any information-reply outside
+icmp deny any outside
+icmp permit any LAN
+icmp permit any SUPPORT-TRUNK
+icmp permit any RRAS-AIMES
+asdm image flash:/asdm524.bin
+no asdm history enable
+arp timeout 14400
+nat-control
+global (outside) 1 interface
+global (outside) 101 37.48.240.10 netmask 255.255.255.0
+global (outside) 118 37.48.240.18 netmask 255.255.255.0
+nat (LAN) 0 access-list nonat-LAN
+nat (LAN) 118 192.168.0.96 255.255.255.240
+nat (LAN) 1 192.168.0.0 255.255.255.192  
+nat (LAN) 1 192.168.0.128 255.255.255.128
+nat (MONITOR-LAN) 0 access-list nonat-vlan999
+nat (MONITOR-LAN) 1 0.0.0.0 0.0.0.0
+nat (AIMES_DMZ) 0 access-list nonat-vlan212
+nat (DC2_SUPPORT) 0 access-list nonat-vlan300
+nat (DC2_SUPPORT) 1 0.0.0.0 0.0.0.0
+nat (DC2_INFRASTRUCTURE) 0 access-list nonat-vlan299
+nat (DC2_INFRASTRUCTURE) 1 0.0.0.0 0.0.0.0
+nat (RRAS-AIMES) 0 access-list nonat-RRAS-AIMES_in
+nat (AIMES-OFFICE) 0 access-list nonat-Aimes-office
+nat (AIMES-OFFICE) 101 0.0.0.0 0.0.0.0
+static (DC2_INFRASTRUCTURE,outside) 37.48.240.251 10.22.35.85 netmask 255.255.255.255 dns
+static (DC2_INFRASTRUCTURE,outside) 37.48.240.252 10.22.35.86 netmask 255.255.255.255 dns
+static (DC2_INFRASTRUCTURE,outside) 37.48.240.253 10.22.32.5 netmask 255.255.255.255 dns
+static (DC2_INFRASTRUCTURE,outside) 37.48.240.254 10.22.32.9 netmask 255.255.255.255 dns
+static (DC2_SUPPORT,outside) 37.48.240.250 10.22.30.50 netmask 255.255.255.255 dns
+static (LAN,AIMES_DMZ) 10.0.4.193 192.168.0.101 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.194 192.168.0.102 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.195 192.168.0.103 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.196 192.168.0.104 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.197 192.168.0.105 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.198 192.168.0.106 netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.199 192.168.0.107 netmask 255.255.255.255
+static (MONITOR-LAN,outside) 37.48.240.16 NETXMS netmask 255.255.255.255 dns
+static (LAN,AIMES_DMZ) 10.0.4.200 192.168.0.108 netmask 255.255.255.255
+static (AIMES-OFFICE,outside) 37.48.240.119 172.20.1.201 netmask 255.255.255.255 dns
+static (MONITOR-LAN,outside) 37.48.240.15 PRTG netmask 255.255.255.255 dns
+static (MONITOR-LAN,AIMES_DMZ) 10.0.4.190 PRTG netmask 255.255.255.255
+static (MONITOR-LAN,AIMES_DMZ) 10.0.4.191 NETXMS netmask 255.255.255.255
+static (LAN,AIMES_DMZ) 10.0.4.192 192.168.0.109 netmask 255.255.255.255
+access-group outside_in in interface outside
+access-group ipv6-outside_in in interface outside
+access-group LAN_in in interface LAN
+access-group ipv6-LAN_in in interface LAN
+access-group vlan999_in in interface MONITOR-LAN
+access-group vlan212_in in interface AIMES_DMZ
+access-group ipv6-v212_in in interface AIMES_DMZ
+access-group vlan300_in in interface DC2_SUPPORT
+access-group vlan299_in in interface DC2_INFRASTRUCTURE
+access-group RRAS-AIMES_in in interface RRAS-AIMES
+access-group Aimes-Office-LAN_in in interface AIMES-OFFICE
+route outside 0.0.0.0 0.0.0.0 37.48.240.1 1
+route outside 0.0.0.0 0.0.0.0 37.48.240.2 10
+route outside 0.0.0.0 0.0.0.0 37.48.240.3 20
+route outside 109.0.0.0 255.0.0.0 37.48.240.8 1
+route MONITOR-LAN 192.168.223.0 255.255.255.0 172.16.99.51 1
+route MONITOR-LAN 10.241.83.0 255.255.255.0 172.16.99.51 1
+route MONITOR-LAN 10.241.84.0 255.255.255.0 172.16.99.51 1
+route MONITOR-LAN 192.168.5.0 255.255.255.0 172.16.99.200 1
+route MONITOR-LAN 192.168.31.0 255.255.255.0 172.16.99.58 1
+route MONITOR-LAN 192.168.227.0 255.255.255.0 172.16.99.51 1
+route AIMES_DMZ 10.17.47.64 255.255.255.192 10.0.4.13 1
+route AIMES_DMZ 10.0.48.0 255.255.248.0 10.0.4.13 1
+route AIMES_DMZ 10.6.100.0 255.255.255.0 10.0.4.234 1
+route AIMES_DMZ 10.0.42.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.151.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.159.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.155.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 192.168.10.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.153.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.39.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.156.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.152.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.199.0 255.255.255.0 10.0.4.245 1
+route AIMES_DMZ 10.0.198.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.27.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.250.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.53.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.17.47.103 255.255.255.255 10.0.4.13 1
+route AIMES_DMZ 10.0.50.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.28.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.43.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.41.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.40.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.0.19.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 192.168.20.0 255.255.255.0 10.0.4.13 1
+route AIMES_DMZ 10.5.96.0 255.255.224.0 10.0.4.241 1
+route AIMES_DMZ 10.0.12.0 255.255.255.0 10.0.4.241 1
+route AIMES_DMZ 10.0.58.0 255.255.255.0 10.0.4.33 1
+route AIMES_DMZ 192.168.95.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.200.0.0 255.255.0.0 10.0.4.236 1
+route AIMES_DMZ 10.0.26.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.10.10.0 255.255.255.0 10.0.4.236 1
+route AIMES_DMZ 172.10.0.0 255.255.254.0 10.0.4.236 1
+route AIMES_DMZ 10.0.245.0 255.255.255.0 10.0.4.227 1
+route AIMES_DMZ 10.8.100.0 255.255.255.0 10.0.4.232 1
+route AIMES_DMZ 10.3.166.0 255.255.255.0 10.0.4.238 1
+route AIMES_DMZ 10.8.102.0 255.255.255.0 10.0.4.232 1
+route AIMES_DMZ 10.0.220.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 192.168.2.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.2.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.8.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 192.168.45.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 192.168.50.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.46.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.48.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.35.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.251.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.31.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.247.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.208.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.201.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.202.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.0.101.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.8.181.0 255.255.255.0 10.0.4.227 1
+route AIMES_DMZ 10.0.236.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.0.70.0 255.255.255.0 10.0.4.1 1
+route AIMES_DMZ 10.201.0.0 255.255.0.0 10.0.4.236 1
+route AIMES_DMZ 10.0.193.0 255.255.255.0 10.0.4.234 1
+route AIMES_DMZ 10.3.162.0 255.255.255.0 10.0.4.232 1
+route AIMES_DMZ 10.5.177.0 255.255.255.0 10.0.4.247 1
+route AIMES_DMZ 10.16.100.0 255.255.255.0 10.0.4.226 1
+route AIMES_DMZ 192.168.181.0 255.255.255.0 10.0.4.247 1
+route RRAS-AIMES 172.16.251.0 255.255.255.0 172.16.250.200 1
+
+
+--route RRAS-AIMES 192.168.70.0 255.255.255.0 37.48.240.36 1
+
+
+
+
+timeout xlate 3:00:00
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+aaa authentication ssh console LOCAL
+aaa authentication http console LOCAL
+http server enable
+http NETXMS 255.255.255.255 MONITOR-LAN
+http 192.168.0.0 255.255.255.0 LAN
+snmp-server host AIMES_DMZ 10.0.4.216 community monitor
+snmp-server host MONITOR-LAN SYSLOG_999 community monitor version 2c
+snmp-server host MONITOR-LAN PRTG community monitor version 2c udp-port 161
+snmp-server host MONITOR-LAN eSight_Server community monitor version 2c udp-port 161
+snmp-server host MONITOR-LAN NETXMS community monitor version 2c udp-port 161
+snmp-server location AIMES IPv6 A724
+snmp-server contact G Lawton
+snmp-server community monitor
+snmp-server enable traps snmp authentication linkup linkdown coldstart
+snmp-server enable traps syslog
+snmp-server enable traps ipsec start stop
+snmp-server enable traps entity config-change fru-insert fru-remove
+snmp-server enable traps remote-access session-threshold-exceeded
+no vpn-addr-assign aaa
+no vpn-addr-assign dhcp
+telnet timeout 5
+ssh 195.88.100.4 255.255.255.255 outside
+ssh 192.168.0.0 255.255.255.0 LAN
+ssh 2a00:7640:0:1::/64 LAN
+ssh timeout 60
+console timeout 0
+dhcpd ping_timeout 100
+dhcpd domain dhcp.aimes.co.uk
+!
+ntp server 195.88.100.3 source outside prefer
+ntp server 91.186.12.87 source outside
+username aali password 5bbROzs6da1775ki encrypted privilege 15
+username mlawton password 2fs3Dh7Jq.G/1emH encrypted privilege 15
+username banders password /QjFRl8KL0uTBBlM encrypted privilege 15
+username dlawton password hqHcQeYS4rtMieY. encrypted privilege 15
+tunnel-group access-AIMES type ipsec-ra
+tunnel-group access-AIMES ipsec-attributes
+ pre-shared-key *
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum 512
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map
+  inspect h323 h225
+  inspect h323 ras
+  inspect netbios
+  inspect rsh
+  inspect rtsp
+  inspect skinny
+  inspect sqlnet
+  inspect sunrpc
+  inspect tftp
+  inspect sip
+  inspect xdmcp
+  inspect ftp
+!
+service-policy global_policy global
+prompt hostname context
+Cryptochecksum:abaac3c4e9cda6c55c51e49c3d20f623
+: end
+f27-edge-ipv6# $
+
+
+
+
+
+
+
