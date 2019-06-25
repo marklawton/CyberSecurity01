@@ -1,0 +1,1 @@
+nmap -PN -d -p445 --script=smb-check-vulns --script-args=safe=1 [network_range]
