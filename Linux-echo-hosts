@@ -1,0 +1,1 @@
+echo "151.231.58.58  fred" >> /etc/hosts
