@@ -1,0 +1,9 @@
+ python3 cisco_pwdecrypt.py -u "\$1\$ge7Z\$ojTjQRrdFYwEmQtL94Meu0" -d passwords.txt 
+ python3 cisco_pwdecrypt.py -u "\$1\$6O1H\$NnhjMYq/jkDrolXaUDVyX0" -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$2HCj\$GAW3Mc4Isk1K6cJVtMn/L0" -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$ULj2\$cTvhVMW/r3FCzbjez4eN10" -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$hwHg\$cYLoSezHCd.s4hlvWv6Mv0" -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$hwHg\$cYLoSezHCd.s4hlvWv6Mv0" -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$SxUQ\$cagQpaHnjwV4TPTHVM./w." -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$xn8F\$zMKMdW9bA001ukmr6Wn0V." -d passwords.txt
+ python3 cisco_pwdecrypt.py -u "\$1\$LNN6\$DfvzK9.lW8TG.a3altjwE/" -d passwords.txt
