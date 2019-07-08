@@ -1,0 +1,25 @@
+advanced linux commands --OSCP
+
+
+find -name *.sh 
+
+
+grep tecmint /etc/passwd
+
+
+==========================
+
+alias is a built in shell command that lets you assign name for a long command or frequently used command.
+
+I uses ‘ls -l‘ command frequently, which includes 5 characters including space. Hence I created an alias for this to ‘l‘.
+
+root@tecmint:~# alias l='ls -l'
+
+------
+
+unalias l
+------
+
+
+=========================
+
