@@ -1,0 +1,13 @@
+Description
+The remote host implements TCP timestamps, as defined by RFC1323.
+
+Solution
+To disable TCP timestamps on linux add the line 'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at runtime.
+
+To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when initiating TCP connections, but use them if the TCP peer that is initiating communication includes them in their synchronize (SYN) segment.
+
+See also: http://www.microsoft.com/en-us/download/details.aspx?id=9152
