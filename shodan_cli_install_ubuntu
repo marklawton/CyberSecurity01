@@ -18,7 +18,7 @@ python -m pip install -U setuptools
 
 #shodan init <API KEY>
 
-shodan init J4dE6A5V9LiFkesF4Wed8Ac0EmHks8v5
+shodan init J4dE6A5V9LixxxsF4xxx8Ac0EmHks8v5
 
 
 
