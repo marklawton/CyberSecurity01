@@ -1,0 +1,7 @@
+alias <shortname>="<command>"
+
+alias ln="ls -ln"
+alias python3="p3"
+alias python="p2"
+alias cd="c"
+alias l="ls"
