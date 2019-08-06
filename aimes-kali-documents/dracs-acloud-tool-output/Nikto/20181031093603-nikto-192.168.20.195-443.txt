@@ -1,4 +1,0 @@
-- Nikto v2.1.6/2.1.5
-+ Target Host: 192.168.20.195
-+ Target Port: 443
-+ GET The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS

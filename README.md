@@ -1,5 +1,3 @@
-# pentest
-scripts for pentesting
-dump of kali machines i had 
+#CyberSecurity01 repo 
 
-any scripts i found to help with pentesting 
+dump of data 
