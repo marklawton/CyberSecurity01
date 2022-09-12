@@ -1,0 +1,5 @@
+python -c 'import pty;pty.spawn("/bin/bash");'
+export TERM=XTERM
+ctrl+Z
+stty raw -echo; fg
+
